@@ -21,22 +21,21 @@ let Post = class Post extends mongoose_2.Document {
 };
 __decorate([
     (0, swagger_1.ApiProperty)({
-        example: "amamov@kakao.com",
-        description: "email",
+        example: "title of post",
+        description: "title",
         required: true,
     }),
     (0, mongoose_1.Prop)({
         required: true,
-        unique: true,
     }),
-    (0, class_validator_1.IsEmail)(),
+    (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", String)
-], Post.prototype, "email", void 0);
+], Post.prototype, "title", void 0);
 __decorate([
     (0, swagger_1.ApiProperty)({
-        example: "amamov",
-        description: "name",
+        example: "content of post",
+        description: "content",
         required: true,
     }),
     (0, mongoose_1.Prop)({
@@ -45,27 +44,7 @@ __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", String)
-], Post.prototype, "name", void 0);
-__decorate([
-    (0, swagger_1.ApiProperty)({
-        example: "23810",
-        description: "password",
-        required: true,
-    }),
-    (0, mongoose_1.Prop)({
-        required: true,
-    }),
-    (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)(),
-    __metadata("design:type", String)
-], Post.prototype, "password", void 0);
-__decorate([
-    (0, mongoose_1.Prop)({
-        default: "https://github.com/amamov/NestJS-solid-restapi-boilerplate/raw/main/docs/images/1.jpeg",
-    }),
-    (0, class_validator_1.IsString)(),
-    __metadata("design:type", String)
-], Post.prototype, "imgUrl", void 0);
+], Post.prototype, "content", void 0);
 Post = __decorate([
     (0, mongoose_1.Schema)(options)
 ], Post);
@@ -73,10 +52,8 @@ exports.Post = Post;
 const _PostSchema = mongoose_1.SchemaFactory.createForClass(Post);
 _PostSchema.virtual("readOnlyData").get(function () {
     return {
-        id: this.id,
-        email: this.email,
-        name: this.name,
-        imgUrl: this.imgUrl,
+        title: this.title,
+        content: this.content,
     };
 });
 _PostSchema.set("toObject", { virtuals: true });

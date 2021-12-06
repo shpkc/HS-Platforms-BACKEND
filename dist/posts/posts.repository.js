@@ -27,9 +27,7 @@ let PostsRepository = class PostsRepository {
     }
     async findByIdAndUpdateImg(id, fileName) {
         const cat = await this.postModel.findById(id);
-        cat.imgUrl = `http://localhost:8000/media/${fileName}`;
         const newCat = await cat.save();
-        console.log(newCat);
         return newCat.readOnlyData;
     }
     async findCatByIdWithoutPassword(catId) {
@@ -44,8 +42,8 @@ let PostsRepository = class PostsRepository {
         const result = await this.postModel.exists({ email });
         return result;
     }
-    async create(cat) {
-        return await this.postModel.create(cat);
+    async create(post) {
+        return await this.postModel.create(post);
     }
 };
 PostsRepository = __decorate([

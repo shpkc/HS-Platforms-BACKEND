@@ -50,7 +50,7 @@ let CatsController = class CatsController {
     }
 };
 __decorate([
-    (0, swagger_1.ApiOperation)({ summary: '현재 고양이 가져오기' }),
+    (0, swagger_1.ApiOperation)({ summary: "현재 고양이 가져오기" }),
     (0, common_1.UseGuards)(jwt_guard_1.JwtAuthGuard),
     (0, common_2.Get)(),
     __param(0, (0, user_decorator_1.CurrentUser)()),
@@ -61,14 +61,14 @@ __decorate([
 __decorate([
     (0, swagger_1.ApiResponse)({
         status: 500,
-        description: 'Server Error...',
+        description: "Server Error...",
     }),
     (0, swagger_1.ApiResponse)({
         status: 200,
-        description: '성공!',
+        description: "성공!",
         type: cat_dto_1.ReadOnlyCatDto,
     }),
-    (0, swagger_1.ApiOperation)({ summary: '회원가입' }),
+    (0, swagger_1.ApiOperation)({ summary: "회원가입" }),
     (0, common_2.Post)(),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
@@ -76,18 +76,18 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], CatsController.prototype, "signUp", null);
 __decorate([
-    (0, swagger_1.ApiOperation)({ summary: '로그인' }),
-    (0, common_2.Post)('login'),
+    (0, swagger_1.ApiOperation)({ summary: "로그인" }),
+    (0, common_2.Post)("login"),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [login_request_dto_1.LoginRequestDto]),
     __metadata("design:returntype", void 0)
 ], CatsController.prototype, "logIn", null);
 __decorate([
-    (0, swagger_1.ApiOperation)({ summary: '고양이 이미지 업로드' }),
-    (0, common_1.UseInterceptors)((0, platform_express_1.FilesInterceptor)('image', 10, (0, multer_options_1.multerOptions)('cats'))),
+    (0, swagger_1.ApiOperation)({ summary: "고양이 이미지 업로드" }),
+    (0, common_1.UseInterceptors)((0, platform_express_1.FilesInterceptor)("image", 10, (0, multer_options_1.multerOptions)("cats"))),
     (0, common_1.UseGuards)(jwt_guard_1.JwtAuthGuard),
-    (0, common_2.Post)('upload'),
+    (0, common_2.Post)("upload"),
     __param(0, (0, common_1.UploadedFiles)()),
     __param(1, (0, user_decorator_1.CurrentUser)()),
     __metadata("design:type", Function),
@@ -96,14 +96,14 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], CatsController.prototype, "uploadCatImg", null);
 __decorate([
-    (0, swagger_1.ApiOperation)({ summary: '모든 고양이 가져오기' }),
-    (0, common_2.Get)('all'),
+    (0, swagger_1.ApiOperation)({ summary: "모든 고양이 가져오기" }),
+    (0, common_2.Get)("all"),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
 ], CatsController.prototype, "getAllCat", null);
 CatsController = __decorate([
-    (0, common_2.Controller)('cats'),
+    (0, common_2.Controller)("cats"),
     (0, common_1.UseInterceptors)(success_interceptor_1.SuccessInterceptor),
     (0, common_1.UseFilters)(http_exception_filter_1.HttpExceptionFilter),
     __metadata("design:paramtypes", [cats_service_1.CatsService,

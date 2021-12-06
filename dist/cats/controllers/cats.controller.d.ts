@@ -1,9 +1,9 @@
 /// <reference types="multer" />
-import { CatsService } from '../services/cats.service';
-import { CatRequestDto } from '../dto/cats.request.dto';
-import { AuthService } from 'src/auth/auth.service';
-import { LoginRequestDto } from 'src/auth/dto/login.request.dto';
-import { Cat } from '../cats.schema';
+import { CatsService } from "../services/cats.service";
+import { CatRequestDto } from "../dto/cats.request.dto";
+import { AuthService } from "src/auth/auth.service";
+import { LoginRequestDto } from "src/auth/dto/login.request.dto";
+import { Cat } from "../cats.schema";
 export declare class CatsController {
     private readonly catsService;
     private readonly authService;

@@ -10,21 +10,20 @@ const options: SchemaOptions = {
 @Schema(options)
 export class Post extends Document {
   @ApiProperty({
-    example: "amamov@kakao.com",
-    description: "email",
+    example: "title of post",
+    description: "title",
     required: true,
   })
   @Prop({
     required: true,
-    unique: true,
   })
-  @IsEmail()
+  @IsString()
   @IsNotEmpty()
-  email: string;
+  title: string;
 
   @ApiProperty({
-    example: "amamov",
-    description: "name",
+    example: "content of post",
+    description: "content",
     required: true,
   })
   @Prop({
@@ -32,32 +31,11 @@ export class Post extends Document {
   })
   @IsString()
   @IsNotEmpty()
-  name: string;
-
-  @ApiProperty({
-    example: "23810",
-    description: "password",
-    required: true,
-  })
-  @Prop({
-    required: true,
-  })
-  @IsString()
-  @IsNotEmpty()
-  password: string;
-
-  @Prop({
-    default:
-      "https://github.com/amamov/NestJS-solid-restapi-boilerplate/raw/main/docs/images/1.jpeg",
-  })
-  @IsString()
-  imgUrl: string;
+  content: string;
 
   readonly readOnlyData: {
-    id: string;
-    email: string;
-    name: string;
-    imgUrl: string;
+    title: string;
+    content: string;
   };
 }
 
@@ -65,10 +43,8 @@ const _PostSchema = SchemaFactory.createForClass(Post);
 
 _PostSchema.virtual("readOnlyData").get(function (this: Post) {
   return {
-    id: this.id,
-    email: this.email,
-    name: this.name,
-    imgUrl: this.imgUrl,
+    title: this.title,
+    content: this.content,
   };
 });
 

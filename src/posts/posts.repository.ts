@@ -19,11 +19,8 @@ export class PostsRepository {
   async findByIdAndUpdateImg(id: string, fileName: string) {
     const cat = await this.postModel.findById(id);
 
-    cat.imgUrl = `http://localhost:8000/media/${fileName}`;
-
     const newCat = await cat.save();
 
-    console.log(newCat);
     return newCat.readOnlyData;
   }
 
@@ -44,7 +41,7 @@ export class PostsRepository {
     return result;
   }
 
-  async create(cat: PostRequestDto): Promise<Post> {
-    return await this.postModel.create(cat);
+  async create(post: PostRequestDto): Promise<Post> {
+    return await this.postModel.create(post);
   }
 }

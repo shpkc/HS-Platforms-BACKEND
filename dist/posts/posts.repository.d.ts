@@ -6,13 +6,11 @@ export declare class PostsRepository {
     constructor(postModel: Model<Post>);
     findAll(): Promise<Post[]>;
     findByIdAndUpdateImg(id: string, fileName: string): Promise<{
-        id: string;
-        email: string;
-        name: string;
-        imgUrl: string;
+        title: string;
+        content: string;
     }>;
     findCatByIdWithoutPassword(catId: string | Types.ObjectId): Promise<Post | null>;
     findCatByEmail(email: string): Promise<Post | null>;
     existsByEmail(email: string): Promise<boolean>;
-    create(cat: PostRequestDto): Promise<Post>;
+    create(post: PostRequestDto): Promise<Post>;
 }

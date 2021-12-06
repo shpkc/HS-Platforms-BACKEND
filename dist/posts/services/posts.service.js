@@ -16,10 +16,18 @@ let PostsService = class PostsService {
     constructor(postsRepository) {
         this.postsRepository = postsRepository;
     }
-    async getAllCat() {
-        const allCat = await this.postsRepository.findAll();
-        const readOnlyCats = allCat.map((cat) => cat.readOnlyData);
-        return readOnlyCats;
+    async getAllPost() {
+        const allpost = await this.postsRepository.findAll();
+        const readOnlyPosts = allpost.map((post) => post.readOnlyData);
+        return readOnlyPosts;
+    }
+    async addPost(body) {
+        const { title, content } = body;
+        const post = await this.postsRepository.create({
+            title,
+            content,
+        });
+        return post.readOnlyData;
     }
 };
 PostsService = __decorate([
