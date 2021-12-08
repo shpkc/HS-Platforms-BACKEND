@@ -33,9 +33,48 @@ export class Post extends Document {
   @IsNotEmpty()
   content: string;
 
+  @ApiProperty({
+    example: "category of post",
+    description: "category",
+    required: true,
+  })
+  @Prop({
+    required: true,
+  })
+  @IsString()
+  @IsNotEmpty()
+  category: string;
+
+  @ApiProperty({
+    example: "tag of post",
+    description: "tag",
+    required: true,
+  })
+  @Prop({
+    required: true,
+  })
+  @IsString()
+  @IsNotEmpty()
+  tag: string;
+
+  @ApiProperty({
+    example: "user of post",
+    description: "tag",
+    required: true,
+  })
+  @Prop({
+    required: true,
+  })
+  @IsString()
+  @IsNotEmpty()
+  participants: string;
+
   readonly readOnlyData: {
     title: string;
     content: string;
+    category: string;
+    tag: string;
+    participants: string;
   };
 }
 
@@ -45,6 +84,8 @@ _PostSchema.virtual("readOnlyData").get(function (this: Post) {
   return {
     title: this.title,
     content: this.content,
+    category: this.category,
+    tag: this.tag,
   };
 });
 

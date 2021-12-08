@@ -45,6 +45,45 @@ __decorate([
     (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", String)
 ], Post.prototype, "content", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)({
+        example: "category of post",
+        description: "category",
+        required: true,
+    }),
+    (0, mongoose_1.Prop)({
+        required: true,
+    }),
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)(),
+    __metadata("design:type", String)
+], Post.prototype, "category", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)({
+        example: "tag of post",
+        description: "tag",
+        required: true,
+    }),
+    (0, mongoose_1.Prop)({
+        required: true,
+    }),
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)(),
+    __metadata("design:type", String)
+], Post.prototype, "tag", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)({
+        example: "user of post",
+        description: "tag",
+        required: true,
+    }),
+    (0, mongoose_1.Prop)({
+        required: true,
+    }),
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)(),
+    __metadata("design:type", String)
+], Post.prototype, "participants", void 0);
 Post = __decorate([
     (0, mongoose_1.Schema)(options)
 ], Post);
@@ -54,6 +93,8 @@ _PostSchema.virtual("readOnlyData").get(function () {
     return {
         title: this.title,
         content: this.content,
+        category: this.category,
+        tag: this.tag,
     };
 });
 _PostSchema.set("toObject", { virtuals: true });

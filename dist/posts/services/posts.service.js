@@ -22,10 +22,12 @@ let PostsService = class PostsService {
         return readOnlyPosts;
     }
     async addPost(body) {
-        const { title, content } = body;
+        const { title, content, category, tag } = body;
         const post = await this.postsRepository.create({
             title,
             content,
+            category,
+            tag,
         });
         return post.readOnlyData;
     }

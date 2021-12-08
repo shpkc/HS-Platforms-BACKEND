@@ -19,7 +19,7 @@ import { PostsService } from "../services/posts.service";
 export class PostsController {
   constructor(private readonly postsService: PostsService) {}
 
-  @ApiOperation({ summary: "모든 고양이 가져오기" })
+  @ApiOperation({ summary: "모든 포스트 가져오기" })
   @Get()
   getAllCat() {
     return this.postsService.getAllPost();

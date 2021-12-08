@@ -6,6 +6,8 @@ const posts_schema_1 = require("../posts.schema");
 class PostRequestDto extends (0, swagger_1.PickType)(posts_schema_1.Post, [
     "title",
     "content",
+    "category",
+    "tag",
 ]) {
 }
 exports.PostRequestDto = PostRequestDto;

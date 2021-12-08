@@ -6,9 +6,15 @@ export declare class PostsController {
     getAllCat(): Promise<{
         title: string;
         content: string;
+        category: string;
+        tag: string;
+        participants: string;
     }[]>;
     addPost(body: PostRequestDto): Promise<{
         title: string;
         content: string;
+        category: string;
+        tag: string;
+        participants: string;
     }>;
 }

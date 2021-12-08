@@ -33,7 +33,7 @@ let PostsController = class PostsController {
     }
 };
 __decorate([
-    (0, swagger_1.ApiOperation)({ summary: "모든 고양이 가져오기" }),
+    (0, swagger_1.ApiOperation)({ summary: "모든 포스트 가져오기" }),
     (0, common_1.Get)(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),

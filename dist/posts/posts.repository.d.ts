@@ -8,6 +8,9 @@ export declare class PostsRepository {
     findByIdAndUpdateImg(id: string, fileName: string): Promise<{
         title: string;
         content: string;
+        category: string;
+        tag: string;
+        participants: string;
     }>;
     findCatByIdWithoutPassword(catId: string | Types.ObjectId): Promise<Post | null>;
     findCatByEmail(email: string): Promise<Post | null>;

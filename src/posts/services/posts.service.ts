@@ -15,11 +15,13 @@ export class PostsService {
   }
 
   async addPost(body: PostRequestDto) {
-    const { title, content } = body;
+    const { title, content, category, tag } = body;
 
     const post = await this.postsRepository.create({
       title,
       content,
+      category,
+      tag,
     });
 
     return post.readOnlyData;
