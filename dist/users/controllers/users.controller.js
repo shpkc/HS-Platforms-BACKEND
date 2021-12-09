@@ -45,7 +45,6 @@ let UsersController = class UsersController {
 };
 __decorate([
     (0, swagger_1.ApiOperation)({ summary: "현재 유저 가져오기" }),
-    (0, common_1.UseGuards)(jwt_guard_1.JwtAuthGuard),
     (0, common_2.Get)(),
     __param(0, (0, user_decorator_1.CurrentUser)()),
     __metadata("design:type", Function),

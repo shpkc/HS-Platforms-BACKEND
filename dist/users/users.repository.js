@@ -25,6 +25,14 @@ let UsersRepository = class UsersRepository {
         const result = await this.userModel.find();
         return result;
     }
+    async findUserByEmail(email) {
+        const user = await this.userModel.findOne({ email });
+        return user;
+    }
+    async findUserByIdWithoutPassword(userId) {
+        const user = await this.userModel.findById(userId).select("-password");
+        return user;
+    }
     async existsByEmail(email) {
         const result = await this.userModel.exists({ email });
         return result;

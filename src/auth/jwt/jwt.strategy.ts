@@ -1,12 +1,13 @@
-import { ExtractJwt, Strategy } from 'passport-jwt';
-import { PassportStrategy } from '@nestjs/passport';
-import { Injectable, UnauthorizedException } from '@nestjs/common';
-import { Payload } from './jwt.payload';
-import { CatsRepository } from 'src/cats/cats.repository';
+import { ExtractJwt, Strategy } from "passport-jwt";
+import { PassportStrategy } from "@nestjs/passport";
+import { Injectable, UnauthorizedException } from "@nestjs/common";
+import { Payload } from "./jwt.payload";
+import { CatsRepository } from "src/cats/cats.repository";
+import { UsersRepository } from "src/users/users.repository";
 
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
-  constructor(private readonly catsRepository: CatsRepository) {
+  constructor(private readonly usersRepository: UsersRepository) {
     super({
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
       secretOrKey: process.env.JWT_SECRET,
@@ -15,14 +16,14 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
   }
 
   async validate(payload: Payload) {
-    const cat = await this.catsRepository.findCatByIdWithoutPassword(
-      payload.sub,
+    const user = await this.usersRepository.findUserByIdWithoutPassword(
+      payload.sub
     );
 
-    if (cat) {
-      return cat; // request.user
+    if (user) {
+      return user; // request.user
     } else {
-      throw new UnauthorizedException('접근 오류');
+      throw new UnauthorizedException("접근 오류");
     }
   }
 }

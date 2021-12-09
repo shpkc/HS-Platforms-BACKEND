@@ -11,8 +11,8 @@ const common_1 = require("@nestjs/common");
 const auth_service_1 = require("./auth.service");
 const jwt_1 = require("@nestjs/jwt");
 const jwt_strategy_1 = require("./jwt/jwt.strategy");
-const cats_module_1 = require("../cats/cats.module");
 const config_1 = require("@nestjs/config");
+const users_module_1 = require("../users/users.module");
 let AuthModule = class AuthModule {
 };
 AuthModule = __decorate([
@@ -21,9 +21,9 @@ AuthModule = __decorate([
             config_1.ConfigModule.forRoot(),
             jwt_1.JwtModule.register({
                 secret: process.env.JWT_SECRET,
-                signOptions: { expiresIn: '1y' },
+                signOptions: { expiresIn: "1y" },
             }),
-            (0, common_1.forwardRef)(() => cats_module_1.CatsModule),
+            (0, common_1.forwardRef)(() => users_module_1.UsersModule),
         ],
         providers: [auth_service_1.AuthService, jwt_strategy_1.JwtStrategy],
         exports: [auth_service_1.AuthService],

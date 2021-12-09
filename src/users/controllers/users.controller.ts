@@ -27,7 +27,7 @@ export class UsersController {
   ) {}
 
   @ApiOperation({ summary: "현재 유저 가져오기" })
-  @UseGuards(JwtAuthGuard)
+  //   @UseGuards(JwtAuthGuard)
   @Get()
   getCurrentUser(@CurrentUser() user) {
     return user.readOnlyData;

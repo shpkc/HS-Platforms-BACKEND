@@ -14,28 +14,29 @@ const passport_jwt_1 = require("passport-jwt");
 const passport_1 = require("@nestjs/passport");
 const common_1 = require("@nestjs/common");
 const cats_repository_1 = require("../../cats/cats.repository");
+const users_repository_1 = require("../../users/users.repository");
 let JwtStrategy = class JwtStrategy extends (0, passport_1.PassportStrategy)(passport_jwt_1.Strategy) {
-    constructor(catsRepository) {
+    constructor(usersRepository) {
         super({
             jwtFromRequest: passport_jwt_1.ExtractJwt.fromAuthHeaderAsBearerToken(),
             secretOrKey: process.env.JWT_SECRET,
             ignoreExpiration: false,
         });
-        this.catsRepository = catsRepository;
+        this.usersRepository = usersRepository;
     }
     async validate(payload) {
-        const cat = await this.catsRepository.findCatByIdWithoutPassword(payload.sub);
-        if (cat) {
-            return cat;
+        const user = await this.usersRepository.findUserByIdWithoutPassword(payload.sub);
+        if (user) {
+            return user;
         }
         else {
-            throw new common_1.UnauthorizedException('접근 오류');
+            throw new common_1.UnauthorizedException("접근 오류");
         }
     }
 };
 JwtStrategy = __decorate([
     (0, common_1.Injectable)(),
-    __metadata("design:paramtypes", [cats_repository_1.CatsRepository])
+    __metadata("design:paramtypes", [users_repository_1.UsersRepository])
 ], JwtStrategy);
 exports.JwtStrategy = JwtStrategy;
 //# sourceMappingURL=jwt.strategy.js.map

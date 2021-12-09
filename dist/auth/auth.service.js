@@ -11,25 +11,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AuthService = void 0;
 const common_1 = require("@nestjs/common");
-const cats_repository_1 = require("../cats/cats.repository");
 const bcrypt = require("bcrypt");
 const jwt_1 = require("@nestjs/jwt");
+const users_repository_1 = require("../users/users.repository");
 let AuthService = class AuthService {
-    constructor(catsRepository, jwtService) {
-        this.catsRepository = catsRepository;
+    constructor(usersRepository, jwtService) {
+        this.usersRepository = usersRepository;
         this.jwtService = jwtService;
     }
     async jwtLogIn(data) {
         const { email, password } = data;
-        const cat = await this.catsRepository.findCatByEmail(email);
-        if (!cat) {
-            throw new common_1.UnauthorizedException('이메일과 비밀번호를 확인해주세요.');
+        const user = await this.usersRepository.findUserByEmail(email);
+        if (!user) {
+            throw new common_1.UnauthorizedException("이메일과 비밀번호를 확인해주세요.");
         }
-        const isPasswordValidated = await bcrypt.compare(password, cat.password);
+        const isPasswordValidated = await bcrypt.compare(password, user.password);
         if (!isPasswordValidated) {
-            throw new common_1.UnauthorizedException('이메일과 비밀번호를 확인해주세요.');
+            throw new common_1.UnauthorizedException("이메일과 비밀번호를 확인해주세요.");
         }
-        const payload = { email: email, sub: cat.id };
+        const payload = { email: email, sub: user.id };
         return {
             token: this.jwtService.sign(payload),
         };
@@ -37,7 +37,7 @@ let AuthService = class AuthService {
 };
 AuthService = __decorate([
     (0, common_1.Injectable)(),
-    __metadata("design:paramtypes", [cats_repository_1.CatsRepository,
+    __metadata("design:paramtypes", [users_repository_1.UsersRepository,
         jwt_1.JwtService])
 ], AuthService);
 exports.AuthService = AuthService;

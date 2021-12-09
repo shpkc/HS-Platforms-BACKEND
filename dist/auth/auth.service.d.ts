@@ -1,10 +1,10 @@
-import { CatsRepository } from 'src/cats/cats.repository';
-import { LoginRequestDto } from './dto/login.request.dto';
-import { JwtService } from '@nestjs/jwt';
+import { LoginRequestDto } from "./dto/login.request.dto";
+import { JwtService } from "@nestjs/jwt";
+import { UsersRepository } from "src/users/users.repository";
 export declare class AuthService {
-    private readonly catsRepository;
+    private readonly usersRepository;
     private jwtService;
-    constructor(catsRepository: CatsRepository, jwtService: JwtService);
+    constructor(usersRepository: UsersRepository, jwtService: JwtService);
     jwtLogIn(data: LoginRequestDto): Promise<{
         token: string;
     }>;

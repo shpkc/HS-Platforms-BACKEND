@@ -1,10 +1,10 @@
-import { forwardRef, Module } from '@nestjs/common';
-import { AuthService } from './auth.service';
-import { PassportModule } from '@nestjs/passport';
-import { JwtModule } from '@nestjs/jwt';
-import { JwtStrategy } from './jwt/jwt.strategy';
-import { CatsModule } from 'src/cats/cats.module';
-import { ConfigModule } from '@nestjs/config';
+import { forwardRef, Module } from "@nestjs/common";
+import { AuthService } from "./auth.service";
+import { PassportModule } from "@nestjs/passport";
+import { JwtModule } from "@nestjs/jwt";
+import { JwtStrategy } from "./jwt/jwt.strategy";
+import { ConfigModule } from "@nestjs/config";
+import { UsersModule } from "src/users/users.module";
 
 @Module({
   imports: [
@@ -13,10 +13,10 @@ import { ConfigModule } from '@nestjs/config';
 
     JwtModule.register({
       secret: process.env.JWT_SECRET,
-      signOptions: { expiresIn: '1y' },
+      signOptions: { expiresIn: "1y" },
     }),
 
-    forwardRef(() => CatsModule),
+    forwardRef(() => UsersModule),
   ],
   providers: [AuthService, JwtStrategy],
   exports: [AuthService],
