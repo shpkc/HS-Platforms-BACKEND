@@ -11,7 +11,6 @@ import { SuccessInterceptor } from "src/common/interceptors/success.interceptor"
 import { CatsService } from "../services/cats.service";
 import { CatRequestDto } from "../dto/cats.request.dto";
 import { ApiOperation, ApiResponse } from "@nestjs/swagger";
-import { ReadOnlyCatDto } from "../dto/cat.dto";
 import { AuthService } from "src/auth/auth.service";
 import { LoginRequestDto } from "src/auth/dto/login.request.dto";
 import { JwtAuthGuard } from "src/auth/jwt/jwt.guard";
@@ -19,6 +18,7 @@ import { CurrentUser } from "src/common/decorators/user.decorator";
 import { FilesInterceptor } from "@nestjs/platform-express";
 import { multerOptions } from "src/common/utils/multer.options";
 import { Cat } from "../cats.schema";
+import { ReadOnlyCatDto } from "../dto/cat.dto";
 
 @Controller("cats")
 @UseInterceptors(SuccessInterceptor)
