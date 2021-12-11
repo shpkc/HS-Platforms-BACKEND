@@ -57,10 +57,12 @@ With official support, you can get expert help straight from Nest core team. We 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
 #### Principal Sponsors
-<table style="text-align:center;"><tr><td>
+<table style="text-align:center;"><tr>
+  <td><a href="https://trilon.io" target="_blank"><img src="https://nestjs.com/img/trilon.svg" width="200" valign="middle" /></a></td>
+<td>
 <a href="https://github.com/Sanofi-IADC" target="_blank"><img src="https://docs.nestjs.com/assets/sponsors/sanofi.png" width="180" valign="middle" /></a></td>
 <td>
-<a href="https://trilon.io" target="_blank"><img src="https://nestjs.com/img/trilon.svg" width="200" valign="middle" /></a></td>
+<a href="https://nx.dev" target="_blank"><img src="https://nestjs.com/img/nx-logo.png" height="45" valign="middle" /></a></td>
 </tr></table>
 
 #### Gold Sponsors
@@ -113,6 +115,8 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
   <td align="center" valign="middle"><a href="https://studyclerk.com/pay-for-research-paper" target="_blank"><img src="https://nestjs.com/img/studyclerk-logo.png" width="125" valign="middle" /></a></td><td align="center" valign="middle"><a href="https://xyndata.com" target="_blank"><img src="https://nestjs.com/img/xyndata-logo.png" width="125" valign="middle" /></a></td></tr><tr>
   <td align="center" valign="middle"><a href="https://www.anonymistic.com/" target="_blank"><img src="https://nestjs.com/img/anonymistic-logo.png" width="125" valign="middle" /></a></td>
 <td align="center" valign="middle"><a href="https://www.naologic.com/" target="_blank"><img src="https://nestjs.com/img/naologic-logo.svg" width="125" valign="middle" /></a></td>
+  <td align="center" valign="middle"><a href="https://messaged.com/" target="_blank"><img src="https://nestjs.com/img/messaged-logo.png" width="50" valign="middle" /></a></td>
+  <td align="center" valign="middle"><a href="https://triplecore.io" target="_blank"><img src="https://nestjs.com/img/triplecore-logo.svg" width="50" valign="middle" /></a></td>
   </tr></table>
 
 ## Backers
