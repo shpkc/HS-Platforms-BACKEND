@@ -21,68 +21,68 @@ const Workspaces_1 = require("./Workspaces");
 let Users = class Users {
 };
 __decorate([
-    typeorm_1.PrimaryGeneratedColumn({ type: 'int', name: 'id' }),
+    (0, typeorm_1.PrimaryGeneratedColumn)({ type: 'int', name: 'id' }),
     __metadata("design:type", Number)
 ], Users.prototype, "id", void 0);
 __decorate([
-    typeorm_1.Column('varchar', { name: 'email', unique: true, length: 30 }),
+    (0, typeorm_1.Column)('varchar', { name: 'email', unique: true, length: 30 }),
     __metadata("design:type", String)
 ], Users.prototype, "email", void 0);
 __decorate([
-    typeorm_1.Column('varchar', { name: 'nickname', length: 30 }),
+    (0, typeorm_1.Column)('varchar', { name: 'nickname', length: 30 }),
     __metadata("design:type", String)
 ], Users.prototype, "nickname", void 0);
 __decorate([
-    typeorm_1.Column('varchar', { name: 'password', length: 100, select: false }),
+    (0, typeorm_1.Column)('varchar', { name: 'password', length: 100, select: false }),
     __metadata("design:type", String)
 ], Users.prototype, "password", void 0);
 __decorate([
-    typeorm_1.CreateDateColumn(),
+    (0, typeorm_1.CreateDateColumn)(),
     __metadata("design:type", Date)
 ], Users.prototype, "createdAt", void 0);
 __decorate([
-    typeorm_1.UpdateDateColumn(),
+    (0, typeorm_1.UpdateDateColumn)(),
     __metadata("design:type", Date)
 ], Users.prototype, "updatedAt", void 0);
 __decorate([
-    typeorm_1.DeleteDateColumn(),
+    (0, typeorm_1.DeleteDateColumn)(),
     __metadata("design:type", Date)
 ], Users.prototype, "deletedAt", void 0);
 __decorate([
-    typeorm_1.OneToMany(() => ChannelChats_1.ChannelChats, (channelchats) => channelchats.User),
+    (0, typeorm_1.OneToMany)(() => ChannelChats_1.ChannelChats, (channelchats) => channelchats.User),
     __metadata("design:type", Array)
 ], Users.prototype, "ChannelChats", void 0);
 __decorate([
-    typeorm_1.OneToMany(() => ChannelMembers_1.ChannelMembers, (channelmembers) => channelmembers.User),
+    (0, typeorm_1.OneToMany)(() => ChannelMembers_1.ChannelMembers, (channelmembers) => channelmembers.User),
     __metadata("design:type", Array)
 ], Users.prototype, "ChannelMembers", void 0);
 __decorate([
-    typeorm_1.OneToMany(() => DMs_1.DMs, (dms) => dms.Sender),
+    (0, typeorm_1.OneToMany)(() => DMs_1.DMs, (dms) => dms.Sender),
     __metadata("design:type", Array)
 ], Users.prototype, "DMs", void 0);
 __decorate([
-    typeorm_1.OneToMany(() => DMs_1.DMs, (dms) => dms.Receiver),
+    (0, typeorm_1.OneToMany)(() => DMs_1.DMs, (dms) => dms.Receiver),
     __metadata("design:type", Array)
 ], Users.prototype, "DMs2", void 0);
 __decorate([
-    typeorm_1.OneToMany(() => Mentions_1.Mentions, (mentions) => mentions.Sender),
+    (0, typeorm_1.OneToMany)(() => Mentions_1.Mentions, (mentions) => mentions.Sender),
     __metadata("design:type", Array)
 ], Users.prototype, "Mentions", void 0);
 __decorate([
-    typeorm_1.OneToMany(() => Mentions_1.Mentions, (mentions) => mentions.Receiver),
+    (0, typeorm_1.OneToMany)(() => Mentions_1.Mentions, (mentions) => mentions.Receiver),
     __metadata("design:type", Array)
 ], Users.prototype, "Mentions2", void 0);
 __decorate([
-    typeorm_1.OneToMany(() => WorkspaceMembers_1.WorkspaceMembers, (workspacemembers) => workspacemembers.User),
+    (0, typeorm_1.OneToMany)(() => WorkspaceMembers_1.WorkspaceMembers, (workspacemembers) => workspacemembers.User),
     __metadata("design:type", Array)
 ], Users.prototype, "WorkspaceMembers", void 0);
 __decorate([
-    typeorm_1.OneToMany(() => Workspaces_1.Workspaces, (workspaces) => workspaces.Owner),
+    (0, typeorm_1.OneToMany)(() => Workspaces_1.Workspaces, (workspaces) => workspaces.Owner),
     __metadata("design:type", Array)
 ], Users.prototype, "OwnedWorkspaces", void 0);
 __decorate([
-    typeorm_1.ManyToMany(() => Workspaces_1.Workspaces, (workspaces) => workspaces.Members),
-    typeorm_1.JoinTable({
+    (0, typeorm_1.ManyToMany)(() => Workspaces_1.Workspaces, (workspaces) => workspaces.Members),
+    (0, typeorm_1.JoinTable)({
         name: 'workspacemembers',
         joinColumn: {
             name: 'UserId',
@@ -96,8 +96,8 @@ __decorate([
     __metadata("design:type", Array)
 ], Users.prototype, "Workspaces", void 0);
 __decorate([
-    typeorm_1.ManyToMany(() => Channels_1.Channels, (channels) => channels.Members),
-    typeorm_1.JoinTable({
+    (0, typeorm_1.ManyToMany)(() => Channels_1.Channels, (channels) => channels.Members),
+    (0, typeorm_1.JoinTable)({
         name: 'channelmembers',
         joinColumn: {
             name: 'UserId',
@@ -111,8 +111,8 @@ __decorate([
     __metadata("design:type", Array)
 ], Users.prototype, "Channels", void 0);
 Users = __decorate([
-    typeorm_1.Index('email', ['email'], { unique: true }),
-    typeorm_1.Entity({ schema: 'sleact', name: 'users' })
+    (0, typeorm_1.Index)('email', ['email'], { unique: true }),
+    (0, typeorm_1.Entity)({ schema: 'sleact', name: 'users' })
 ], Users);
 exports.Users = Users;
 //# sourceMappingURL=Users.js.map

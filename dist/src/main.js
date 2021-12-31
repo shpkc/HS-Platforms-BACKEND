@@ -40,8 +40,8 @@ async function bootstrap() {
         .build();
     const document = swagger_1.SwaggerModule.createDocument(app, config);
     swagger_1.SwaggerModule.setup('api', app, document);
-    app.use(cookie_parser_1.default());
-    app.use(express_session_1.default({
+    app.use((0, cookie_parser_1.default)());
+    app.use((0, express_session_1.default)({
         resave: false,
         saveUninitialized: false,
         secret: process.env.COOKIE_SECRET,

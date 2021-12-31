@@ -17,7 +17,7 @@ const local_strategy_1 = require("./local.strategy");
 let AuthModule = class AuthModule {
 };
 AuthModule = __decorate([
-    common_1.Module({
+    (0, common_1.Module)({
         imports: [
             passport_1.PassportModule.register({ session: true }),
             typeorm_1.TypeOrmModule.forFeature([Users_1.Users]),

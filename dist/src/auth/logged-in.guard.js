@@ -15,7 +15,7 @@ let LoggedInGuard = class LoggedInGuard {
     }
 };
 LoggedInGuard = __decorate([
-    common_1.Injectable()
+    (0, common_1.Injectable)()
 ], LoggedInGuard);
 exports.LoggedInGuard = LoggedInGuard;
 //# sourceMappingURL=logged-in.guard.js.map

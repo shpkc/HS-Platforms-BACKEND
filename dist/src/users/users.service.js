@@ -24,10 +24,11 @@ const ChannelMembers_1 = require("../entities/ChannelMembers");
 const Users_1 = require("../entities/Users");
 const WorkspaceMembers_1 = require("../entities/WorkspaceMembers");
 let UsersService = class UsersService {
-    constructor(usersRepository, workspaceMembersRepository, channelMembersRepository) {
+    constructor(usersRepository, workspaceMembersRepository, channelMembersRepository, connection) {
         this.usersRepository = usersRepository;
         this.workspaceMembersRepository = workspaceMembersRepository;
         this.channelMembersRepository = channelMembersRepository;
+        this.connection = connection;
     }
     async findByEmail(email) {
         return this.usersRepository.findOne({
@@ -36,35 +37,56 @@ let UsersService = class UsersService {
         });
     }
     async join(email, nickname, password) {
-        const hashedPassword = await bcrypt_1.default.hash(password, 12);
-        const user = await this.usersRepository.findOne({ where: { email } });
+        const queryRunner = this.connection.createQueryRunner();
+        await queryRunner.connect();
+        await queryRunner.startTransaction();
+        const user = await queryRunner.manager
+            .getRepository(Users_1.Users)
+            .findOne({ where: { email } });
         if (user) {
-            return false;
+            throw new common_1.ForbiddenException('이미 존재하는 사용자입니다');
         }
-        const returned = await this.usersRepository.save({
-            email,
-            nickname,
-            password: hashedPassword,
-        });
-        const workspaceMember = new WorkspaceMembers_1.WorkspaceMembers();
-        workspaceMember.UserId = returned.id;
-        workspaceMember.WorkspaceId = 1;
-        await this.workspaceMembersRepository.save(workspaceMember);
-        const channelMember = new ChannelMembers_1.ChannelMembers();
-        channelMember.UserId = returned.id;
-        channelMember.ChannelId = 1;
-        await this.channelMembersRepository.save(channelMember);
-        return true;
+        const hashedPassword = await bcrypt_1.default.hash(password, 12);
+        try {
+            const returned = await queryRunner.manager.getRepository(Users_1.Users).save({
+                email,
+                nickname,
+                password: hashedPassword,
+            });
+            const workspaceMember = queryRunner.manager
+                .getRepository(WorkspaceMembers_1.WorkspaceMembers)
+                .create();
+            workspaceMember.UserId = returned.id;
+            workspaceMember.WorkspaceId = 1;
+            await queryRunner.manager
+                .getRepository(WorkspaceMembers_1.WorkspaceMembers)
+                .save(workspaceMember);
+            await queryRunner.manager.getRepository(ChannelMembers_1.ChannelMembers).save({
+                UserId: returned.id,
+                ChannelId: 1,
+            });
+            await queryRunner.commitTransaction();
+            return true;
+        }
+        catch (error) {
+            console.error(error);
+            await queryRunner.rollbackTransaction();
+            throw error;
+        }
+        finally {
+            await queryRunner.release();
+        }
     }
 };
 UsersService = __decorate([
-    common_1.Injectable(),
-    __param(0, typeorm_1.InjectRepository(Users_1.Users)),
-    __param(1, typeorm_1.InjectRepository(WorkspaceMembers_1.WorkspaceMembers)),
-    __param(2, typeorm_1.InjectRepository(ChannelMembers_1.ChannelMembers)),
+    (0, common_1.Injectable)(),
+    __param(0, (0, typeorm_1.InjectRepository)(Users_1.Users)),
+    __param(1, (0, typeorm_1.InjectRepository)(WorkspaceMembers_1.WorkspaceMembers)),
+    __param(2, (0, typeorm_1.InjectRepository)(ChannelMembers_1.ChannelMembers)),
     __metadata("design:paramtypes", [typeorm_2.Repository,
         typeorm_2.Repository,
-        typeorm_2.Repository])
+        typeorm_2.Repository,
+        typeorm_2.Connection])
 ], UsersService);
 exports.UsersService = UsersService;
 //# sourceMappingURL=users.service.js.map

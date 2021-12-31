@@ -45,8 +45,8 @@ let LocalSerializer = class LocalSerializer extends passport_1.PassportSerialize
     }
 };
 LocalSerializer = __decorate([
-    common_1.Injectable(),
-    __param(1, typeorm_1.InjectRepository(Users_1.Users)),
+    (0, common_1.Injectable)(),
+    __param(1, (0, typeorm_1.InjectRepository)(Users_1.Users)),
     __metadata("design:paramtypes", [auth_service_1.AuthService,
         typeorm_2.Repository])
 ], LocalSerializer);

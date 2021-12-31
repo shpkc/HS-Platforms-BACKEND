@@ -14,13 +14,13 @@ const ChannelMembers_1 = require("../entities/ChannelMembers");
 const Channels_1 = require("../entities/Channels");
 const Users_1 = require("../entities/Users");
 const Workspaces_1 = require("../entities/Workspaces");
-const events_gateway_1 = require("../events/events.gateway");
 const channels_service_1 = require("./channels.service");
 const channels_controller_1 = require("./channels.controller");
+const events_module_1 = require("../events/events.module");
 let ChannelsModule = class ChannelsModule {
 };
 ChannelsModule = __decorate([
-    common_1.Module({
+    (0, common_1.Module)({
         imports: [
             typeorm_1.TypeOrmModule.forFeature([
                 Channels_1.Channels,
@@ -29,8 +29,9 @@ ChannelsModule = __decorate([
                 Workspaces_1.Workspaces,
                 ChannelMembers_1.ChannelMembers,
             ]),
+            events_module_1.EventsModule,
         ],
-        providers: [channels_service_1.ChannelsService, events_gateway_1.EventsGateway],
+        providers: [channels_service_1.ChannelsService],
         controllers: [channels_controller_1.ChannelsController],
     })
 ], ChannelsModule);

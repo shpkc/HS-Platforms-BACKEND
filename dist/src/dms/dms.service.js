@@ -96,16 +96,16 @@ let DMsService = class DMsService {
                 WorkspaceId: workspace.id,
                 SenderId: id,
                 ReceiverId: myId,
-                createdAt: typeorm_2.MoreThan(new Date(after)),
+                createdAt: (0, typeorm_2.MoreThan)(new Date(after)),
             },
         });
     }
 };
 DMsService = __decorate([
-    common_1.Injectable(),
-    __param(0, typeorm_1.InjectRepository(Workspaces_1.Workspaces)),
-    __param(1, typeorm_1.InjectRepository(DMs_1.DMs)),
-    __param(2, typeorm_1.InjectRepository(Users_1.Users)),
+    (0, common_1.Injectable)(),
+    __param(0, (0, typeorm_1.InjectRepository)(Workspaces_1.Workspaces)),
+    __param(1, (0, typeorm_1.InjectRepository)(DMs_1.DMs)),
+    __param(2, (0, typeorm_1.InjectRepository)(Users_1.Users)),
     __metadata("design:paramtypes", [typeorm_2.Repository,
         typeorm_2.Repository,
         typeorm_2.Repository,

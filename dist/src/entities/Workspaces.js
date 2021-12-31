@@ -19,66 +19,66 @@ const Users_1 = require("./Users");
 let Workspaces = class Workspaces {
 };
 __decorate([
-    typeorm_1.PrimaryGeneratedColumn({ type: 'int', name: 'id' }),
+    (0, typeorm_1.PrimaryGeneratedColumn)({ type: 'int', name: 'id' }),
     __metadata("design:type", Number)
 ], Workspaces.prototype, "id", void 0);
 __decorate([
-    typeorm_1.Column('varchar', { name: 'name', unique: true, length: 30 }),
+    (0, typeorm_1.Column)('varchar', { name: 'name', unique: true, length: 30 }),
     __metadata("design:type", String)
 ], Workspaces.prototype, "name", void 0);
 __decorate([
-    typeorm_1.Column('varchar', { name: 'url', unique: true, length: 30 }),
+    (0, typeorm_1.Column)('varchar', { name: 'url', unique: true, length: 30 }),
     __metadata("design:type", String)
 ], Workspaces.prototype, "url", void 0);
 __decorate([
-    typeorm_1.CreateDateColumn(),
+    (0, typeorm_1.CreateDateColumn)(),
     __metadata("design:type", Date)
 ], Workspaces.prototype, "createdAt", void 0);
 __decorate([
-    typeorm_1.UpdateDateColumn(),
+    (0, typeorm_1.UpdateDateColumn)(),
     __metadata("design:type", Date)
 ], Workspaces.prototype, "updatedAt", void 0);
 __decorate([
-    typeorm_1.DeleteDateColumn(),
+    (0, typeorm_1.DeleteDateColumn)(),
     __metadata("design:type", Date)
 ], Workspaces.prototype, "deletedAt", void 0);
 __decorate([
-    typeorm_1.Column('int', { name: 'OwnerId', nullable: true }),
+    (0, typeorm_1.Column)('int', { name: 'OwnerId', nullable: true }),
     __metadata("design:type", Number)
 ], Workspaces.prototype, "OwnerId", void 0);
 __decorate([
-    typeorm_1.OneToMany(() => Channels_1.Channels, (channels) => channels.Workspace),
+    (0, typeorm_1.OneToMany)(() => Channels_1.Channels, (channels) => channels.Workspace),
     __metadata("design:type", Array)
 ], Workspaces.prototype, "Channels", void 0);
 __decorate([
-    typeorm_1.OneToMany(() => DMs_1.DMs, (dms) => dms.Workspace),
+    (0, typeorm_1.OneToMany)(() => DMs_1.DMs, (dms) => dms.Workspace),
     __metadata("design:type", Array)
 ], Workspaces.prototype, "DMs", void 0);
 __decorate([
-    typeorm_1.OneToMany(() => Mentions_1.Mentions, (mentions) => mentions.Workspace),
+    (0, typeorm_1.OneToMany)(() => Mentions_1.Mentions, (mentions) => mentions.Workspace),
     __metadata("design:type", Array)
 ], Workspaces.prototype, "Mentions", void 0);
 __decorate([
-    typeorm_1.OneToMany(() => WorkspaceMembers_1.WorkspaceMembers, (workspacemembers) => workspacemembers.Workspace, { cascade: ['insert'] }),
+    (0, typeorm_1.OneToMany)(() => WorkspaceMembers_1.WorkspaceMembers, (workspacemembers) => workspacemembers.Workspace, { cascade: ['insert'] }),
     __metadata("design:type", Array)
 ], Workspaces.prototype, "WorkspaceMembers", void 0);
 __decorate([
-    typeorm_1.ManyToOne(() => Users_1.Users, (users) => users.Workspaces, {
+    (0, typeorm_1.ManyToOne)(() => Users_1.Users, (users) => users.Workspaces, {
         onDelete: 'SET NULL',
         onUpdate: 'CASCADE',
     }),
-    typeorm_1.JoinColumn([{ name: 'OwnerId', referencedColumnName: 'id' }]),
+    (0, typeorm_1.JoinColumn)([{ name: 'OwnerId', referencedColumnName: 'id' }]),
     __metadata("design:type", Users_1.Users)
 ], Workspaces.prototype, "Owner", void 0);
 __decorate([
-    typeorm_1.ManyToMany(() => Users_1.Users, (users) => users.Workspaces),
+    (0, typeorm_1.ManyToMany)(() => Users_1.Users, (users) => users.Workspaces),
     __metadata("design:type", Array)
 ], Workspaces.prototype, "Members", void 0);
 Workspaces = __decorate([
-    typeorm_1.Index('name', ['name'], { unique: true }),
-    typeorm_1.Index('url', ['url'], { unique: true }),
-    typeorm_1.Index('OwnerId', ['OwnerId'], {}),
-    typeorm_1.Entity({ schema: 'sleact', name: 'workspaces' })
+    (0, typeorm_1.Index)('name', ['name'], { unique: true }),
+    (0, typeorm_1.Index)('url', ['url'], { unique: true }),
+    (0, typeorm_1.Index)('OwnerId', ['OwnerId'], {}),
+    (0, typeorm_1.Entity)({ schema: 'sleact', name: 'workspaces' })
 ], Workspaces);
 exports.Workspaces = Workspaces;
 //# sourceMappingURL=Workspaces.js.map

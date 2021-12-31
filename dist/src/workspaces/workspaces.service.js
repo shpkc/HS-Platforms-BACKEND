@@ -91,27 +91,27 @@ let WorkspacesService = class WorkspacesService {
     }
 };
 __decorate([
-    typeorm_1.InjectRepository(Workspaces_1.Workspaces),
+    (0, typeorm_1.InjectRepository)(Workspaces_1.Workspaces),
     __metadata("design:type", typeorm_2.Repository)
 ], WorkspacesService.prototype, "workspacesRepository", void 0);
 __decorate([
-    typeorm_1.InjectRepository(Channels_1.Channels),
+    (0, typeorm_1.InjectRepository)(Channels_1.Channels),
     __metadata("design:type", typeorm_2.Repository)
 ], WorkspacesService.prototype, "channelsRepository", void 0);
 __decorate([
-    typeorm_1.InjectRepository(WorkspaceMembers_1.WorkspaceMembers),
+    (0, typeorm_1.InjectRepository)(WorkspaceMembers_1.WorkspaceMembers),
     __metadata("design:type", typeorm_2.Repository)
 ], WorkspacesService.prototype, "workspaceMembersRepository", void 0);
 __decorate([
-    typeorm_1.InjectRepository(ChannelMembers_1.ChannelMembers),
+    (0, typeorm_1.InjectRepository)(ChannelMembers_1.ChannelMembers),
     __metadata("design:type", typeorm_2.Repository)
 ], WorkspacesService.prototype, "channelMembersRepository", void 0);
 __decorate([
-    typeorm_1.InjectRepository(Users_1.Users),
+    (0, typeorm_1.InjectRepository)(Users_1.Users),
     __metadata("design:type", typeorm_2.Repository)
 ], WorkspacesService.prototype, "usersRepository", void 0);
 WorkspacesService = __decorate([
-    common_1.Injectable()
+    (0, common_1.Injectable)()
 ], WorkspacesService);
 exports.WorkspacesService = WorkspacesService;
 //# sourceMappingURL=workspaces.service.js.map

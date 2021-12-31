@@ -320,11 +320,12 @@ const workspaces_module_1 = __webpack_require__(44);
 const channels_module_1 = __webpack_require__(48);
 const dms_module_1 = __webpack_require__(60);
 const frontend_middleware_1 = __webpack_require__(63);
+const courts_module_1 = __webpack_require__(65);
 let AppModule = class AppModule {
     configure(consumer) {
-        consumer.apply(logger_middleware_1.LoggerMiddleware).forRoutes('*');
+        consumer.apply(logger_middleware_1.LoggerMiddleware).forRoutes("*");
         consumer.apply(frontend_middleware_1.FrontendMiddleware).forRoutes({
-            path: '/**',
+            path: "/**",
             method: common_1.RequestMethod.ALL,
         });
     }
@@ -339,6 +340,7 @@ AppModule = __decorate([
             workspaces_module_1.WorkspacesModule,
             channels_module_1.ChannelsModule,
             dms_module_1.DMsModule,
+            courts_module_1.CourtsModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
@@ -3150,6 +3152,80 @@ HttpExceptionFilter = __decorate([
 exports.HttpExceptionFilter = HttpExceptionFilter;
 
 
+/***/ }),
+/* 65 */
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.CourtsModule = void 0;
+const common_1 = __webpack_require__(10);
+const courts_service_1 = __webpack_require__(66);
+const courts_controller_1 = __webpack_require__(67);
+let CourtsModule = class CourtsModule {
+};
+CourtsModule = __decorate([
+    (0, common_1.Module)({
+        providers: [courts_service_1.CourtsService],
+        controllers: [courts_controller_1.CourtsController]
+    })
+], CourtsModule);
+exports.CourtsModule = CourtsModule;
+
+
+/***/ }),
+/* 66 */
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.CourtsService = void 0;
+const common_1 = __webpack_require__(10);
+let CourtsService = class CourtsService {
+};
+CourtsService = __decorate([
+    (0, common_1.Injectable)()
+], CourtsService);
+exports.CourtsService = CourtsService;
+
+
+/***/ }),
+/* 67 */
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.CourtsController = void 0;
+const common_1 = __webpack_require__(10);
+let CourtsController = class CourtsController {
+};
+CourtsController = __decorate([
+    (0, common_1.Controller)('courts')
+], CourtsController);
+exports.CourtsController = CourtsController;
+
+
 /***/ })
 /******/ 	]);
 /************************************************************************/
@@ -3212,7 +3288,7 @@ exports.HttpExceptionFilter = HttpExceptionFilter;
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("719b5e25de548163db0c")
+/******/ 		__webpack_require__.h = () => ("1d500921092ecfd51c30")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */

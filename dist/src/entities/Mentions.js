@@ -16,66 +16,66 @@ const Users_1 = require("./Users");
 let Mentions = class Mentions {
 };
 __decorate([
-    typeorm_1.PrimaryGeneratedColumn({ type: 'int', name: 'id' }),
+    (0, typeorm_1.PrimaryGeneratedColumn)({ type: 'int', name: 'id' }),
     __metadata("design:type", Number)
 ], Mentions.prototype, "id", void 0);
 __decorate([
-    typeorm_1.Column('enum', { name: 'category', enum: ['chat', 'dm', 'system'] }),
+    (0, typeorm_1.Column)('enum', { name: 'category', enum: ['chat', 'dm', 'system'] }),
     __metadata("design:type", String)
 ], Mentions.prototype, "type", void 0);
 __decorate([
-    typeorm_1.Column('int', { name: 'ChatId', nullable: true }),
+    (0, typeorm_1.Column)('int', { name: 'ChatId', nullable: true }),
     __metadata("design:type", Number)
 ], Mentions.prototype, "ChatId", void 0);
 __decorate([
-    typeorm_1.CreateDateColumn(),
+    (0, typeorm_1.CreateDateColumn)(),
     __metadata("design:type", Date)
 ], Mentions.prototype, "createdAt", void 0);
 __decorate([
-    typeorm_1.UpdateDateColumn(),
+    (0, typeorm_1.UpdateDateColumn)(),
     __metadata("design:type", Date)
 ], Mentions.prototype, "updatedAt", void 0);
 __decorate([
-    typeorm_1.Column('int', { name: 'WorkspaceId', nullable: true }),
+    (0, typeorm_1.Column)('int', { name: 'WorkspaceId', nullable: true }),
     __metadata("design:type", Number)
 ], Mentions.prototype, "WorkspaceId", void 0);
 __decorate([
-    typeorm_1.Column('int', { name: 'SenderId', nullable: true }),
+    (0, typeorm_1.Column)('int', { name: 'SenderId', nullable: true }),
     __metadata("design:type", Number)
 ], Mentions.prototype, "SenderId", void 0);
 __decorate([
-    typeorm_1.Column('int', { name: 'ReceiverId', nullable: true }),
+    (0, typeorm_1.Column)('int', { name: 'ReceiverId', nullable: true }),
     __metadata("design:type", Number)
 ], Mentions.prototype, "ReceiverId", void 0);
 __decorate([
-    typeorm_1.ManyToOne(() => Workspaces_1.Workspaces, (workspaces) => workspaces.Mentions, {
+    (0, typeorm_1.ManyToOne)(() => Workspaces_1.Workspaces, (workspaces) => workspaces.Mentions, {
         onDelete: 'SET NULL',
         onUpdate: 'CASCADE',
     }),
-    typeorm_1.JoinColumn([{ name: 'WorkspaceId', referencedColumnName: 'id' }]),
+    (0, typeorm_1.JoinColumn)([{ name: 'WorkspaceId', referencedColumnName: 'id' }]),
     __metadata("design:type", Workspaces_1.Workspaces)
 ], Mentions.prototype, "Workspace", void 0);
 __decorate([
-    typeorm_1.ManyToOne(() => Users_1.Users, (users) => users.Mentions, {
+    (0, typeorm_1.ManyToOne)(() => Users_1.Users, (users) => users.Mentions, {
         onDelete: 'SET NULL',
         onUpdate: 'CASCADE',
     }),
-    typeorm_1.JoinColumn([{ name: 'SenderId', referencedColumnName: 'id' }]),
+    (0, typeorm_1.JoinColumn)([{ name: 'SenderId', referencedColumnName: 'id' }]),
     __metadata("design:type", Users_1.Users)
 ], Mentions.prototype, "Sender", void 0);
 __decorate([
-    typeorm_1.ManyToOne(() => Users_1.Users, (users) => users.Mentions2, {
+    (0, typeorm_1.ManyToOne)(() => Users_1.Users, (users) => users.Mentions2, {
         onDelete: 'SET NULL',
         onUpdate: 'CASCADE',
     }),
-    typeorm_1.JoinColumn([{ name: 'ReceiverId', referencedColumnName: 'id' }]),
+    (0, typeorm_1.JoinColumn)([{ name: 'ReceiverId', referencedColumnName: 'id' }]),
     __metadata("design:type", Users_1.Users)
 ], Mentions.prototype, "Receiver", void 0);
 Mentions = __decorate([
-    typeorm_1.Index('WorkspaceId', ['WorkspaceId'], {}),
-    typeorm_1.Index('SenderId', ['SenderId'], {}),
-    typeorm_1.Index('ReceiverId', ['ReceiverId'], {}),
-    typeorm_1.Entity({ schema: 'sleact', name: 'mentions' })
+    (0, typeorm_1.Index)('WorkspaceId', ['WorkspaceId'], {}),
+    (0, typeorm_1.Index)('SenderId', ['SenderId'], {}),
+    (0, typeorm_1.Index)('ReceiverId', ['ReceiverId'], {}),
+    (0, typeorm_1.Entity)({ schema: 'sleact', name: 'mentions' })
 ], Mentions);
 exports.Mentions = Mentions;
 //# sourceMappingURL=Mentions.js.map

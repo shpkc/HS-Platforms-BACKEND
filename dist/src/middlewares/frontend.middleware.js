@@ -24,7 +24,7 @@ let FrontendMiddleware = class FrontendMiddleware {
     }
 };
 FrontendMiddleware = __decorate([
-    common_1.Injectable()
+    (0, common_1.Injectable)()
 ], FrontendMiddleware);
 exports.FrontendMiddleware = FrontendMiddleware;
 //# sourceMappingURL=frontend.middleware.js.map

@@ -54,8 +54,8 @@ let AuthService = class AuthService {
     }
 };
 AuthService = __decorate([
-    common_1.Injectable(),
-    __param(0, typeorm_1.InjectRepository(Users_1.Users)),
+    (0, common_1.Injectable)(),
+    __param(0, (0, typeorm_1.InjectRepository)(Users_1.Users)),
     __metadata("design:paramtypes", [typeorm_2.Repository])
 ], AuthService);
 exports.AuthService = AuthService;

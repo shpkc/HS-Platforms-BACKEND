@@ -16,7 +16,7 @@ export declare class ChannelsService {
     constructor(channelsRepository: Repository<Channels>, channelMembersRepository: Repository<ChannelMembers>, workspacesRepository: Repository<Workspaces>, channelChatsRepository: Repository<ChannelChats>, usersRepository: Repository<Users>, eventsGateway: EventsGateway);
     findById(id: number): Promise<Channels>;
     getWorkspaceChannels(url: string, myId: number): Promise<Channels[]>;
-    getWorkspaceChannel(url: string, channelId: number): Promise<Channels>;
+    getWorkspaceChannel(url: string, name: string): Promise<Channels>;
     createWorkspaceChannels(url: string, name: string, myId: number): Promise<void>;
     getWorkspaceChannelMembers(url: string, name: string): Promise<Users[]>;
     createWorkspaceChannelMembers(url: any, name: any, email: any): Promise<any>;

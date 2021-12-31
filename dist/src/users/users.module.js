@@ -17,7 +17,7 @@ const users_controller_1 = require("./users.controller");
 let UsersModule = class UsersModule {
 };
 UsersModule = __decorate([
-    common_1.Module({
+    (0, common_1.Module)({
         imports: [
             typeorm_1.TypeOrmModule.forFeature([Users_1.Users, ChannelMembers_1.ChannelMembers, WorkspaceMembers_1.WorkspaceMembers]),
         ],

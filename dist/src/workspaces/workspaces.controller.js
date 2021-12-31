@@ -44,61 +44,62 @@ let WorkspacesController = class WorkspacesController {
     }
 };
 __decorate([
-    swagger_1.ApiOperation({ summary: '내 워크스페이스 가져오기' }),
-    common_1.Get(),
-    __param(0, user_decorator_1.User()),
+    (0, swagger_1.ApiOperation)({ summary: '내 워크스페이스 가져오기' }),
+    (0, common_1.Get)(),
+    __param(0, (0, user_decorator_1.User)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Users_1.Users]),
     __metadata("design:returntype", Promise)
 ], WorkspacesController.prototype, "getMyWorkspaces", null);
 __decorate([
-    swagger_1.ApiOperation({ summary: '워크스페이스 만들기' }),
-    common_1.Post(),
-    __param(0, user_decorator_1.User()), __param(1, common_1.Body()),
+    (0, swagger_1.ApiOperation)({ summary: '워크스페이스 만들기' }),
+    (0, common_1.Post)(),
+    __param(0, (0, user_decorator_1.User)()),
+    __param(1, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Users_1.Users, create_workspace_dto_1.CreateWorkspaceDto]),
     __metadata("design:returntype", Promise)
 ], WorkspacesController.prototype, "createWorkspace", null);
 __decorate([
-    swagger_1.ApiOperation({ summary: '워크스페이스 멤버 가져오기' }),
-    common_1.Get(':url/members'),
-    __param(0, common_1.Param('url')),
+    (0, swagger_1.ApiOperation)({ summary: '워크스페이스 멤버 가져오기' }),
+    (0, common_1.Get)(':url/members'),
+    __param(0, (0, common_1.Param)('url')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], WorkspacesController.prototype, "getWorkspaceMembers", null);
 __decorate([
-    swagger_1.ApiOperation({ summary: '워크스페이스 멤버 초대하기' }),
-    common_1.Post(':url/members'),
-    __param(0, common_1.Param('url')),
-    __param(1, common_1.Body('email')),
+    (0, swagger_1.ApiOperation)({ summary: '워크스페이스 멤버 초대하기' }),
+    (0, common_1.Post)(':url/members'),
+    __param(0, (0, common_1.Param)('url')),
+    __param(1, (0, common_1.Body)('email')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String, Object]),
     __metadata("design:returntype", Promise)
 ], WorkspacesController.prototype, "createWorkspaceMembers", null);
 __decorate([
-    swagger_1.ApiOperation({ summary: '워크스페이스 특정멤버 가져오기' }),
-    common_1.Get(':url/members/:id'),
-    __param(0, common_1.Param('url')),
-    __param(1, common_1.Param('id', common_1.ParseIntPipe)),
+    (0, swagger_1.ApiOperation)({ summary: '워크스페이스 특정멤버 가져오기' }),
+    (0, common_1.Get)(':url/members/:id'),
+    __param(0, (0, common_1.Param)('url')),
+    __param(1, (0, common_1.Param)('id', common_1.ParseIntPipe)),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String, Number]),
     __metadata("design:returntype", Promise)
 ], WorkspacesController.prototype, "getWorkspaceMember", null);
 __decorate([
-    swagger_1.ApiOperation({ summary: '워크스페이스 특정멤버 가져오기' }),
-    common_1.Get(':url/users/:id'),
-    __param(0, common_1.Param('url')),
-    __param(1, common_1.Param('id', common_1.ParseIntPipe)),
+    (0, swagger_1.ApiOperation)({ summary: '워크스페이스 특정멤버 가져오기' }),
+    (0, common_1.Get)(':url/users/:id'),
+    __param(0, (0, common_1.Param)('url')),
+    __param(1, (0, common_1.Param)('id', common_1.ParseIntPipe)),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String, Number]),
     __metadata("design:returntype", Promise)
 ], WorkspacesController.prototype, "getWorkspaceUser", null);
 WorkspacesController = __decorate([
-    swagger_1.ApiTags('WORKSPACES'),
-    swagger_1.ApiCookieAuth('connect.sid'),
-    common_1.UseGuards(logged_in_guard_1.LoggedInGuard),
-    common_1.Controller('api/workspaces'),
+    (0, swagger_1.ApiTags)('WORKSPACES'),
+    (0, swagger_1.ApiCookieAuth)('connect.sid'),
+    (0, common_1.UseGuards)(logged_in_guard_1.LoggedInGuard),
+    (0, common_1.Controller)('api/workspaces'),
     __metadata("design:paramtypes", [workspaces_service_1.WorkspacesService])
 ], WorkspacesController);
 exports.WorkspacesController = WorkspacesController;

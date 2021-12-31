@@ -14,7 +14,7 @@ const swagger_1 = require("@nestjs/swagger");
 class CreateChannelDto {
 }
 __decorate([
-    swagger_1.ApiProperty({
+    (0, swagger_1.ApiProperty)({
         example: '수다방',
         description: '채널명',
     }),

@@ -14,6 +14,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.EventsGateway = void 0;
 const websockets_1 = require("@nestjs/websockets");
+const socket_io_1 = require("socket.io");
 const onlineMap_1 = require("./onlineMap");
 let EventsGateway = class EventsGateway {
     handleTest(data) {
@@ -47,38 +48,38 @@ let EventsGateway = class EventsGateway {
     }
 };
 __decorate([
-    websockets_1.WebSocketServer(),
-    __metadata("design:type", Object)
+    (0, websockets_1.WebSocketServer)(),
+    __metadata("design:type", socket_io_1.Server)
 ], EventsGateway.prototype, "server", void 0);
 __decorate([
-    websockets_1.SubscribeMessage('test'),
-    __param(0, websockets_1.MessageBody()),
+    (0, websockets_1.SubscribeMessage)('test'),
+    __param(0, (0, websockets_1.MessageBody)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
 ], EventsGateway.prototype, "handleTest", null);
 __decorate([
-    websockets_1.SubscribeMessage('login'),
-    __param(0, websockets_1.MessageBody()),
-    __param(1, websockets_1.ConnectedSocket()),
+    (0, websockets_1.SubscribeMessage)('login'),
+    __param(0, (0, websockets_1.MessageBody)()),
+    __param(1, (0, websockets_1.ConnectedSocket)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object, Object]),
+    __metadata("design:paramtypes", [Object, socket_io_1.Socket]),
     __metadata("design:returntype", void 0)
 ], EventsGateway.prototype, "handleLogin", null);
 __decorate([
-    __param(0, websockets_1.ConnectedSocket()),
+    __param(0, (0, websockets_1.ConnectedSocket)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
+    __metadata("design:paramtypes", [socket_io_1.Socket]),
     __metadata("design:returntype", void 0)
 ], EventsGateway.prototype, "handleConnection", null);
 __decorate([
-    __param(0, websockets_1.ConnectedSocket()),
+    __param(0, (0, websockets_1.ConnectedSocket)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
+    __metadata("design:paramtypes", [socket_io_1.Socket]),
     __metadata("design:returntype", void 0)
 ], EventsGateway.prototype, "handleDisconnect", null);
 EventsGateway = __decorate([
-    websockets_1.WebSocketGateway({ namespace: /\/ws-.+/ })
+    (0, websockets_1.WebSocketGateway)({ namespace: /\/ws-.+/ })
 ], EventsGateway);
 exports.EventsGateway = EventsGateway;
 //# sourceMappingURL=events.gateway.js.map

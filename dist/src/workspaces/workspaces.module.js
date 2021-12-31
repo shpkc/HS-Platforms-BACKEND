@@ -19,7 +19,7 @@ const workspaces_controller_1 = require("./workspaces.controller");
 let WorkspacesModule = class WorkspacesModule {
 };
 WorkspacesModule = __decorate([
-    common_1.Module({
+    (0, common_1.Module)({
         imports: [
             typeorm_1.TypeOrmModule.forFeature([
                 Users_1.Users,

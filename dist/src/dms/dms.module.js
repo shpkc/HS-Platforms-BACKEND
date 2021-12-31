@@ -12,16 +12,16 @@ const typeorm_1 = require("@nestjs/typeorm");
 const DMs_1 = require("../entities/DMs");
 const Users_1 = require("../entities/Users");
 const Workspaces_1 = require("../entities/Workspaces");
-const events_gateway_1 = require("../events/events.gateway");
 const dms_controller_1 = require("./dms.controller");
 const dms_service_1 = require("./dms.service");
+const events_module_1 = require("../events/events.module");
 let DMsModule = class DMsModule {
 };
 DMsModule = __decorate([
-    common_1.Module({
-        imports: [typeorm_1.TypeOrmModule.forFeature([DMs_1.DMs, Users_1.Users, Workspaces_1.Workspaces])],
+    (0, common_1.Module)({
+        imports: [typeorm_1.TypeOrmModule.forFeature([DMs_1.DMs, Users_1.Users, Workspaces_1.Workspaces]), events_module_1.EventsModule],
         controllers: [dms_controller_1.DMsController],
-        providers: [dms_service_1.DMsService, events_gateway_1.EventsGateway],
+        providers: [dms_service_1.DMsService],
     })
 ], DMsModule);
 exports.DMsModule = DMsModule;

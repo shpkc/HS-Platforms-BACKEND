@@ -15,17 +15,17 @@ const class_validator_1 = require("class-validator");
 class LoginRequestDto {
 }
 __decorate([
-    class_validator_1.IsEmail(),
-    swagger_1.ApiProperty({
+    (0, class_validator_1.IsEmail)(),
+    (0, swagger_1.ApiProperty)({
         example: 'zerohch0@gmail.com',
         description: '이메일',
     }),
     __metadata("design:type", String)
 ], LoginRequestDto.prototype, "email", void 0);
 __decorate([
-    class_validator_1.IsString(),
-    class_validator_1.IsNotEmpty(),
-    swagger_1.ApiProperty({
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)(),
+    (0, swagger_1.ApiProperty)({
         example: 'nodejsbook',
         description: '비밀번호',
     }),

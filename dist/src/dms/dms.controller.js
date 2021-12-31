@@ -74,39 +74,40 @@ let DMsController = class DMsController {
     }
 };
 __decorate([
-    swagger_1.ApiOperation({ summary: '워크스페이스 DM 모두 가져오기' }),
-    common_2.Get(':url/dms'),
-    __param(0, common_2.Param('url')), __param(1, user_decorator_1.User()),
+    (0, swagger_1.ApiOperation)({ summary: '워크스페이스 DM 모두 가져오기' }),
+    (0, common_2.Get)(':url/dms'),
+    __param(0, (0, common_2.Param)('url')),
+    __param(1, (0, user_decorator_1.User)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, Users_1.Users]),
     __metadata("design:returntype", Promise)
 ], DMsController.prototype, "getWorkspaceChannels", null);
 __decorate([
-    swagger_1.ApiOperation({ summary: '워크스페이스 특정 DM 채팅 모두 가져오기' }),
-    common_2.Get(':url/dms/:id/chats'),
-    __param(0, common_2.Param('url')),
-    __param(1, common_2.Param('id', common_1.ParseIntPipe)),
-    __param(2, common_2.Query('perPage', common_1.ParseIntPipe)),
-    __param(3, common_2.Query('page', common_1.ParseIntPipe)),
-    __param(4, user_decorator_1.User()),
+    (0, swagger_1.ApiOperation)({ summary: '워크스페이스 특정 DM 채팅 모두 가져오기' }),
+    (0, common_2.Get)(':url/dms/:id/chats'),
+    __param(0, (0, common_2.Param)('url')),
+    __param(1, (0, common_2.Param)('id', common_1.ParseIntPipe)),
+    __param(2, (0, common_2.Query)('perPage', common_1.ParseIntPipe)),
+    __param(3, (0, common_2.Query)('page', common_1.ParseIntPipe)),
+    __param(4, (0, user_decorator_1.User)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, Number, Number, Number, Users_1.Users]),
     __metadata("design:returntype", Promise)
 ], DMsController.prototype, "getWorkspaceDMChats", null);
 __decorate([
-    swagger_1.ApiOperation({ summary: '워크스페이스 특정 DM 채팅 생성하기' }),
-    common_2.Post(':url/dms/:id/chats'),
-    __param(0, common_2.Param('url')),
-    __param(1, common_2.Param('id', common_1.ParseIntPipe)),
-    __param(2, common_2.Body('content')),
-    __param(3, user_decorator_1.User()),
+    (0, swagger_1.ApiOperation)({ summary: '워크스페이스 특정 DM 채팅 생성하기' }),
+    (0, common_2.Post)(':url/dms/:id/chats'),
+    __param(0, (0, common_2.Param)('url')),
+    __param(1, (0, common_2.Param)('id', common_1.ParseIntPipe)),
+    __param(2, (0, common_2.Body)('content')),
+    __param(3, (0, user_decorator_1.User)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, Number, Object, Users_1.Users]),
     __metadata("design:returntype", Promise)
 ], DMsController.prototype, "createWorkspaceDMChats", null);
 __decorate([
-    swagger_1.ApiOperation({ summary: '워크스페이스 특정 DM 이미지 업로드하기' }),
-    common_2.UseInterceptors(platform_express_1.FilesInterceptor('image', 10, {
+    (0, swagger_1.ApiOperation)({ summary: '워크스페이스 특정 DM 이미지 업로드하기' }),
+    (0, common_2.UseInterceptors)((0, platform_express_1.FilesInterceptor)('image', 10, {
         storage: multer_1.default.diskStorage({
             destination(req, file, cb) {
                 cb(null, 'uploads/');
@@ -118,31 +119,31 @@ __decorate([
         }),
         limits: { fileSize: 5 * 1024 * 1024 },
     })),
-    common_2.Post(':url/dms/:id/images'),
-    __param(0, common_2.Param('url')),
-    __param(1, common_2.Param('id', common_1.ParseIntPipe)),
-    __param(2, common_2.UploadedFiles()),
-    __param(3, user_decorator_1.User()),
+    (0, common_2.Post)(':url/dms/:id/images'),
+    __param(0, (0, common_2.Param)('url')),
+    __param(1, (0, common_2.Param)('id', common_1.ParseIntPipe)),
+    __param(2, (0, common_2.UploadedFiles)()),
+    __param(3, (0, user_decorator_1.User)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, Number, Array, Users_1.Users]),
     __metadata("design:returntype", Promise)
 ], DMsController.prototype, "createWorkspaceDMImages", null);
 __decorate([
-    swagger_1.ApiOperation({ summary: '안 읽은 개수 가져오기' }),
-    common_2.Get(':url/dms/:id/unreads'),
-    __param(0, common_2.Param('url')),
-    __param(1, common_2.Param('id', common_1.ParseIntPipe)),
-    __param(2, common_2.Query('after', common_1.ParseIntPipe)),
-    __param(3, user_decorator_1.User()),
+    (0, swagger_1.ApiOperation)({ summary: '안 읽은 개수 가져오기' }),
+    (0, common_2.Get)(':url/dms/:id/unreads'),
+    __param(0, (0, common_2.Param)('url')),
+    __param(1, (0, common_2.Param)('id', common_1.ParseIntPipe)),
+    __param(2, (0, common_2.Query)('after', common_1.ParseIntPipe)),
+    __param(3, (0, user_decorator_1.User)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, Number, Number, Users_1.Users]),
     __metadata("design:returntype", Promise)
 ], DMsController.prototype, "getUnreads", null);
 DMsController = __decorate([
-    swagger_1.ApiTags('DMS'),
-    swagger_1.ApiCookieAuth('connect.sid'),
-    common_2.UseGuards(logged_in_guard_1.LoggedInGuard),
-    common_2.Controller('api/workspaces'),
+    (0, swagger_1.ApiTags)('DMS'),
+    (0, swagger_1.ApiCookieAuth)('connect.sid'),
+    (0, common_2.UseGuards)(logged_in_guard_1.LoggedInGuard),
+    (0, common_2.Controller)('api/workspaces'),
     __metadata("design:paramtypes", [dms_service_1.DMsService])
 ], DMsController);
 exports.DMsController = DMsController;

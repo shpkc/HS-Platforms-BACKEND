@@ -41,12 +41,14 @@ let ChannelsService = class ChannelsService {
             .innerJoinAndSelect('channels.Workspace', 'workspace', 'workspace.url = :url', { url })
             .getMany();
     }
-    async getWorkspaceChannel(url, channelId) {
-        return this.channelsRepository.findOne({
-            where: {
-                id: channelId,
-            },
-        });
+    async getWorkspaceChannel(url, name) {
+        return this.channelsRepository
+            .createQueryBuilder('channel')
+            .innerJoin('channel.Workspace', 'workspace', 'workspace.url = :url', {
+            url,
+        })
+            .where('channel.name = :name', { name })
+            .getOne();
     }
     async createWorkspaceChannels(url, name, myId) {
         const workspace = await this.workspacesRepository.findOne({
@@ -169,18 +171,18 @@ let ChannelsService = class ChannelsService {
         return this.channelChatsRepository.count({
             where: {
                 ChannelId: channel.id,
-                createdAt: typeorm_2.MoreThan(new Date(after)),
+                createdAt: (0, typeorm_2.MoreThan)(new Date(after)),
             },
         });
     }
 };
 ChannelsService = __decorate([
-    common_1.Injectable(),
-    __param(0, typeorm_1.InjectRepository(Channels_1.Channels)),
-    __param(1, typeorm_1.InjectRepository(ChannelMembers_1.ChannelMembers)),
-    __param(2, typeorm_1.InjectRepository(Workspaces_1.Workspaces)),
-    __param(3, typeorm_1.InjectRepository(ChannelChats_1.ChannelChats)),
-    __param(4, typeorm_1.InjectRepository(Users_1.Users)),
+    (0, common_1.Injectable)(),
+    __param(0, (0, typeorm_1.InjectRepository)(Channels_1.Channels)),
+    __param(1, (0, typeorm_1.InjectRepository)(ChannelMembers_1.ChannelMembers)),
+    __param(2, (0, typeorm_1.InjectRepository)(Workspaces_1.Workspaces)),
+    __param(3, (0, typeorm_1.InjectRepository)(ChannelChats_1.ChannelChats)),
+    __param(4, (0, typeorm_1.InjectRepository)(Users_1.Users)),
     __metadata("design:paramtypes", [typeorm_2.Repository,
         typeorm_2.Repository,
         typeorm_2.Repository,

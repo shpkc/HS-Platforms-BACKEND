@@ -67,76 +67,78 @@ let ChannelsController = class ChannelsController {
     }
 };
 __decorate([
-    swagger_1.ApiOperation({ summary: '워크스페이스 채널 모두 가져오기' }),
-    common_1.Get(':url/channels'),
-    __param(0, common_1.Param('url')), __param(1, user_decorator_1.User()),
+    (0, swagger_1.ApiOperation)({ summary: '워크스페이스 채널 모두 가져오기' }),
+    (0, common_1.Get)(':url/channels'),
+    __param(0, (0, common_1.Param)('url')),
+    __param(1, (0, user_decorator_1.User)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, Users_1.Users]),
     __metadata("design:returntype", Promise)
 ], ChannelsController.prototype, "getWorkspaceChannels", null);
 __decorate([
-    swagger_1.ApiOperation({ summary: '워크스페이스 특정 채널 가져오기' }),
-    common_1.Get(':url/channels/:name'),
-    __param(0, common_1.Param('url')), __param(1, common_1.Param('name')),
+    (0, swagger_1.ApiOperation)({ summary: '워크스페이스 특정 채널 가져오기' }),
+    (0, common_1.Get)(':url/channels/:name'),
+    __param(0, (0, common_1.Param)('url')),
+    __param(1, (0, common_1.Param)('name')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, Object]),
     __metadata("design:returntype", Promise)
 ], ChannelsController.prototype, "getWorkspaceChannel", null);
 __decorate([
-    swagger_1.ApiOperation({ summary: '워크스페이스 채널 만들기' }),
-    common_1.Post(':url/channels'),
-    __param(0, common_1.Param('url')),
-    __param(1, common_1.Body()),
-    __param(2, user_decorator_1.User()),
+    (0, swagger_1.ApiOperation)({ summary: '워크스페이스 채널 만들기' }),
+    (0, common_1.Post)(':url/channels'),
+    __param(0, (0, common_1.Param)('url')),
+    __param(1, (0, common_1.Body)()),
+    __param(2, (0, user_decorator_1.User)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, create_channel_dto_1.CreateChannelDto,
         Users_1.Users]),
     __metadata("design:returntype", Promise)
 ], ChannelsController.prototype, "createWorkspaceChannels", null);
 __decorate([
-    swagger_1.ApiOperation({ summary: '워크스페이스 채널 멤버 가져오기' }),
-    common_1.Get(':url/channels/:name/members'),
-    __param(0, common_1.Param('url')),
-    __param(1, common_1.Param('name')),
+    (0, swagger_1.ApiOperation)({ summary: '워크스페이스 채널 멤버 가져오기' }),
+    (0, common_1.Get)(':url/channels/:name/members'),
+    __param(0, (0, common_1.Param)('url')),
+    __param(1, (0, common_1.Param)('name')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String, String]),
     __metadata("design:returntype", Promise)
 ], ChannelsController.prototype, "getWorkspaceChannelMembers", null);
 __decorate([
-    swagger_1.ApiOperation({ summary: '워크스페이스 채널 멤버 초대하기' }),
-    common_1.Post(':url/channels/:name/members'),
-    __param(0, common_1.Param('url')),
-    __param(1, common_1.Param('name')),
-    __param(2, common_1.Body('email')),
+    (0, swagger_1.ApiOperation)({ summary: '워크스페이스 채널 멤버 초대하기' }),
+    (0, common_1.Post)(':url/channels/:name/members'),
+    __param(0, (0, common_1.Param)('url')),
+    __param(1, (0, common_1.Param)('name')),
+    __param(2, (0, common_1.Body)('email')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String, String, Object]),
     __metadata("design:returntype", Promise)
 ], ChannelsController.prototype, "createWorkspaceMembers", null);
 __decorate([
-    swagger_1.ApiOperation({ summary: '워크스페이스 특정 채널 채팅 모두 가져오기' }),
-    common_1.Get(':url/channels/:name/chats'),
-    __param(0, common_1.Param('url')),
-    __param(1, common_1.Param('name')),
-    __param(2, common_1.Query('perPage', common_1.ParseIntPipe)),
-    __param(3, common_1.Query('page', common_1.ParseIntPipe)),
+    (0, swagger_1.ApiOperation)({ summary: '워크스페이스 특정 채널 채팅 모두 가져오기' }),
+    (0, common_1.Get)(':url/channels/:name/chats'),
+    __param(0, (0, common_1.Param)('url')),
+    __param(1, (0, common_1.Param)('name')),
+    __param(2, (0, common_1.Query)('perPage', common_1.ParseIntPipe)),
+    __param(3, (0, common_1.Query)('page', common_1.ParseIntPipe)),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, Object, Number, Number]),
     __metadata("design:returntype", Promise)
 ], ChannelsController.prototype, "getWorkspaceChannelChats", null);
 __decorate([
-    swagger_1.ApiOperation({ summary: '워크스페이스 특정 채널 채팅 생성하기' }),
-    common_1.Post(':url/channels/:name/chats'),
-    __param(0, common_1.Param('url')),
-    __param(1, common_1.Param('name')),
-    __param(2, common_1.Body('content')),
-    __param(3, user_decorator_1.User()),
+    (0, swagger_1.ApiOperation)({ summary: '워크스페이스 특정 채널 채팅 생성하기' }),
+    (0, common_1.Post)(':url/channels/:name/chats'),
+    __param(0, (0, common_1.Param)('url')),
+    __param(1, (0, common_1.Param)('name')),
+    __param(2, (0, common_1.Body)('content')),
+    __param(3, (0, user_decorator_1.User)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, Object, Object, Users_1.Users]),
     __metadata("design:returntype", Promise)
 ], ChannelsController.prototype, "createWorkspaceChannelChats", null);
 __decorate([
-    swagger_1.ApiOperation({ summary: '워크스페이스 특정 채널 이미지 업로드하기' }),
-    common_1.UseInterceptors(platform_express_1.FilesInterceptor('image', 10, {
+    (0, swagger_1.ApiOperation)({ summary: '워크스페이스 특정 채널 이미지 업로드하기' }),
+    (0, common_1.UseInterceptors)((0, platform_express_1.FilesInterceptor)('image', 10, {
         storage: multer_1.default.diskStorage({
             destination(req, file, cb) {
                 cb(null, 'uploads/');
@@ -148,30 +150,30 @@ __decorate([
         }),
         limits: { fileSize: 5 * 1024 * 1024 },
     })),
-    common_1.Post(':url/channels/:name/images'),
-    __param(0, common_1.Param('url')),
-    __param(1, common_1.Param('name')),
-    __param(2, common_1.UploadedFiles()),
-    __param(3, user_decorator_1.User()),
+    (0, common_1.Post)(':url/channels/:name/images'),
+    __param(0, (0, common_1.Param)('url')),
+    __param(1, (0, common_1.Param)('name')),
+    __param(2, (0, common_1.UploadedFiles)()),
+    __param(3, (0, user_decorator_1.User)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, Object, Array, Users_1.Users]),
     __metadata("design:returntype", Promise)
 ], ChannelsController.prototype, "createWorkspaceChannelImages", null);
 __decorate([
-    swagger_1.ApiOperation({ summary: '안 읽은 개수 가져오기' }),
-    common_1.Get(':url/channels/:name/unreads'),
-    __param(0, common_1.Param('url')),
-    __param(1, common_1.Param('name')),
-    __param(2, common_1.Query('after', common_1.ParseIntPipe)),
+    (0, swagger_1.ApiOperation)({ summary: '안 읽은 개수 가져오기' }),
+    (0, common_1.Get)(':url/channels/:name/unreads'),
+    __param(0, (0, common_1.Param)('url')),
+    __param(1, (0, common_1.Param)('name')),
+    __param(2, (0, common_1.Query)('after', common_1.ParseIntPipe)),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, Object, Number]),
     __metadata("design:returntype", Promise)
 ], ChannelsController.prototype, "getUnreads", null);
 ChannelsController = __decorate([
-    swagger_1.ApiTags('CHANNELS'),
-    swagger_1.ApiCookieAuth('connect.sid'),
-    common_1.UseGuards(logged_in_guard_1.LoggedInGuard),
-    common_1.Controller('api/workspaces'),
+    (0, swagger_1.ApiTags)('CHANNELS'),
+    (0, swagger_1.ApiCookieAuth)('connect.sid'),
+    (0, common_1.UseGuards)(logged_in_guard_1.LoggedInGuard),
+    (0, common_1.Controller)('api/workspaces'),
     __metadata("design:paramtypes", [channels_service_1.ChannelsService])
 ], ChannelsController);
 exports.ChannelsController = ChannelsController;

@@ -14,14 +14,14 @@ const swagger_1 = require("@nestjs/swagger");
 class CreateWorkspaceDto {
 }
 __decorate([
-    swagger_1.ApiProperty({
+    (0, swagger_1.ApiProperty)({
         example: '슬리액트',
         description: '워크스페이스명',
     }),
     __metadata("design:type", String)
 ], CreateWorkspaceDto.prototype, "workspace", void 0);
 __decorate([
-    swagger_1.ApiProperty({
+    (0, swagger_1.ApiProperty)({
         example: 'sleact',
         description: 'url 주소',
     }),

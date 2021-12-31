@@ -37,7 +37,6 @@ const ormconfig = __importStar(require("./ormconfig"));
 const users_module_1 = require("./users/users.module");
 const workspaces_module_1 = require("./workspaces/workspaces.module");
 const channels_module_1 = require("./channels/channels.module");
-const events_module_1 = require("./events/events.module");
 const dms_module_1 = require("./dms/dms.module");
 const frontend_middleware_1 = require("./middlewares/frontend.middleware");
 let AppModule = class AppModule {
@@ -50,7 +49,7 @@ let AppModule = class AppModule {
     }
 };
 AppModule = __decorate([
-    common_1.Module({
+    (0, common_1.Module)({
         imports: [
             config_1.ConfigModule.forRoot(),
             typeorm_1.TypeOrmModule.forRoot(ormconfig),
@@ -58,7 +57,6 @@ AppModule = __decorate([
             users_module_1.UsersModule,
             workspaces_module_1.WorkspacesModule,
             channels_module_1.ChannelsModule,
-            events_module_1.EventsModule,
             dms_module_1.DMsModule,
         ],
         controllers: [app_controller_1.AppController],
