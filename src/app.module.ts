@@ -36,9 +36,9 @@ import { CourtsModule } from "./courts/courts.module";
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer): void {
     consumer.apply(LoggerMiddleware).forRoutes("*");
-    consumer.apply(FrontendMiddleware).forRoutes({
-      path: "/**",
-      method: RequestMethod.ALL,
-    });
+    // consumer.apply(FrontendMiddleware).forRoutes({
+    //   path: "/**",
+    //   method: RequestMethod.ALL,
+    // });
   }
 }
