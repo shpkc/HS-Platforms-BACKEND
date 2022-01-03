@@ -17,6 +17,15 @@ export class Courts {
   @Column("varchar", { name: "name", unique: true, length: 30 })
   name: string;
 
+  @Column("varchar", { name: "contents" })
+  contents: string;
+
+  @Column("varchar", { name: "title" })
+  title: string;
+
+  @Column("varchar", { name: "title2" })
+  title2: string;
+
   @CreateDateColumn()
   createdAt: Date;
 
