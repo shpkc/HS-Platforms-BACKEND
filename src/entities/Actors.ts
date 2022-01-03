@@ -4,9 +4,11 @@ import {
   Entity,
   JoinTable,
   ManyToMany,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from "typeorm";
+import { MovieActors } from "./MovieActors";
 import { Movies } from "./Movies";
 
 @Entity({ schema: "sleact", name: "actors" })
@@ -23,11 +25,20 @@ export class Actors {
   @Column("varchar", { name: "sex" })
   sex: string;
 
-  @ManyToMany(() => Movies, (movies) => movies.castings)
+  @OneToMany(() => MovieActors, (movieActors) => movieActors.Actor)
+  MovieActors: MovieActors[];
+
+  @CreateDateColumn()
+  createdAt: Date;
+
+  @UpdateDateColumn()
+  updatedAt: Date;
+
+  @ManyToMany(() => Movies, (movies) => movies.MovieActors)
   @JoinTable({
-    name: "movieActors",
+    name: "movieactors",
     joinColumn: {
-      name: "UserId",
+      name: "ActorId",
       referencedColumnName: "id",
     },
     inverseJoinColumn: {
@@ -36,10 +47,4 @@ export class Actors {
     },
   })
   Movies: Movies[];
-
-  @CreateDateColumn()
-  createdAt: Date;
-
-  @UpdateDateColumn()
-  updatedAt: Date;
 }

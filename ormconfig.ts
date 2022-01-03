@@ -10,6 +10,7 @@ import { Workspaces } from "./src/entities/Workspaces";
 import { Courts } from "./src/entities/Courts";
 import { Movies } from "./src/entities/Movies";
 import { Actors } from "./src/entities/Actors";
+import { MovieActors } from "./src/entities/MovieActors";
 
 dotenv.config();
 const config: TypeOrmModuleOptions = {
@@ -19,7 +20,7 @@ const config: TypeOrmModuleOptions = {
   username: process.env.DB_USERNAME,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_DATABASE,
-  entities: [Movies, Actors],
+  entities: [Movies, Actors, MovieActors],
   migrations: [__dirname + "/src/migrations/*.ts"],
   cli: { migrationsDir: "src/migrations" },
   autoLoadEntities: true,

@@ -10,6 +10,7 @@ import {
 } from "typeorm";
 
 import { Actors } from "./Actors";
+import { MovieActors } from "./MovieActors";
 
 @Entity({ schema: "sleact", name: "movies" })
 export class Movies {
@@ -28,10 +29,10 @@ export class Movies {
   @Column("varchar", { name: "contents" })
   contents: string;
 
-  @OneToMany(() => Actors, (actors) => actors.Movies, {
+  @OneToMany(() => MovieActors, (movieActors) => movieActors.Movie, {
     cascade: ["insert"],
   })
-  castings: Actors[];
+  MovieActors: MovieActors[];
 
   @CreateDateColumn()
   createdAt: Date;
