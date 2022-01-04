@@ -22,6 +22,10 @@ export class MoviesService {
     private actorsRepository: Repository<Actors>
   ) {}
 
+  async getMovies() {
+    return this.moviesRepository.find();
+  }
+
   async getMovieMembers(title: string) {
     return this.actorsRepository
       .createQueryBuilder("actors")
@@ -49,8 +53,6 @@ export class MoviesService {
     const movieActor = new MovieActors();
     movieActor.MovieId = movie.id;
     movieActor.ActorId = actor.id;
-    console.log(movie);
-    console.log(movieActor);
     await this.movieActorsRepository.save(movieActor);
   }
 }

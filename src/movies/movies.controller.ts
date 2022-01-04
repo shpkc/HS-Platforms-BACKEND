@@ -21,7 +21,7 @@ import { Users } from "../entities/Users";
 import { MoviesService } from "./movies.service";
 
 @ApiTags("MOVIES")
-@Controller("api/movies")
+@Controller("movies")
 export class MoviesController {
   constructor(private moviesService: MoviesService) {}
 
@@ -60,13 +60,25 @@ export class MoviesController {
   //   return this.channelsService.getWorkspaceChannelMembers(url, name);
   // }
 
-  @ApiOperation({ summary: "영화에 출연한 배우 가져오기" })
+  @ApiOperation({ summary: "영화 리스트 가져오기" })
+  @Get()
+  async getMovies() {
+    return this.moviesService.getMovies();
+  }
+
+  @ApiOperation({ summary: "영화 추가하기" })
+  @Post()
+  async addMovies() {
+    return this.moviesService.getMovies();
+  }
+
+  @ApiOperation({ summary: "영화 출연진 가져오기" })
   @Get(":title/members")
   async getMovieMembers(@Param("title") title: string) {
     return this.moviesService.getMovieMembers(title);
   }
 
-  @ApiOperation({ summary: "영화에 배우 추가하기" })
+  @ApiOperation({ summary: "특정 영화 출연진 추가하기" })
   @Post(":title/actors/:name")
   async createMovieActors(@Param("title") title, @Param("name") name: string) {
     return this.moviesService.createMovieActors(title, name);
