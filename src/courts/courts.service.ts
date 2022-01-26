@@ -8,7 +8,7 @@ export class CourtsService {
   @InjectRepository(Courts)
   private courtsRepository: Repository<Courts>;
 
-  async findAllCourts() {
+  async getCourts() {
     return this.courtsRepository.find();
   }
 }

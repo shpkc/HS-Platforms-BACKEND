@@ -13,16 +13,13 @@ import { User } from "../decorators/user.decorator";
 import { Users } from "../entities/Users";
 import { CourtsService } from "./courts.service";
 
-@ApiTags("WORKSPACES")
-@ApiCookieAuth("connect.sid")
-// @UseGuards(LoggedInGuard)
-@Controller("api/courts")
+@Controller("courts")
 export class CourtsController {
   constructor(private courtsService: CourtsService) {}
 
   @ApiOperation({ summary: "코트 정보 가져오기" })
   @Get()
-  async getAllCourts() {
-    return this.courtsService.findAllCourts();
+  async getCourts() {
+    return this.courtsService.getCourts();
   }
 }
