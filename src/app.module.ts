@@ -23,7 +23,6 @@ import { MoviesModule } from "./movies/movies.module";
     ConfigModule.forRoot(),
     TypeOrmModule.forRoot(ormconfig),
     CourtsModule,
-    MoviesModule,
   ],
   controllers: [AppController],
   providers: [AppService],

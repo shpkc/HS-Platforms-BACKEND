@@ -1,14 +1,13 @@
-import { NestFactory } from '@nestjs/core';
-import { NestExpressApplication } from '@nestjs/platform-express';
-import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import passport from 'passport';
-import cookieParser from 'cookie-parser';
-import session from 'express-session';
-import path from 'path';
-import { ValidationPipe } from '@nestjs/common';
-
-import { AppModule } from './app.module';
-import { HttpExceptionFilter } from './http-exception.filter';
+import { NestFactory } from "@nestjs/core";
+import { NestExpressApplication } from "@nestjs/platform-express";
+import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
+import passport from "passport";
+import cookieParser from "cookie-parser";
+import session from "express-session";
+import path from "path";
+import { ValidationPipe } from "@nestjs/common";
+import { AppModule } from "./app.module";
+import { HttpExceptionFilter } from "./http-exception.filter";
 
 declare const module: any;
 
@@ -18,36 +17,36 @@ async function bootstrap() {
   app.useGlobalPipes(
     new ValidationPipe({
       transform: true,
-    }),
+    })
   );
   app.enableCors({
     origin: true,
     credentials: true,
   });
   app.useStaticAssets(
-    process.env.NODE_ENV === 'production'
-      ? path.join(__dirname, '..', '..', 'uploads')
-      : path.join(__dirname, '..', 'uploads'),
+    process.env.NODE_ENV === "production"
+      ? path.join(__dirname, "..", "..", "uploads")
+      : path.join(__dirname, "..", "uploads"),
     {
-      prefix: '/uploads',
-    },
+      prefix: "/uploads",
+    }
   );
   app.useStaticAssets(
-    process.env.NODE_ENV === 'production'
-      ? path.join(__dirname, '..', '..', 'public')
-      : path.join(__dirname, '..', 'public'),
+    process.env.NODE_ENV === "production"
+      ? path.join(__dirname, "..", "..", "public")
+      : path.join(__dirname, "..", "public"),
     {
-      prefix: '/dist',
-    },
+      prefix: "/dist",
+    }
   );
   const config = new DocumentBuilder()
-    .setTitle('Sleact API')
-    .setDescription('Sleact 개발을 위한 API 문서입니다.')
-    .setVersion('1.0')
-    .addCookieAuth('connect.sid')
+    .setTitle("Sleact API")
+    .setDescription("Sleact 개발을 위한 API 문서입니다.")
+    .setVersion("1.0")
+    .addCookieAuth("connect.sid")
     .build();
   const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('api', app, document);
+  SwaggerModule.setup("api", app, document);
 
   app.use(cookieParser());
   app.use(
@@ -58,7 +57,7 @@ async function bootstrap() {
       cookie: {
         httpOnly: true,
       },
-    }),
+    })
   );
   app.use(passport.initialize());
   app.use(passport.session());
