@@ -1,30 +1,65 @@
 import {
   Column,
   CreateDateColumn,
-  DeleteDateColumn,
   Entity,
   Index,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from "typeorm";
 
-@Index("name", ["name"], { unique: true })
-@Entity({ schema: "sleact", name: "courts" })
+@Index("name", ["name"])
+@Entity({ name: "courts" })
 export class Courts {
   @PrimaryGeneratedColumn({ type: "int", name: "id" })
   id: number;
 
-  @Column("varchar", { name: "name", unique: true, length: 30 })
+  @Column("varchar", { name: "name", length: 30 })
   name: string;
 
-  @Column("varchar", { name: "contents" })
-  contents: string;
+  @Column("varchar", { name: "introduction" })
+  introduction: string;
 
-  @Column("varchar", { name: "title" })
-  title: string;
+  @Column("varchar", { name: "city" })
+  city: string;
 
-  @Column("varchar", { name: "title2" })
-  title2: string;
+  @Column("varchar", { name: "address" })
+  address: string;
+
+  @Column("varchar", { name: "phone" })
+  phone: string;
+
+  @Column("float", { name: "lat", default: 0 })
+  lat: number;
+
+  @Column("float", { name: "lng", default: 0 })
+  lng: number;
+
+  @Column("int", { name: "imgLength", default: 0 })
+  imgLength: number;
+
+  @Column("varchar", { name: "reservation" })
+  reservation: string;
+
+  @Column("varchar", { name: "reservationLink" })
+  reservationLink: string;
+
+  @Column("varchar", { name: "numberOfCourts" })
+  numberOfCourts: string;
+
+  @Column("varchar", { name: "keywords", default: "" })
+  keywords: string;
+
+  @Column("boolean", { name: "isOnlineReservation", default: true })
+  isOnlineReservation: boolean;
+
+  @Column("boolean", { name: "isParking", default: true })
+  isParking: boolean;
+
+  @Column("boolean", { name: "isIndoor", default: false })
+  isIndoor: boolean;
+
+  @Column("boolean", { name: "isOutDoor", default: false })
+  isOutDoor: boolean;
 
   @CreateDateColumn()
   createdAt: Date;
