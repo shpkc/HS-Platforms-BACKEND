@@ -9,10 +9,15 @@ export class CourtsService {
   private courtsRepository: Repository<Courts>;
 
   async getCourts(page: number, perPage: number) {
-    return this.courtsRepository
+    const [result, total] = await this.courtsRepository
       .createQueryBuilder("dms")
       .take(perPage)
       .skip(perPage * (page - 1))
-      .getMany();
+      .getManyAndCount();
+
+    return {
+      data: result,
+      totalCount: total,
+    };
   }
 }
