@@ -43,6 +43,9 @@ export class Courts {
   @Column("varchar", { name: "reservationLink" })
   reservationLink: string;
 
+  @Column("varchar", { name: "courtType" })
+  courtType: string;
+
   @Column("varchar", { name: "numberOfCourts" })
   numberOfCourts: string;
 
@@ -55,10 +58,10 @@ export class Courts {
   @Column("boolean", { name: "isParking", default: true })
   isParking: boolean;
 
-  @Column("boolean", { name: "isIndoor", default: false })
+  @Column("boolean", { name: "isIndoor", default: true })
   isIndoor: boolean;
 
-  @Column("boolean", { name: "isOutDoor", default: false })
+  @Column("boolean", { name: "isOutDoor", default: true })
   isOutDoor: boolean;
 
   @CreateDateColumn()
