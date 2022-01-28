@@ -6,6 +6,7 @@ import {
   Body,
   Param,
   ParseIntPipe,
+  Query,
 } from "@nestjs/common";
 import { ApiCookieAuth, ApiOperation, ApiTags } from "@nestjs/swagger";
 import { LoggedInGuard } from "../auth/logged-in.guard";
@@ -19,7 +20,10 @@ export class CourtsController {
 
   @ApiOperation({ summary: "코트 정보 가져오기" })
   @Get()
-  async getCourts() {
-    return this.courtsService.getCourts();
+  async getCourts(
+    @Query("page", ParseIntPipe) page: number,
+    @Query("perPage", ParseIntPipe) perPage: number
+  ) {
+    return this.courtsService.getCourts(page, perPage);
   }
 }
