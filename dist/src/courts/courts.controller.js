@@ -14,7 +14,6 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CourtsController = void 0;
 const common_1 = require("@nestjs/common");
-const swagger_1 = require("@nestjs/swagger");
 const courts_service_1 = require("./courts.service");
 let CourtsController = class CourtsController {
     constructor(courtsService) {
@@ -23,9 +22,11 @@ let CourtsController = class CourtsController {
     async getCourts(page, perPage) {
         return this.courtsService.getCourts(page, perPage);
     }
+    async getCourtsDetail(id) {
+        return this.courtsService.getCourtsDetail(id);
+    }
 };
 __decorate([
-    (0, swagger_1.ApiOperation)({ summary: "코트 정보 가져오기" }),
     (0, common_1.Get)(),
     __param(0, (0, common_1.Query)("page", common_1.ParseIntPipe)),
     __param(1, (0, common_1.Query)("perPage", common_1.ParseIntPipe)),
@@ -33,6 +34,13 @@ __decorate([
     __metadata("design:paramtypes", [Number, Number]),
     __metadata("design:returntype", Promise)
 ], CourtsController.prototype, "getCourts", null);
+__decorate([
+    (0, common_1.Get)("/:id"),
+    __param(0, (0, common_1.Param)("id")),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], CourtsController.prototype, "getCourtsDetail", null);
 CourtsController = __decorate([
     (0, common_1.Controller)("courts"),
     __metadata("design:paramtypes", [courts_service_1.CourtsService])

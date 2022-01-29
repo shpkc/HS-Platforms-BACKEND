@@ -16,11 +16,25 @@ const typeorm_2 = require("typeorm");
 const Courts_1 = require("../entities/Courts");
 let CourtsService = class CourtsService {
     async getCourts(page, perPage) {
-        return this.courtsRepository
-            .createQueryBuilder("dms")
+        const [result, total] = await this.courtsRepository
+            .createQueryBuilder("courts")
             .take(perPage)
             .skip(perPage * (page - 1))
-            .getMany();
+            .getManyAndCount();
+        return {
+            data: result,
+            totalCount: total,
+        };
+    }
+    async getCourtsDetail(id) {
+        const result = await this.courtsRepository.findOne({
+            where: {
+                id: id,
+            },
+        });
+        return {
+            data: result,
+        };
     }
 };
 __decorate([
