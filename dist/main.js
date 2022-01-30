@@ -179,7 +179,7 @@ const fs = __webpack_require__(25);
 async function bootstrap() {
     const httpsOptions = {
         key: fs.readFileSync("./privkey.pem"),
-        cert: fs.readFileSync("./cert.pem"),
+        cert: fs.readFileSync("./fullchain.pem"),
     };
     const app = await core_1.NestFactory.create(app_module_1.AppModule, {
         httpsOptions,
@@ -854,7 +854,7 @@ module.exports = require("fs");
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("798257fcf5578fe5f11a")
+/******/ 		__webpack_require__.h = () => ("2c93a51ae244fd7d72ed")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
