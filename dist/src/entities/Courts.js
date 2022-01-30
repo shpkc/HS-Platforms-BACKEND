@@ -54,7 +54,7 @@ __decorate([
     __metadata("design:type", String)
 ], Courts.prototype, "reservation", void 0);
 __decorate([
-    (0, typeorm_1.Column)("varchar", { name: "reservationLink" }),
+    (0, typeorm_1.Column)("longtext", { name: "reservationLink" }),
     __metadata("design:type", String)
 ], Courts.prototype, "reservationLink", void 0);
 __decorate([
