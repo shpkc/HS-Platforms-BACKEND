@@ -8,18 +8,11 @@ import path from "path";
 import { ValidationPipe } from "@nestjs/common";
 import { AppModule } from "./app.module";
 import { HttpExceptionFilter } from "./http-exception.filter";
-const fs = require("fs");
 
 declare const module: any;
 
 async function bootstrap() {
-  const httpsOptions = {
-    key: fs.readFileSync("./privkey.pem"),
-    cert: fs.readFileSync("./fullchain.pem"),
-  };
-  const app = await NestFactory.create<NestExpressApplication>(AppModule, {
-    httpsOptions,
-  });
+  const app = await NestFactory.create<NestExpressApplication>(AppModule);
   app.useGlobalFilters(new HttpExceptionFilter());
   app.useGlobalPipes(
     new ValidationPipe({
