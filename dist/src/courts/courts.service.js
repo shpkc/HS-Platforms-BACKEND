@@ -36,6 +36,22 @@ let CourtsService = class CourtsService {
             data: result,
         };
     }
+    async createCourts(name, introduction, city, address, phone, lat, lng, imgLength, reservation, reservationLink, numberOfCourts, courtType) {
+        const court = new Courts_1.Courts();
+        court.name = name;
+        court.introduction = introduction;
+        court.city = city;
+        court.address = address;
+        court.phone = phone;
+        court.lat = lat;
+        court.lng = lng;
+        court.imgLength = imgLength;
+        court.reservation = reservation;
+        court.reservationLink = reservationLink;
+        court.numberOfCourts = numberOfCourts;
+        court.courtType = courtType;
+        await this.courtsRepository.save(court);
+    }
 };
 __decorate([
     (0, typeorm_1.InjectRepository)(Courts_1.Courts),

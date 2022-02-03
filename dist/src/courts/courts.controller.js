@@ -25,6 +25,9 @@ let CourtsController = class CourtsController {
     async getCourtsDetail(id) {
         return this.courtsService.getCourtsDetail(id);
     }
+    async createCourts(body) {
+        return this.courtsService.createCourts(body.name, body.introduction, body.city, body.address, body.phone, body.imgLength, body.lat, body.lng, body.reservation, body.reservationLink, body.numberOfCourts, body.courtType);
+    }
 };
 __decorate([
     (0, common_1.Get)(),
@@ -41,6 +44,13 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], CourtsController.prototype, "getCourtsDetail", null);
+__decorate([
+    (0, common_1.Post)(),
+    __param(0, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], CourtsController.prototype, "createCourts", null);
 CourtsController = __decorate([
     (0, common_1.Controller)("courts"),
     __metadata("design:paramtypes", [courts_service_1.CourtsService])

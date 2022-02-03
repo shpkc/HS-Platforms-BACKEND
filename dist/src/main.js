@@ -12,15 +12,8 @@ const path_1 = __importDefault(require("path"));
 const common_1 = require("@nestjs/common");
 const app_module_1 = require("./app.module");
 const http_exception_filter_1 = require("./http-exception.filter");
-const fs = require("fs");
 async function bootstrap() {
-    const httpsOptions = {
-        key: fs.readFileSync("./privkey.pem"),
-        cert: fs.readFileSync("./fullchain.pem"),
-    };
-    const app = await core_1.NestFactory.create(app_module_1.AppModule, {
-        httpsOptions,
-    });
+    const app = await core_1.NestFactory.create(app_module_1.AppModule);
     app.useGlobalFilters(new http_exception_filter_1.HttpExceptionFilter());
     app.useGlobalPipes(new common_1.ValidationPipe({
         transform: true,

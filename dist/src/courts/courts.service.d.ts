@@ -8,4 +8,5 @@ export declare class CourtsService {
     getCourtsDetail(id: number): Promise<{
         data: Courts;
     }>;
+    createCourts(name: string, introduction: string, city: string, address: string, phone: string, lat: number, lng: number, imgLength: number, reservation: string, reservationLink: string, numberOfCourts: string, courtType: string): Promise<void>;
 }

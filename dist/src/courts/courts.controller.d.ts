@@ -9,4 +9,5 @@ export declare class CourtsController {
     getCourtsDetail(id: any): Promise<{
         data: import("../entities/Courts").Courts;
     }>;
+    createCourts(body: any): Promise<void>;
 }
