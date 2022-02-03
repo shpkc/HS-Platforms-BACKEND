@@ -2,9 +2,6 @@ node_modules
 yarn.lock
 build
 
-.env
-.env.development
-.env.production
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
