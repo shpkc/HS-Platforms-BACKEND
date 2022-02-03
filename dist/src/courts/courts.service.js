@@ -36,7 +36,7 @@ let CourtsService = class CourtsService {
             data: result,
         };
     }
-    async createCourts(name, introduction, city, address, phone, lat, lng, imgLength, reservation, reservationLink, numberOfCourts, courtType) {
+    async createCourts(name, introduction, city, address, phone, lat, lng, imgLength, reservation, reservationLink, numberOfCourts, isOnlineReservation, isParking, isIndoor, isOutDoor, courtType) {
         const court = new Courts_1.Courts();
         court.name = name;
         court.introduction = introduction;
@@ -49,6 +49,10 @@ let CourtsService = class CourtsService {
         court.reservation = reservation;
         court.reservationLink = reservationLink;
         court.numberOfCourts = numberOfCourts;
+        court.isOnlineReservation = isOnlineReservation;
+        court.isParking = isParking;
+        court.isIndoor = isIndoor;
+        court.isOutDoor = isOutDoor;
         court.courtType = courtType;
         await this.courtsRepository.save(court);
     }

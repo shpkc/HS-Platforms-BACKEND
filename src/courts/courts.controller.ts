@@ -40,6 +40,10 @@ export class CourtsController {
       body.reservation,
       body.reservationLink,
       body.numberOfCourts,
+      body.isOnlineReservation,
+      body.Parking,
+      body.isIndoor,
+      body.isOutDoor,
       body.courtType
     );
   }

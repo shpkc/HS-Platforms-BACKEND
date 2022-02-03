@@ -44,6 +44,10 @@ export class CourtsService {
     reservation: string,
     reservationLink: string,
     numberOfCourts: string,
+    isOnlineReservation: boolean,
+    isParking: boolean,
+    isIndoor: boolean,
+    isOutDoor: boolean,
     courtType: string
   ) {
     const court = new Courts();
@@ -59,6 +63,10 @@ export class CourtsService {
     court.reservation = reservation;
     court.reservationLink = reservationLink;
     court.numberOfCourts = numberOfCourts;
+    court.isOnlineReservation = isOnlineReservation;
+    court.isParking = isParking;
+    court.isIndoor = isIndoor;
+    court.isOutDoor = isOutDoor;
     court.courtType = courtType;
 
     await this.courtsRepository.save(court);

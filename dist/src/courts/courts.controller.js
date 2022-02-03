@@ -26,7 +26,7 @@ let CourtsController = class CourtsController {
         return this.courtsService.getCourtsDetail(id);
     }
     async createCourts(body) {
-        return this.courtsService.createCourts(body.name, body.introduction, body.city, body.address, body.phone, body.imgLength, body.lat, body.lng, body.reservation, body.reservationLink, body.numberOfCourts, body.courtType);
+        return this.courtsService.createCourts(body.name, body.introduction, body.city, body.address, body.phone, body.imgLength, body.lat, body.lng, body.reservation, body.reservationLink, body.numberOfCourts, body.isOnlineReservation, body.Parking, body.isIndoor, body.isOutDoor, body.courtType);
     }
 };
 __decorate([
