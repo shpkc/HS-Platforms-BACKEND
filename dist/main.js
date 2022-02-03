@@ -175,15 +175,8 @@ const path_1 = __importDefault(__webpack_require__(9));
 const common_1 = __webpack_require__(10);
 const app_module_1 = __webpack_require__(11);
 const http_exception_filter_1 = __webpack_require__(24);
-const fs = __webpack_require__(25);
 async function bootstrap() {
-    const httpsOptions = {
-        key: fs.readFileSync("./privkey.pem"),
-        cert: fs.readFileSync("./fullchain.pem"),
-    };
-    const app = await core_1.NestFactory.create(app_module_1.AppModule, {
-        httpsOptions,
-    });
+    const app = await core_1.NestFactory.create(app_module_1.AppModule);
     app.useGlobalFilters(new http_exception_filter_1.HttpExceptionFilter());
     app.useGlobalPipes(new common_1.ValidationPipe({
         transform: true,
@@ -549,7 +542,7 @@ __decorate([
     __metadata("design:type", String)
 ], Courts.prototype, "reservation", void 0);
 __decorate([
-    (0, typeorm_1.Column)("longtext", { name: "reservationLink" }),
+    (0, typeorm_1.Column)("longtext", { name: "reservationLink", default: "" }),
     __metadata("design:type", String)
 ], Courts.prototype, "reservationLink", void 0);
 __decorate([
@@ -677,6 +670,22 @@ let CourtsService = class CourtsService {
             data: result,
         };
     }
+    async createCourts(name, introduction, city, address, phone, lat, lng, imgLength, reservation, reservationLink, numberOfCourts, courtType) {
+        const court = new Courts_1.Courts();
+        court.name = name;
+        court.introduction = introduction;
+        court.city = city;
+        court.address = address;
+        court.phone = phone;
+        court.lat = lat;
+        court.lng = lng;
+        court.imgLength = imgLength;
+        court.reservation = reservation;
+        court.reservationLink = reservationLink;
+        court.numberOfCourts = numberOfCourts;
+        court.courtType = courtType;
+        await this.courtsRepository.save(court);
+    }
 };
 __decorate([
     (0, typeorm_1.InjectRepository)(Courts_1.Courts),
@@ -721,6 +730,9 @@ let CourtsController = class CourtsController {
     async getCourtsDetail(id) {
         return this.courtsService.getCourtsDetail(id);
     }
+    async createCourts(body) {
+        return this.courtsService.createCourts(body.name, body.introduction, body.city, body.address, body.phone, body.imgLength, body.lat, body.lng, body.reservation, body.reservationLink, body.numberOfCourts, body.courtType);
+    }
 };
 __decorate([
     (0, common_1.Get)(),
@@ -737,6 +749,13 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], CourtsController.prototype, "getCourtsDetail", null);
+__decorate([
+    (0, common_1.Post)(),
+    __param(0, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], CourtsController.prototype, "createCourts", null);
 CourtsController = __decorate([
     (0, common_1.Controller)("courts"),
     __metadata("design:paramtypes", [typeof (_a = typeof courts_service_1.CourtsService !== "undefined" && courts_service_1.CourtsService) === "function" ? _a : Object])
@@ -784,13 +803,6 @@ HttpExceptionFilter = __decorate([
 ], HttpExceptionFilter);
 exports.HttpExceptionFilter = HttpExceptionFilter;
 
-
-/***/ }),
-/* 25 */
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("fs");
 
 /***/ })
 /******/ 	]);
@@ -854,7 +866,7 @@ module.exports = require("fs");
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("2c93a51ae244fd7d72ed")
+/******/ 		__webpack_require__.h = () => ("b5f4aaad25bca4bbad09")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */

@@ -40,7 +40,7 @@ export class Courts {
   @Column("varchar", { name: "reservation" })
   reservation: string;
 
-  @Column("longtext", { name: "reservationLink" })
+  @Column("varchar", { name: "reservationLink", default: "" })
   reservationLink: string;
 
   @Column("varchar", { name: "courtType" })

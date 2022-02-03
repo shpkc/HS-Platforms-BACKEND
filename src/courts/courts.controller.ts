@@ -25,4 +25,22 @@ export class CourtsController {
   async getCourtsDetail(@Param("id") id) {
     return this.courtsService.getCourtsDetail(id);
   }
+
+  @Post()
+  async createCourts(@Body() body) {
+    return this.courtsService.createCourts(
+      body.name,
+      body.introduction,
+      body.city,
+      body.address,
+      body.phone,
+      body.imgLength,
+      body.lat,
+      body.lng,
+      body.reservation,
+      body.reservationLink,
+      body.numberOfCourts,
+      body.courtType
+    );
+  }
 }
