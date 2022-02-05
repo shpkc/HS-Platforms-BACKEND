@@ -22,7 +22,7 @@ let CourtsService = class CourtsService {
             .skip(perPage * (page - 1))
             .getManyAndCount();
         return {
-            data: result,
+            result,
             totalCount: total,
         };
     }
@@ -33,7 +33,7 @@ let CourtsService = class CourtsService {
             },
         });
         return {
-            data: result,
+            result,
         };
     }
     async createCourts(name, introduction, city, address, phone, lat, lng, imgLength, reservation, reservationLink, numberOfCourts, isOnlineReservation, isParking, isIndoor, isOutDoor, courtType) {

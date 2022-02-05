@@ -16,7 +16,7 @@ export class CourtsService {
       .getManyAndCount();
 
     return {
-      data: result,
+      result,
       totalCount: total,
     };
   }
@@ -28,7 +28,7 @@ export class CourtsService {
       },
     });
     return {
-      data: result,
+      result,
     };
   }
 
