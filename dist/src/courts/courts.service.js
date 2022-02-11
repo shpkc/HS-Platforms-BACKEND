@@ -36,6 +36,16 @@ let CourtsService = class CourtsService {
             result,
         };
     }
+    async getAllCourtsId() {
+        const [result, total] = await this.courtsRepository
+            .createQueryBuilder("courts")
+            .select(["courts.id"])
+            .getManyAndCount();
+        console.log(result);
+        return {
+            result,
+        };
+    }
     async createCourts(name, introduction, city, address, phone, lat, lng, imgLength, reservation, reservationLink, numberOfCourts, isOnlineReservation, isParking, isIndoor, isOutDoor, courtType) {
         const court = new Courts_1.Courts();
         court.name = name;

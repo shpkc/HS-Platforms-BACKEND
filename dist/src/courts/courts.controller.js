@@ -22,6 +22,9 @@ let CourtsController = class CourtsController {
     async getCourts(page, perPage) {
         return this.courtsService.getCourts(page, perPage);
     }
+    async getAllCourtsId() {
+        return this.courtsService.getAllCourtsId();
+    }
     async getCourtsDetail(id) {
         return this.courtsService.getCourtsDetail(id);
     }
@@ -37,6 +40,12 @@ __decorate([
     __metadata("design:paramtypes", [Number, Number]),
     __metadata("design:returntype", Promise)
 ], CourtsController.prototype, "getCourts", null);
+__decorate([
+    (0, common_1.Get)("/all-id"),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], CourtsController.prototype, "getAllCourtsId", null);
 __decorate([
     (0, common_1.Get)("/:id"),
     __param(0, (0, common_1.Param)("id")),

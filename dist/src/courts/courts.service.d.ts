@@ -8,5 +8,8 @@ export declare class CourtsService {
     getCourtsDetail(id: number): Promise<{
         result: Courts;
     }>;
+    getAllCourtsId(): Promise<{
+        result: Courts[];
+    }>;
     createCourts(name: string, introduction: string, city: string, address: string, phone: string, lat: number, lng: number, imgLength: number, reservation: string, reservationLink: string, numberOfCourts: string, isOnlineReservation: boolean, isParking: boolean, isIndoor: boolean, isOutDoor: boolean, courtType: string): Promise<void>;
 }

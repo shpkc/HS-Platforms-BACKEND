@@ -6,6 +6,9 @@ export declare class CourtsController {
         result: import("../entities/Courts").Courts[];
         totalCount: number;
     }>;
+    getAllCourtsId(): Promise<{
+        result: import("../entities/Courts").Courts[];
+    }>;
     getCourtsDetail(id: any): Promise<{
         result: import("../entities/Courts").Courts;
     }>;

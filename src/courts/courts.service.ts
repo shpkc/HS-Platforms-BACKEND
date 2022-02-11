@@ -37,7 +37,7 @@ export class CourtsService {
       .createQueryBuilder("courts")
       .select(["courts.id"])
       .getManyAndCount();
-
+    console.log(result);
     return {
       result,
     };
