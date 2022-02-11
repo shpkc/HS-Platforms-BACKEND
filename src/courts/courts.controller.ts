@@ -21,6 +21,11 @@ export class CourtsController {
     return this.courtsService.getCourts(page, perPage);
   }
 
+  @Get("/all-id")
+  async getAllCourtsId() {
+    return this.courtsService.getAllCourtsId();
+  }
+
   @Get("/:id")
   async getCourtsDetail(@Param("id") id) {
     return this.courtsService.getCourtsDetail(id);

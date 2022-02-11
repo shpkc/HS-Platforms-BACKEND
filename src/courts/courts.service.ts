@@ -32,6 +32,17 @@ export class CourtsService {
     };
   }
 
+  async getAllCourtsId() {
+    const [result, total] = await this.courtsRepository
+      .createQueryBuilder("courts")
+      .select(["courts.id"])
+      .getManyAndCount();
+
+    return {
+      result,
+    };
+  }
+
   async createCourts(
     name: string,
     introduction: string,
