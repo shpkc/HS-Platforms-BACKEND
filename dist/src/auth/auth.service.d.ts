@@ -10,14 +10,5 @@ export declare class AuthService {
         createdAt: Date;
         updatedAt: Date;
         deletedAt: Date;
-        ChannelChats: import("../entities/ChannelChats").ChannelChats[];
-        ChannelMembers: import("../entities/ChannelMembers").ChannelMembers[];
-        DMs: import("../entities/DMs").DMs[];
-        DMs2: import("../entities/DMs").DMs[];
-        Mentions: import("../entities/Mentions").Mentions[];
-        Mentions2: import("../entities/Mentions").Mentions[];
-        OwnedWorkspaces: import("../entities/Workspaces").Workspaces[];
-        Workspaces: import("../entities/Workspaces").Workspaces[];
-        Channels: import("../entities/Channels").Channels[];
     }>;
 }

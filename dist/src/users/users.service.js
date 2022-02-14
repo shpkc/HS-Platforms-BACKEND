@@ -20,12 +20,10 @@ const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_2 = require("typeorm");
 const bcrypt_1 = __importDefault(require("bcrypt"));
-const ChannelMembers_1 = require("../entities/ChannelMembers");
 const Users_1 = require("../entities/Users");
 let UsersService = class UsersService {
-    constructor(usersRepository, channelMembersRepository, connection) {
+    constructor(usersRepository, connection) {
         this.usersRepository = usersRepository;
-        this.channelMembersRepository = channelMembersRepository;
         this.connection = connection;
     }
     async findByEmail(email) {
@@ -67,9 +65,7 @@ let UsersService = class UsersService {
 UsersService = __decorate([
     (0, common_1.Injectable)(),
     __param(0, (0, typeorm_1.InjectRepository)(Users_1.Users)),
-    __param(1, (0, typeorm_1.InjectRepository)(ChannelMembers_1.ChannelMembers)),
     __metadata("design:paramtypes", [typeorm_2.Repository,
-        typeorm_2.Repository,
         typeorm_2.Connection])
 ], UsersService);
 exports.UsersService = UsersService;

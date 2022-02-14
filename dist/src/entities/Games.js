@@ -9,41 +9,49 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Users = void 0;
+exports.Games = void 0;
 const typeorm_1 = require("typeorm");
-let Users = class Users {
+let Games = class Games {
 };
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)({ type: "int", name: "id" }),
     __metadata("design:type", Number)
-], Users.prototype, "id", void 0);
+], Games.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.Column)("varchar", { name: "email", unique: true, length: 30 }),
+    (0, typeorm_1.Column)("varchar", { name: "title" }),
     __metadata("design:type", String)
-], Users.prototype, "email", void 0);
+], Games.prototype, "title", void 0);
 __decorate([
-    (0, typeorm_1.Column)("varchar", { name: "nickname", length: 30 }),
+    (0, typeorm_1.Column)("varchar", { name: "description" }),
     __metadata("design:type", String)
-], Users.prototype, "nickname", void 0);
+], Games.prototype, "description", void 0);
 __decorate([
-    (0, typeorm_1.Column)("varchar", { name: "password", length: 100, select: false }),
+    (0, typeorm_1.Column)("varchar", { name: "genre" }),
     __metadata("design:type", String)
-], Users.prototype, "password", void 0);
+], Games.prototype, "genre", void 0);
+__decorate([
+    (0, typeorm_1.Column)("varchar", { name: "developer" }),
+    __metadata("design:type", String)
+], Games.prototype, "developer", void 0);
+__decorate([
+    (0, typeorm_1.Column)("varchar", { name: "currency" }),
+    __metadata("design:type", String)
+], Games.prototype, "currency", void 0);
+__decorate([
+    (0, typeorm_1.Column)("varchar", { name: "release" }),
+    __metadata("design:type", String)
+], Games.prototype, "release", void 0);
 __decorate([
     (0, typeorm_1.CreateDateColumn)(),
     __metadata("design:type", Date)
-], Users.prototype, "createdAt", void 0);
+], Games.prototype, "createdAt", void 0);
 __decorate([
     (0, typeorm_1.UpdateDateColumn)(),
     __metadata("design:type", Date)
-], Users.prototype, "updatedAt", void 0);
-__decorate([
-    (0, typeorm_1.DeleteDateColumn)(),
-    __metadata("design:type", Date)
-], Users.prototype, "deletedAt", void 0);
-Users = __decorate([
-    (0, typeorm_1.Index)("email", ["email"], { unique: true }),
-    (0, typeorm_1.Entity)({ schema: "sleact", name: "users" })
-], Users);
-exports.Users = Users;
-//# sourceMappingURL=Users.js.map
+], Games.prototype, "updatedAt", void 0);
+Games = __decorate([
+    (0, typeorm_1.Index)("title", ["title"]),
+    (0, typeorm_1.Entity)({ name: "games" })
+], Games);
+exports.Games = Games;
+//# sourceMappingURL=Games.js.map
