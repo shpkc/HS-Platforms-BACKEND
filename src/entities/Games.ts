@@ -31,6 +31,9 @@ export class Games {
   @Column("varchar", { name: "release" })
   release: string;
 
+  @Column("varchar", { name: "website", default: "" })
+  website: string;
+
   @CreateDateColumn()
   createdAt: Date;
 
