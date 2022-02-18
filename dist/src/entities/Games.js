@@ -42,6 +42,10 @@ __decorate([
     __metadata("design:type", String)
 ], Games.prototype, "release", void 0);
 __decorate([
+    (0, typeorm_1.Column)("varchar", { name: "website", default: "" }),
+    __metadata("design:type", String)
+], Games.prototype, "website", void 0);
+__decorate([
     (0, typeorm_1.CreateDateColumn)(),
     __metadata("design:type", Date)
 ], Games.prototype, "createdAt", void 0);

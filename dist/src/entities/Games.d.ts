@@ -6,6 +6,7 @@ export declare class Games {
     developer: string;
     currency: string;
     release: string;
+    website: string;
     createdAt: Date;
     updatedAt: Date;
 }
