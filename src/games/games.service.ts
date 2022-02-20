@@ -41,4 +41,16 @@ export class GamesService {
       result,
     };
   }
+
+  async getGamesMain() {
+    // NOTE : 임시로 1,2,3,4,5번 배너 설정
+    const bannerIdList = ["1", "2", "3", "4", "5"];
+    const bannerResult = await this.gamesRepository
+        .createQueryBuilder("games")
+      .where("games.id IN (:...ids)", { ids: bannerIdList })
+      .getMany();
+    return {
+      banner: bannerResult,
+    };
+  }
 }

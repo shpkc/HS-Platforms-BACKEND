@@ -25,6 +25,9 @@ let GamesController = class GamesController {
     async getAllGamesId() {
         return this.gamesService.getAllGamesId();
     }
+    async getGamesMain() {
+        return this.gamesService.getGamesMain();
+    }
     async getGamesDetail(id) {
         return this.gamesService.getGamesDetail(id);
     }
@@ -43,6 +46,12 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], GamesController.prototype, "getAllGamesId", null);
+__decorate([
+    (0, common_1.Get)("/main"),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], GamesController.prototype, "getGamesMain", null);
 __decorate([
     (0, common_1.Get)("/:id"),
     __param(0, (0, common_1.Param)("id")),

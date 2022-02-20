@@ -17,6 +17,10 @@ export class GamesController {
   async getAllGamesId() {
     return this.gamesService.getAllGamesId();
   }
+  @Get("/main")
+  async getGamesMain() {
+    return this.gamesService.getGamesMain();
+  }
 
   @Get("/:id")
   async getGamesDetail(@Param("id") id) {

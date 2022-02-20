@@ -45,6 +45,16 @@ let GamesService = class GamesService {
             result,
         };
     }
+    async getGamesMain() {
+        const bannerIdList = ["1", "2", "3", "4", "5"];
+        const bannerResult = await this.gamesRepository
+            .createQueryBuilder("games")
+            .where("games.id IN (:...ids)", { ids: bannerIdList })
+            .getMany();
+        return {
+            banner: bannerResult,
+        };
+    }
 };
 __decorate([
     (0, typeorm_1.InjectRepository)(Games_1.Games),

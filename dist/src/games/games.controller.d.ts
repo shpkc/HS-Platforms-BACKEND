@@ -9,6 +9,9 @@ export declare class GamesController {
     getAllGamesId(): Promise<{
         result: import("../entities/Games").Games[];
     }>;
+    getGamesMain(): Promise<{
+        banner: import("../entities/Games").Games[];
+    }>;
     getGamesDetail(id: any): Promise<{
         result: import("../entities/Games").Games;
     }>;

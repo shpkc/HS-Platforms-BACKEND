@@ -11,4 +11,7 @@ export declare class GamesService {
     getAllGamesId(): Promise<{
         result: Games[];
     }>;
+    getGamesMain(): Promise<{
+        banner: Games[];
+    }>;
 }
