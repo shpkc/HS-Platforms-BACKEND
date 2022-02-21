@@ -28,11 +28,14 @@ export class Games {
   @Column("varchar", { name: "currency" })
   currency: string;
 
-  @Column("varchar", { name: "release" })
-  release: string;
-
   @Column("varchar", { name: "website", default: "" })
   website: string;
+
+  @Column("boolean", { name: "isReleased", default: true })
+  isReleased: boolean;
+
+  @Column("varchar", { name: "releaseDate", default: "" })
+  releaseDate: string;
 
   @CreateDateColumn()
   createdAt: Date;
