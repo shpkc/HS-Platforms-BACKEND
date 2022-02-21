@@ -38,13 +38,17 @@ __decorate([
     __metadata("design:type", String)
 ], Games.prototype, "currency", void 0);
 __decorate([
-    (0, typeorm_1.Column)("varchar", { name: "release" }),
-    __metadata("design:type", String)
-], Games.prototype, "release", void 0);
-__decorate([
     (0, typeorm_1.Column)("varchar", { name: "website", default: "" }),
     __metadata("design:type", String)
 ], Games.prototype, "website", void 0);
+__decorate([
+    (0, typeorm_1.Column)("boolean", { name: "isReleased", default: true }),
+    __metadata("design:type", Boolean)
+], Games.prototype, "isReleased", void 0);
+__decorate([
+    (0, typeorm_1.Column)("varchar", { name: "releaseDate", default: "" }),
+    __metadata("design:type", String)
+], Games.prototype, "releaseDate", void 0);
 __decorate([
     (0, typeorm_1.CreateDateColumn)(),
     __metadata("design:type", Date)

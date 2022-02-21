@@ -5,8 +5,9 @@ export declare class Games {
     genre: string;
     developer: string;
     currency: string;
-    release: string;
     website: string;
+    isReleased: boolean;
+    releaseDate: string;
     createdAt: Date;
     updatedAt: Date;
 }
