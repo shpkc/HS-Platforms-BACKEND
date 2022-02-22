@@ -13,6 +13,6 @@ export declare class GamesService {
     }>;
     getGamesMain(): Promise<{
         banner: Games[];
-        upComing: Games[];
+        upcoming: Games[];
     }>;
 }

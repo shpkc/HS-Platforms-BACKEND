@@ -51,14 +51,14 @@ export class GamesService {
       .getMany();
 
     // NOTE : 메인에서 UPCOMING은 release false로 5개
-    const upComingResult = await this.gamesRepository
+    const upcomingResult = await this.gamesRepository
       .createQueryBuilder("games")
       .where("games.isReleased = false")
       .take(5)
       .getMany();
     return {
       banner: bannerResult,
-      upComing: upComingResult,
+      upcoming: upcomingResult,
     };
   }
 }

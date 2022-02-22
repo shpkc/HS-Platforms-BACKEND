@@ -51,14 +51,14 @@ let GamesService = class GamesService {
             .createQueryBuilder("games")
             .where("games.id IN (:...ids)", { ids: bannerIdList })
             .getMany();
-        const upComingResult = await this.gamesRepository
+        const upcomingResult = await this.gamesRepository
             .createQueryBuilder("games")
             .where("games.isReleased = false")
             .take(5)
             .getMany();
         return {
             banner: bannerResult,
-            upComing: upComingResult,
+            upcoming: upcomingResult,
         };
     }
 };
