@@ -46,7 +46,7 @@ let GamesService = class GamesService {
         };
     }
     async getGamesMain() {
-        const bannerIdList = ["1", "2", "3", "4", "5"];
+        const bannerIdList = ["6", "7", "8", "9", "10"];
         const bannerResult = await this.gamesRepository
             .createQueryBuilder("games")
             .where("games.id IN (:...ids)", { ids: bannerIdList })
@@ -56,9 +56,15 @@ let GamesService = class GamesService {
             .where("games.isReleased = false")
             .take(5)
             .getMany();
+        const bestIdList = ["1", "2", "3", "4", "5"];
+        const bestResult = await this.gamesRepository
+            .createQueryBuilder("games")
+            .where("games.id IN (:...ids)", { ids: bestIdList })
+            .getMany();
         return {
             banner: bannerResult,
             upcoming: upcomingResult,
+            best: bestResult,
         };
     }
 };
