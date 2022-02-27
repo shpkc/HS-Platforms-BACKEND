@@ -44,7 +44,7 @@ export class GamesService {
 
   async getGamesMain() {
     // NOTE : 임시로 6,7,8,9,10번 배너 설정
-    const bannerIdList = ["10", "7", "8", "9", "6"];
+    const bannerIdList = ["6", "7", "8", "9", "10"];
     const bannerResult = await this.gamesRepository
       .createQueryBuilder("games")
       .where("games.id IN (:...ids)", { ids: bannerIdList })
