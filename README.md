@@ -25,7 +25,4 @@
   <br/>
   <br/>
 
-## [TEAMIT](https://teamit.co.kr) BACKEND
-
-
-
+## [NFTIFY](https://nftify.site) BACKEND
