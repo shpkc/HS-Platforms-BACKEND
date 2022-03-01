@@ -46,6 +46,26 @@ __decorate([
     __metadata("design:type", Boolean)
 ], Games.prototype, "isReleased", void 0);
 __decorate([
+    (0, typeorm_1.Column)("boolean", { name: "isWindow", default: true }),
+    __metadata("design:type", Boolean)
+], Games.prototype, "isWindow", void 0);
+__decorate([
+    (0, typeorm_1.Column)("boolean", { name: "isApple", default: false }),
+    __metadata("design:type", Boolean)
+], Games.prototype, "isApple", void 0);
+__decorate([
+    (0, typeorm_1.Column)("boolean", { name: "isGoogle", default: false }),
+    __metadata("design:type", Boolean)
+], Games.prototype, "isGoogle", void 0);
+__decorate([
+    (0, typeorm_1.Column)("boolean", { name: "isSteam", default: false }),
+    __metadata("design:type", Boolean)
+], Games.prototype, "isSteam", void 0);
+__decorate([
+    (0, typeorm_1.Column)("boolean", { name: "isNFT", default: false }),
+    __metadata("design:type", Boolean)
+], Games.prototype, "isNFT", void 0);
+__decorate([
     (0, typeorm_1.Column)("varchar", { name: "releaseDate", default: "" }),
     __metadata("design:type", String)
 ], Games.prototype, "releaseDate", void 0);

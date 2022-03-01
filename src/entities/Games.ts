@@ -34,6 +34,21 @@ export class Games {
   @Column("boolean", { name: "isReleased", default: true })
   isReleased: boolean;
 
+  @Column("boolean", { name: "isWindow", default: true })
+  isWindow: boolean;
+
+  @Column("boolean", { name: "isApple", default: false })
+  isApple: boolean;
+
+  @Column("boolean", { name: "isGoogle", default: false })
+  isGoogle: boolean;
+
+  @Column("boolean", { name: "isSteam", default: false })
+  isSteam: boolean;
+
+  @Column("boolean", { name: "isNFT", default: false })
+  isNFT: boolean;
+
   @Column("varchar", { name: "releaseDate", default: "" })
   releaseDate: string;
 

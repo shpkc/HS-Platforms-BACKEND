@@ -10,14 +10,12 @@ import { AppController } from "./app.controller";
 import { AppService } from "./app.service";
 import { LoggerMiddleware } from "./middlewares/logger.middleware";
 import * as ormconfig from "./ormconfig";
-import { CourtsModule } from "./courts/courts.module";
 import { GamesModule } from "./games/games.module";
 
 @Module({
   imports: [
     ConfigModule.forRoot(),
     TypeOrmModule.forRoot(ormconfig),
-    CourtsModule,
     GamesModule,
   ],
   controllers: [AppController],

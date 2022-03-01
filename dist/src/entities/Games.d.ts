@@ -7,6 +7,11 @@ export declare class Games {
     currency: string;
     website: string;
     isReleased: boolean;
+    isWindow: boolean;
+    isApple: boolean;
+    isGoogle: boolean;
+    isSteam: boolean;
+    isNFT: boolean;
     releaseDate: string;
     createdAt: Date;
     updatedAt: Date;

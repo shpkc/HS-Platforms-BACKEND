@@ -33,7 +33,6 @@ const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const logger_middleware_1 = require("./middlewares/logger.middleware");
 const ormconfig = __importStar(require("./ormconfig"));
-const courts_module_1 = require("./courts/courts.module");
 const games_module_1 = require("./games/games.module");
 let AppModule = class AppModule {
     configure(consumer) {
@@ -45,7 +44,6 @@ AppModule = __decorate([
         imports: [
             config_1.ConfigModule.forRoot(),
             typeorm_1.TypeOrmModule.forRoot(ormconfig),
-            courts_module_1.CourtsModule,
             games_module_1.GamesModule,
         ],
         controllers: [app_controller_1.AppController],
