@@ -51,11 +51,12 @@ export class GamesService {
       .where("games.id IN (:...ids)", { ids: bannerIdList })
       .getMany();
 
-    // NOTE : 메인에서 UPCOMING은 release false로 5개
+    // NOTE : 메인에서 UPCOMING은 release false로 4개
     const upcomingResult = await this.gamesRepository
       .createQueryBuilder("games")
+      .where("games.isUse = true")
       .where("games.isReleased = false")
-      .take(5)
+      .take(4)
       .getMany();
 
     // NOTE : best game id

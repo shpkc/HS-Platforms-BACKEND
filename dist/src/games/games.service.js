@@ -54,8 +54,9 @@ let GamesService = class GamesService {
             .getMany();
         const upcomingResult = await this.gamesRepository
             .createQueryBuilder("games")
+            .where("games.isUse = true")
             .where("games.isReleased = false")
-            .take(5)
+            .take(4)
             .getMany();
         const bestIdList = ["1", "2", "3", "4", "5"];
         const bestResult = await this.gamesRepository
