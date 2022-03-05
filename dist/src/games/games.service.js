@@ -18,6 +18,7 @@ let GamesService = class GamesService {
     async getGames(page, perPage) {
         const [result, total] = await this.gamesRepository
             .createQueryBuilder("games")
+            .where("games.isUse = true")
             .take(perPage)
             .skip(perPage * (page - 1))
             .getManyAndCount();

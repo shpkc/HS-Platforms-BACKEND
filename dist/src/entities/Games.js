@@ -18,6 +18,10 @@ __decorate([
     __metadata("design:type", Number)
 ], Games.prototype, "id", void 0);
 __decorate([
+    (0, typeorm_1.Column)("boolean", { name: "isUse", default: true }),
+    __metadata("design:type", Boolean)
+], Games.prototype, "isUse", void 0);
+__decorate([
     (0, typeorm_1.Column)("varchar", { name: "title" }),
     __metadata("design:type", String)
 ], Games.prototype, "title", void 0);

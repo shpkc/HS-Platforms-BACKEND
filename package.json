@@ -24,10 +24,10 @@
     "seed:run": "ts-node ./node_modules/typeorm-seeding/dist/cli.js seed",
     "schema:drop": "ts-node ./node_modules/typeorm/cli.js schema:drop",
     "schema:sync": "ts-node ./node_modules/typeorm/cli.js schema:sync",
-    "db:migrate": "npm run typeorm migration:run",
+    "migrate:generation": "npm run typeorm migration:generate -- -n",
+    "migrate:run": "npm run typeorm migration:run",
     "db:migrate:revert": "npm run typeorm migration:revert",
-    "db:create-migration": "npm run typeorm migration:create -- -n",
-    "db:generate-migration": "npm run typeorm migration:generate -- -n"
+    "db:create-migration": "npm run typeorm migration:create -- -n"
   },
   "dependencies": {
     "@nestjs/common": "^8.0.6",

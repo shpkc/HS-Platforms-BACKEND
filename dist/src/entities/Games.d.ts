@@ -1,5 +1,6 @@
 export declare class Games {
     id: number;
+    isUse: boolean;
     title: string;
     description: string;
     genre: string;

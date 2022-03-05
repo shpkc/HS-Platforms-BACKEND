@@ -13,6 +13,9 @@ export class Games {
   @PrimaryGeneratedColumn({ type: "int", name: "id" })
   id: number;
 
+  @Column("boolean", { name: "isUse", default: true })
+  isUse: boolean;
+
   @Column("varchar", { name: "title" })
   title: string;
 
