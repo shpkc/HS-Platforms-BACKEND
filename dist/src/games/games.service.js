@@ -47,7 +47,7 @@ let GamesService = class GamesService {
         };
     }
     async getGamesMain() {
-        const bannerIdList = ["19", "22", "26", "20"];
+        const bannerIdList = ["26", "19", "22", "25"];
         const bannerResult = await this.gamesRepository
             .createQueryBuilder("games")
             .where("games.id IN (:...ids)", { ids: bannerIdList })

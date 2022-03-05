@@ -45,7 +45,8 @@ export class GamesService {
 
   async getGamesMain() {
     // NOTE : 19,22,26,30번 배너 설정
-    const bannerIdList = ["19", "22", "26", "20"];
+    // NOTE : 갓오브워 라그나로크, 카트, 마비노기, 야숨2
+    const bannerIdList = ["26", "19", "22", "25"];
     const bannerResult = await this.gamesRepository
       .createQueryBuilder("games")
       .where("games.id IN (:...ids)", { ids: bannerIdList })
