@@ -44,8 +44,8 @@ export class GamesService {
   }
 
   async getGamesMain() {
-    // NOTE : 임시로 6,7,8,9,10번 배너 설정
-    const bannerIdList = ["6", "7", "8", "9", "10"];
+    // NOTE : 19,22,26,30번 배너 설정
+    const bannerIdList = ["19", "22", "26", "20"];
     const bannerResult = await this.gamesRepository
       .createQueryBuilder("games")
       .where("games.id IN (:...ids)", { ids: bannerIdList })
@@ -60,8 +60,7 @@ export class GamesService {
       .getMany();
 
     // NOTE : best game id
-    // NOTE : Axie Infinity, The Sandbox, Gods Unchained, DeFi Kingdoms, Splinterlands
-    const bestIdList = ["1", "2", "3", "4", "5"];
+    const bestIdList = ["16", "18", "17", "22", "20"];
     const bestResult = await this.gamesRepository
       .createQueryBuilder("games")
       .where("games.id IN (:...ids)", { ids: bestIdList })
