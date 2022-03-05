@@ -25,4 +25,4 @@
   <br/>
   <br/>
 
-## [NFTIFY](https://nftify.site) BACKEND
+## [PLUSIVE](https://nftify.site) BACKEND
