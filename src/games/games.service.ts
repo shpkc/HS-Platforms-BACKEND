@@ -55,7 +55,7 @@ export class GamesService {
     const upcomingResult = await this.gamesRepository
       .createQueryBuilder("games")
       .where("games.isUse = true")
-      .where("games.isReleased = false")
+      .andWhere("games.isReleased = false")
       .take(4)
       .getMany();
 
