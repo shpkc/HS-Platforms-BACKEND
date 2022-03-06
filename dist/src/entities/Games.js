@@ -34,7 +34,7 @@ __decorate([
     __metadata("design:type", String)
 ], Games.prototype, "genre", void 0);
 __decorate([
-    (0, typeorm_1.Column)("float", { name: "score", default: 0.0 }),
+    (0, typeorm_1.Column)("float", { name: "score", default: 1.0 }),
     __metadata("design:type", Number)
 ], Games.prototype, "score", void 0);
 __decorate([

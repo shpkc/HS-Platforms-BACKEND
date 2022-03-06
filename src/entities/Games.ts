@@ -25,7 +25,7 @@ export class Games {
   @Column("varchar", { name: "genre" })
   genre: string;
 
-  @Column("float", { name: "score", default: 0.0 })
+  @Column("float", { name: "score", default: 1.0 })
   score: number;
 
   @Column("int", { name: "participantsCount", default: 0 })
