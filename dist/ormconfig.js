@@ -3,6 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 const dotenv_1 = __importDefault(require("dotenv"));
+const Users_1 = require("./src/entities/Users");
 const Games_1 = require("./src/entities/Games");
 dotenv_1.default.config();
 const config = {
@@ -12,7 +13,7 @@ const config = {
     username: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_DATABASE,
-    entities: [Games_1.Games],
+    entities: [Users_1.Users, Games_1.Games],
     migrations: [__dirname + "/src/migrations/*.ts"],
     cli: { migrationsDir: "src/migrations" },
     autoLoadEntities: true,

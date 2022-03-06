@@ -12,7 +12,7 @@ import {
 } from "typeorm";
 
 @Index("email", ["email"], { unique: true })
-@Entity({ schema: "sleact", name: "users" })
+@Entity({ name: "users" })
 export class Users {
   @PrimaryGeneratedColumn({ type: "int", name: "id" })
   id: number;

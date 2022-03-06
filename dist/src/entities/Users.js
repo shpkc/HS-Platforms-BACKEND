@@ -43,7 +43,7 @@ __decorate([
 ], Users.prototype, "deletedAt", void 0);
 Users = __decorate([
     (0, typeorm_1.Index)("email", ["email"], { unique: true }),
-    (0, typeorm_1.Entity)({ schema: "sleact", name: "users" })
+    (0, typeorm_1.Entity)({ name: "users" })
 ], Users);
 exports.Users = Users;
 //# sourceMappingURL=Users.js.map
