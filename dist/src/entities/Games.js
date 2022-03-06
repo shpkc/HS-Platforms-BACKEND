@@ -34,11 +34,19 @@ __decorate([
     __metadata("design:type", String)
 ], Games.prototype, "genre", void 0);
 __decorate([
+    (0, typeorm_1.Column)("float", { name: "score", default: 0.0 }),
+    __metadata("design:type", Number)
+], Games.prototype, "score", void 0);
+__decorate([
+    (0, typeorm_1.Column)("int", { name: "score", default: 0 }),
+    __metadata("design:type", Number)
+], Games.prototype, "participantsCount", void 0);
+__decorate([
     (0, typeorm_1.Column)("varchar", { name: "developer" }),
     __metadata("design:type", String)
 ], Games.prototype, "developer", void 0);
 __decorate([
-    (0, typeorm_1.Column)("varchar", { name: "currency" }),
+    (0, typeorm_1.Column)("varchar", { name: "currency", default: "" }),
     __metadata("design:type", String)
 ], Games.prototype, "currency", void 0);
 __decorate([

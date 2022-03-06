@@ -4,6 +4,8 @@ export declare class Games {
     title: string;
     description: string;
     genre: string;
+    score: number;
+    participantsCount: number;
     developer: string;
     currency: string;
     website: string;

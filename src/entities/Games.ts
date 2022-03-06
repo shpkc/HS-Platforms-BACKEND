@@ -25,10 +25,16 @@ export class Games {
   @Column("varchar", { name: "genre" })
   genre: string;
 
+  @Column("float", { name: "score", default: 0.0 })
+  score: number;
+
+  @Column("int", { name: "score", default: 0 })
+  participantsCount: number;
+
   @Column("varchar", { name: "developer" })
   developer: string;
 
-  @Column("varchar", { name: "currency" })
+  @Column("varchar", { name: "currency", default: "" })
   currency: string;
 
   @Column("varchar", { name: "website", default: "" })
