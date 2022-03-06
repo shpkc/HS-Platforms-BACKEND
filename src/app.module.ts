@@ -12,6 +12,7 @@ import { LoggerMiddleware } from "./middlewares/logger.middleware";
 import * as ormconfig from "./ormconfig";
 import { GamesModule } from "./games/games.module";
 import { UsersModule } from "./users/users.module";
+import { AuthModule } from "./auth/auth.module";
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { UsersModule } from "./users/users.module";
     TypeOrmModule.forRoot(ormconfig),
     GamesModule,
     UsersModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],

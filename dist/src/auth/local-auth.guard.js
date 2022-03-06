@@ -9,12 +9,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.LocalAuthGuard = void 0;
 const common_1 = require("@nestjs/common");
 const passport_1 = require("@nestjs/passport");
-let LocalAuthGuard = class LocalAuthGuard extends (0, passport_1.AuthGuard)('local') {
+let LocalAuthGuard = class LocalAuthGuard extends (0, passport_1.AuthGuard)("local") {
     async canActivate(context) {
         const can = await super.canActivate(context);
         if (can) {
             const request = context.switchToHttp().getRequest();
-            console.log('login for cookie');
+            console.log("login for cookie");
             await super.logIn(request);
         }
         return true;

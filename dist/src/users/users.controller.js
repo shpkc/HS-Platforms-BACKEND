@@ -39,20 +39,19 @@ let UsersController = class UsersController {
         }
         const result = await this.usersService.join(data.email, data.nickname, data.password);
         if (result) {
-            return 'ok';
+            return "ok";
         }
         else {
             throw new common_1.ForbiddenException();
         }
     }
     async logout(res) {
-        res.clearCookie('connect.sid', { httpOnly: true });
-        return res.send('ok');
+        res.clearCookie("connect.sid", { httpOnly: true });
+        return res.send("ok");
     }
 };
 __decorate([
-    (0, swagger_1.ApiCookieAuth)('connect.sid'),
-    (0, swagger_1.ApiOperation)({ summary: '내 정보 가져오기' }),
+    (0, swagger_1.ApiCookieAuth)("connect.sid"),
     (0, common_1.Get)(),
     __param(0, (0, user_decorator_1.User)()),
     __metadata("design:type", Function),
@@ -60,36 +59,33 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], UsersController.prototype, "getProfile", null);
 __decorate([
-    (0, swagger_1.ApiOperation)({ summary: '로그인' }),
     (0, common_1.UseGuards)(local_auth_guard_1.LocalAuthGuard),
-    (0, common_1.Post)('login'),
+    (0, common_1.Post)("/login"),
     __param(0, (0, user_decorator_1.User)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Users_1.Users]),
     __metadata("design:returntype", Promise)
 ], UsersController.prototype, "login", null);
 __decorate([
-    (0, swagger_1.ApiOperation)({ summary: '회원가입' }),
     (0, common_1.UseGuards)(not_logged_in_guard_1.NotLoggedInGuard),
-    (0, common_1.Post)(),
+    (0, common_1.Post)("/signup"),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [join_request_dto_1.JoinRequestDto]),
     __metadata("design:returntype", Promise)
 ], UsersController.prototype, "join", null);
 __decorate([
-    (0, swagger_1.ApiCookieAuth)('connect.sid'),
-    (0, swagger_1.ApiOperation)({ summary: '로그아웃' }),
+    (0, swagger_1.ApiCookieAuth)("connect.sid"),
+    (0, swagger_1.ApiOperation)({ summary: "로그아웃" }),
     (0, common_1.UseGuards)(logged_in_guard_1.LoggedInGuard),
-    (0, common_1.Post)('logout'),
+    (0, common_1.Post)("logout"),
     __param(0, (0, common_1.Response)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], UsersController.prototype, "logout", null);
 UsersController = __decorate([
-    (0, swagger_1.ApiTags)('USERS'),
-    (0, common_1.Controller)('api/users'),
+    (0, common_1.Controller)("users"),
     __metadata("design:paramtypes", [users_service_1.UsersService])
 ], UsersController);
 exports.UsersController = UsersController;

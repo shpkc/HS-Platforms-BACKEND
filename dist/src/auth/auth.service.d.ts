@@ -1,5 +1,5 @@
-import { Repository } from 'typeorm';
-import { Users } from '../entities/Users';
+import { Repository } from "typeorm";
+import { Users } from "../entities/Users";
 export declare class AuthService {
     private usersRepository;
     constructor(usersRepository: Repository<Users>);

@@ -35,6 +35,7 @@ const logger_middleware_1 = require("./middlewares/logger.middleware");
 const ormconfig = __importStar(require("./ormconfig"));
 const games_module_1 = require("./games/games.module");
 const users_module_1 = require("./users/users.module");
+const auth_module_1 = require("./auth/auth.module");
 let AppModule = class AppModule {
     configure(consumer) {
         consumer.apply(logger_middleware_1.LoggerMiddleware).forRoutes("*");
@@ -47,6 +48,7 @@ AppModule = __decorate([
             typeorm_1.TypeOrmModule.forRoot(ormconfig),
             games_module_1.GamesModule,
             users_module_1.UsersModule,
+            auth_module_1.AuthModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

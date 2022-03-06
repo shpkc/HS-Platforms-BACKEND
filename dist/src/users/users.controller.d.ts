@@ -1,6 +1,6 @@
-import { Users } from '../entities/Users';
-import { JoinRequestDto } from './dto/join.request.dto';
-import { UsersService } from './users.service';
+import { Users } from "../entities/Users";
+import { JoinRequestDto } from "./dto/join.request.dto";
+import { UsersService } from "./users.service";
 export declare class UsersController {
     private usersService;
     constructor(usersService: UsersService);
