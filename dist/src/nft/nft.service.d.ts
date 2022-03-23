@@ -11,4 +11,7 @@ export declare class NftsService {
     getAllNftsId(): Promise<{
         result: Nfts[];
     }>;
+    getNftsMain(): Promise<{
+        recommend: Nfts[];
+    }>;
 }

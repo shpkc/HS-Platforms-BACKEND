@@ -17,10 +17,10 @@ export class NftsController {
   async getAllGamesId() {
     return this.nftsService.getAllNftsId();
   }
-  //   @Get("/main")
-  //   async getNftsMain() {
-  //     return this.nftsService.getNftssMain();
-  //   }
+  @Get("/main")
+  async getNftsMain() {
+    return this.nftsService.getNftsMain();
+  }
 
   @Get("/:id")
   async getNftsDetail(@Param("id") id) {

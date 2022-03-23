@@ -25,6 +25,9 @@ let NftsController = class NftsController {
     async getAllGamesId() {
         return this.nftsService.getAllNftsId();
     }
+    async getNftsMain() {
+        return this.nftsService.getNftsMain();
+    }
     async getNftsDetail(id) {
         return this.nftsService.getNftsDetail(id);
     }
@@ -43,6 +46,12 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], NftsController.prototype, "getAllGamesId", null);
+__decorate([
+    (0, common_1.Get)("/main"),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], NftsController.prototype, "getNftsMain", null);
 __decorate([
     (0, common_1.Get)("/:id"),
     __param(0, (0, common_1.Param)("id")),

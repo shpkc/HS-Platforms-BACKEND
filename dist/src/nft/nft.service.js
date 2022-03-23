@@ -47,6 +47,16 @@ let NftsService = class NftsService {
             result,
         };
     }
+    async getNftsMain() {
+        const recommendIdList = ["5", "5", "5", "5"];
+        const recommendResult = await this.nftsRepository
+            .createQueryBuilder("nfts")
+            .where("games.id IN (:...ids)", { ids: recommendIdList })
+            .getMany();
+        return {
+            recommend: recommendResult,
+        };
+    }
 };
 __decorate([
     (0, typeorm_1.InjectRepository)(Nfts_1.Nfts),

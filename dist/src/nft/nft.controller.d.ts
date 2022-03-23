@@ -9,6 +9,9 @@ export declare class NftsController {
     getAllGamesId(): Promise<{
         result: import("../entities/Nfts").Nfts[];
     }>;
+    getNftsMain(): Promise<{
+        recommend: import("../entities/Nfts").Nfts[];
+    }>;
     getNftsDetail(id: any): Promise<{
         result: import("../entities/Nfts").Nfts;
     }>;

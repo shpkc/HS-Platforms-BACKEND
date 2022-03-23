@@ -44,33 +44,32 @@ export class NftsService {
     };
   }
 
-  //   async getGamesMain() {
-  //     // NOTE : 22,19,23,24 배너 설정
-  //     // NOTE : 마비노기 라그나로크, 카트, 스플래툰3, 베요네타3
-  //     const bannerIdList = ["22", "19", "23", "24"];
-  //     const bannerResult = await this.gamesRepository
-  //       .createQueryBuilder("games")
-  //       .where("games.id IN (:...ids)", { ids: bannerIdList })
-  //       .getMany();
+  async getNftsMain() {
+    // NOTE : recommend 4개 list
+    const recommendIdList = ["5", "5", "5", "5"];
+    const recommendResult = await this.nftsRepository
+      .createQueryBuilder("nfts")
+      .where("games.id IN (:...ids)", { ids: recommendIdList })
+      .getMany();
 
-  //     // NOTE : 메인에서 UPCOMING은 release false로 4개
-  //     const upcomingResult = await this.gamesRepository
-  //       .createQueryBuilder("games")
-  //       .where("games.isUse = true")
-  //       .andWhere("games.isReleased = false")
-  //       .take(4)
-  //       .getMany();
+    // NOTE : 메인에서 UPCOMING은 release false로 4개
+    //   const recommendResult = await this.nftsRepository
+    //     .createQueryBuilder("games")
+    //     .where("games.isUse = true")
+    //     .andWhere("games.isReleased = false")
+    //     .take(4)
+    //     .getMany();
 
-  //     // NOTE : best game id
-  //     const bestIdList = ["16", "18", "17", "22", "20"];
-  //     const bestResult = await this.gamesRepository
-  //       .createQueryBuilder("games")
-  //       .where("games.id IN (:...ids)", { ids: bestIdList })
-  //       .getMany();
-  //     return {
-  //       banner: bannerResult,
-  //       upcoming: upcomingResult,
-  //       best: bestResult,
-  //     };
-  //   }
+    //   // NOTE : best game id
+    //   const bestIdList = ["16", "18", "17", "22", "20"];
+    //   const bestResult = await this.gamesRepository
+    //     .createQueryBuilder("games")
+    //     .where("games.id IN (:...ids)", { ids: bestIdList })
+    //     .getMany();
+    return {
+      // banner: bannerResult,
+      recommend: recommendResult,
+      // marketplace: bestResult,
+    };
+  }
 }
