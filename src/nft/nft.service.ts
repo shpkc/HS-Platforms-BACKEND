@@ -49,7 +49,7 @@ export class NftsService {
     const recommendIdList = ["5", "5", "5", "5"];
     const recommendResult = await this.nftsRepository
       .createQueryBuilder("nfts")
-      .where("games.id IN (:...ids)", { ids: recommendIdList })
+      .where("nfts.id IN (:...ids)", { ids: recommendIdList })
       .getMany();
 
     // NOTE : 메인에서 UPCOMING은 release false로 4개

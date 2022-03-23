@@ -51,7 +51,7 @@ let NftsService = class NftsService {
         const recommendIdList = ["5", "5", "5", "5"];
         const recommendResult = await this.nftsRepository
             .createQueryBuilder("nfts")
-            .where("games.id IN (:...ids)", { ids: recommendIdList })
+            .where("nfts.id IN (:...ids)", { ids: recommendIdList })
             .getMany();
         return {
             recommend: recommendResult,
