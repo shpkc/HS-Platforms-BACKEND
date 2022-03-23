@@ -18,8 +18,8 @@ let NftsService = class NftsService {
     async getNfts(page, perPage) {
         const [result, total] = await this.nftsRepository
             .createQueryBuilder("nfts")
-            .where("games.isSold = false")
-            .andWhere("games.isReleased = false")
+            .where("nfts.isUse = true")
+            .andWhere("nfts.isSold = false")
             .take(perPage)
             .skip(perPage * (page - 1))
             .getManyAndCount();
