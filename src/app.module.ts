@@ -13,6 +13,7 @@ import * as ormconfig from "./ormconfig";
 import { GamesModule } from "./games/games.module";
 import { UsersModule } from "./users/users.module";
 import { AuthModule } from "./auth/auth.module";
+import { NftModule } from './nft/nft.module';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { AuthModule } from "./auth/auth.module";
     GamesModule,
     UsersModule,
     AuthModule,
+    NftModule,
   ],
   controllers: [AppController],
   providers: [AppService],

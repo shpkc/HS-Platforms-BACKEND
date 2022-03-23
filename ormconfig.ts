@@ -2,6 +2,7 @@ import { TypeOrmModuleOptions } from "@nestjs/typeorm";
 import dotenv from "dotenv";
 import { Users } from "./src/entities/Users";
 import { Games } from "./src/entities/Games";
+import { Nfts } from "./src/entities/Nfts";
 
 dotenv.config();
 const config: TypeOrmModuleOptions = {
@@ -11,7 +12,7 @@ const config: TypeOrmModuleOptions = {
   username: process.env.DB_USERNAME,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_DATABASE,
-  entities: [Users, Games],
+  entities: [Users, Games, Nfts],
   migrations: [__dirname + "/src/migrations/*.ts"],
   cli: { migrationsDir: "src/migrations" },
   autoLoadEntities: true,

@@ -12,6 +12,9 @@ export class Nfts {
   @PrimaryGeneratedColumn({ type: "int", name: "id" })
   id: number;
 
+  @Column("varchar", { name: "tokenId" })
+  tokenId: string;
+
   @Column("varchar", { name: "title" })
   title: string;
 
@@ -38,6 +41,9 @@ export class Nfts {
 
   @Column("boolean", { name: "isSold", default: false })
   isSold: boolean;
+
+  @Column("boolean", { name: "isUse", default: true })
+  isUse: boolean;
 
   @CreateDateColumn()
   createdAt: Date;
