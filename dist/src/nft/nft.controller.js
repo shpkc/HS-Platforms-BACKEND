@@ -51,7 +51,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], NftsController.prototype, "getNftsDetail", null);
 NftsController = __decorate([
-    (0, common_1.Controller)("nft"),
+    (0, common_1.Controller)("nfts"),
     __metadata("design:paramtypes", [nft_service_1.NftsService])
 ], NftsController);
 exports.NftsController = NftsController;
