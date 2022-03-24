@@ -1,6 +1,8 @@
 import { Nfts } from "../entities/Nfts";
+import { Collections } from "../entities/Collections";
 export declare class NftsService {
     private nftsRepository;
+    private collectionsRepository;
     getNfts(page: number, perPage: number): Promise<{
         result: Nfts[];
         totalCount: number;
@@ -12,6 +14,7 @@ export declare class NftsService {
         result: Nfts[];
     }>;
     getNftsMain(): Promise<{
+        banner: Collections[];
         recommend: Nfts[];
     }>;
 }

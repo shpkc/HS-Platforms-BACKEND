@@ -10,6 +10,7 @@ export declare class NftsController {
         result: import("../entities/Nfts").Nfts[];
     }>;
     getNftsMain(): Promise<{
+        banner: import("../entities/Collections").Collections[];
         recommend: import("../entities/Nfts").Nfts[];
     }>;
     getNftsDetail(id: any): Promise<{

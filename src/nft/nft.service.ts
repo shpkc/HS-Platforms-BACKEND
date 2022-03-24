@@ -2,11 +2,13 @@ import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Repository } from "typeorm";
 import { Nfts } from "../entities/Nfts";
+import { Collections } from "../entities/Collections";
 
 @Injectable()
 export class NftsService {
   @InjectRepository(Nfts)
   private nftsRepository: Repository<Nfts>;
+  private collectionsRepository: Repository<Collections>;
 
   async getNfts(page: number, perPage: number) {
     const [result, total] = await this.nftsRepository
@@ -52,6 +54,12 @@ export class NftsService {
       .where("nfts.id IN (:...ids)", { ids: recommendIdList })
       .getMany();
 
+    const bannerIdList = ["1"];
+    const bannerResult = await this.collectionsRepository
+      .createQueryBuilder("collections")
+      .where("collections.id IN (:...ids)", { ids: bannerIdList })
+      .getMany();
+
     // NOTE : 메인에서 UPCOMING은 release false로 4개
     //   const recommendResult = await this.nftsRepository
     //     .createQueryBuilder("games")
@@ -67,7 +75,7 @@ export class NftsService {
     //     .where("games.id IN (:...ids)", { ids: bestIdList })
     //     .getMany();
     return {
-      // banner: bannerResult,
+      banner: bannerResult,
       recommend: recommendResult,
       // marketplace: bestResult,
     };
