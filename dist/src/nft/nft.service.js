@@ -14,6 +14,7 @@ const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_2 = require("typeorm");
 const Nfts_1 = require("../entities/Nfts");
+const Collections_1 = require("../entities/Collections");
 let NftsService = class NftsService {
     async getNfts(page, perPage) {
         const [result, total] = await this.nftsRepository
@@ -68,6 +69,10 @@ __decorate([
     (0, typeorm_1.InjectRepository)(Nfts_1.Nfts),
     __metadata("design:type", typeorm_2.Repository)
 ], NftsService.prototype, "nftsRepository", void 0);
+__decorate([
+    (0, typeorm_1.InjectRepository)(Collections_1.Collections),
+    __metadata("design:type", typeorm_2.Repository)
+], NftsService.prototype, "collectionsRepository", void 0);
 NftsService = __decorate([
     (0, common_1.Injectable)()
 ], NftsService);
