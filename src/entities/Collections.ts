@@ -17,6 +17,9 @@ export class Collections {
   @Column("varchar", { name: "description" })
   description: string;
 
+  @Column("varchar", { name: "category" })
+  category: string;
+
   @Column("boolean", { name: "isUse", default: true })
   isUse: boolean;
 
