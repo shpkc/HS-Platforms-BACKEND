@@ -8,6 +8,7 @@ import { Collections } from "../entities/Collections";
 export class NftsService {
   @InjectRepository(Nfts)
   private nftsRepository: Repository<Nfts>;
+  @InjectRepository(Collections)
   private collectionsRepository: Repository<Collections>;
 
   async getNfts(page: number, perPage: number) {
@@ -77,7 +78,6 @@ export class NftsService {
     return {
       banner: bannerResult,
       recommend: recommendResult,
-      // marketplace: bestResult,
     };
   }
 }
