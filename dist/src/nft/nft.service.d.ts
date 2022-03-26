@@ -15,6 +15,7 @@ export declare class NftsService {
     }>;
     getNftsMain(): Promise<{
         banner: Collections[];
-        trendNfts: Nfts[];
+        mainCollections: Collections[];
+        mainProducts: Nfts[];
     }>;
 }

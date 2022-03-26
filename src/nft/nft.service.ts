@@ -47,6 +47,7 @@ export class NftsService {
     };
   }
 
+  // NOTE : home API
   async getNftsMain() {
     const bannerIdList = ["1", "2"];
     const bannerResult = await this.collectionsRepository
@@ -54,30 +55,23 @@ export class NftsService {
       .where("collections.id IN (:...ids)", { ids: bannerIdList })
       .getMany();
 
+    const mainCollectionIdList = ["1", "2"];
+    const mainCollectionsResult = await this.collectionsRepository
+      .createQueryBuilder("collections")
+      .where("collections.id IN (:...ids)", { ids: mainCollectionIdList })
+      .getMany();
+
     // NOTE : 첫번째부터 8개
-    const trendNftsResult = await this.nftsRepository
+    const mainProductsResult = await this.nftsRepository
       .createQueryBuilder("nfts")
       .where("nfts.isUse = true")
       .take(8)
       .getMany();
 
-    // NOTE : 메인에서 UPCOMING은 release false로 4개
-    //   const recommendResult = await this.nftsRepository
-    //     .createQueryBuilder("games")
-    //     .where("games.isUse = true")
-    //     .andWhere("games.isReleased = false")
-    //     .take(4)
-    //     .getMany();
-
-    //   // NOTE : best game id
-    //   const bestIdList = ["16", "18", "17", "22", "20"];
-    //   const bestResult = await this.gamesRepository
-    //     .createQueryBuilder("games")
-    //     .where("games.id IN (:...ids)", { ids: bestIdList })
-    //     .getMany();
     return {
       banner: bannerResult,
-      trendNfts: trendNftsResult,
+      mainCollections: mainCollectionsResult,
+      mainProducts: mainProductsResult,
     };
   }
 }

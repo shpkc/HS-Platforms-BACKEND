@@ -54,14 +54,20 @@ let NftsService = class NftsService {
             .createQueryBuilder("collections")
             .where("collections.id IN (:...ids)", { ids: bannerIdList })
             .getMany();
-        const trendNftsResult = await this.nftsRepository
+        const mainCollectionIdList = ["1", "2"];
+        const mainCollectionsResult = await this.collectionsRepository
+            .createQueryBuilder("collections")
+            .where("collections.id IN (:...ids)", { ids: mainCollectionIdList })
+            .getMany();
+        const mainProductsResult = await this.nftsRepository
             .createQueryBuilder("nfts")
             .where("nfts.isUse = true")
             .take(8)
             .getMany();
         return {
             banner: bannerResult,
-            trendNfts: trendNftsResult,
+            mainCollections: mainCollectionsResult,
+            mainProducts: mainProductsResult,
         };
     }
 };
