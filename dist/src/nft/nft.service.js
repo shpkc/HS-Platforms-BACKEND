@@ -54,7 +54,7 @@ let NftsService = class NftsService {
             .createQueryBuilder("collections")
             .where("collections.id IN (:...ids)", { ids: bannerIdList })
             .getMany();
-        const trendNftsIdList = ["1", "2", "3"];
+        const trendNftsIdList = ["5", "6", "7"];
         const trendNftsResult = await this.nftsRepository
             .createQueryBuilder("nfts")
             .where("nfts.id IN (:...ids)", { ids: trendNftsIdList })
