@@ -49,12 +49,12 @@ let NftsService = class NftsService {
         };
     }
     async getNftsMain() {
-        const bannerIdList = ["1", "2"];
+        const bannerIdList = ["1", "2", "3", "4"];
         const bannerResult = await this.collectionsRepository
             .createQueryBuilder("collections")
             .where("collections.id IN (:...ids)", { ids: bannerIdList })
             .getMany();
-        const mainCollectionIdList = ["1", "2"];
+        const mainCollectionIdList = ["1", "2", "3", "4"];
         const mainCollectionsResult = await this.collectionsRepository
             .createQueryBuilder("collections")
             .where("collections.id IN (:...ids)", { ids: mainCollectionIdList })
