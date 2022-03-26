@@ -54,10 +54,11 @@ export class NftsService {
       .where("collections.id IN (:...ids)", { ids: bannerIdList })
       .getMany();
 
-    const trendNftsIdList = ["5", "6", "7"];
+    // NOTE : 첫번째부터 8개
     const trendNftsResult = await this.nftsRepository
       .createQueryBuilder("nfts")
-      .where("nfts.id IN (:...ids)", { ids: trendNftsIdList })
+      .where("nfts.isUse = true")
+      .take(8)
       .getMany();
 
     // NOTE : 메인에서 UPCOMING은 release false로 4개
