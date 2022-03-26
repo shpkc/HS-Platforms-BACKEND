@@ -11,7 +11,7 @@ export declare class NftsController {
     }>;
     getNftsMain(): Promise<{
         banner: import("../entities/Collections").Collections[];
-        recommend: import("../entities/Nfts").Nfts[];
+        trendNfts: import("../entities/Nfts").Nfts[];
     }>;
     getNftsDetail(id: any): Promise<{
         result: import("../entities/Nfts").Nfts;

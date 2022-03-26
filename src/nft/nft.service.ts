@@ -48,17 +48,16 @@ export class NftsService {
   }
 
   async getNftsMain() {
-    // NOTE : recommend 4개 list
-    const recommendIdList = ["5", "5", "5", "5"];
-    const recommendResult = await this.nftsRepository
-      .createQueryBuilder("nfts")
-      .where("nfts.id IN (:...ids)", { ids: recommendIdList })
-      .getMany();
-
-    const bannerIdList = ["1"];
+    const bannerIdList = ["1", "2"];
     const bannerResult = await this.collectionsRepository
       .createQueryBuilder("collections")
       .where("collections.id IN (:...ids)", { ids: bannerIdList })
+      .getMany();
+
+    const trendNftsIdList = ["1", "2", "3"];
+    const trendNftsResult = await this.nftsRepository
+      .createQueryBuilder("nfts")
+      .where("nfts.id IN (:...ids)", { ids: trendNftsIdList })
       .getMany();
 
     // NOTE : 메인에서 UPCOMING은 release false로 4개
@@ -77,7 +76,7 @@ export class NftsService {
     //     .getMany();
     return {
       banner: bannerResult,
-      recommend: recommendResult,
+      trendNfts: trendNftsResult,
     };
   }
 }

@@ -26,6 +26,10 @@ __decorate([
     __metadata("design:type", String)
 ], Collections.prototype, "description", void 0);
 __decorate([
+    (0, typeorm_1.Column)("varchar", { name: "category" }),
+    __metadata("design:type", String)
+], Collections.prototype, "category", void 0);
+__decorate([
     (0, typeorm_1.Column)("boolean", { name: "isUse", default: true }),
     __metadata("design:type", Boolean)
 ], Collections.prototype, "isUse", void 0);

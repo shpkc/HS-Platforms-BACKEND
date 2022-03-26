@@ -49,19 +49,19 @@ let NftsService = class NftsService {
         };
     }
     async getNftsMain() {
-        const recommendIdList = ["5", "5", "5", "5"];
-        const recommendResult = await this.nftsRepository
-            .createQueryBuilder("nfts")
-            .where("nfts.id IN (:...ids)", { ids: recommendIdList })
-            .getMany();
-        const bannerIdList = ["1"];
+        const bannerIdList = ["1", "2"];
         const bannerResult = await this.collectionsRepository
             .createQueryBuilder("collections")
             .where("collections.id IN (:...ids)", { ids: bannerIdList })
             .getMany();
+        const trendNftsIdList = ["1", "2", "3"];
+        const trendNftsResult = await this.nftsRepository
+            .createQueryBuilder("nfts")
+            .where("nfts.id IN (:...ids)", { ids: trendNftsIdList })
+            .getMany();
         return {
             banner: bannerResult,
-            recommend: recommendResult,
+            trendNfts: trendNftsResult,
         };
     }
 };
