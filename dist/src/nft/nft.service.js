@@ -42,6 +42,7 @@ let NftsService = class NftsService {
     async getAllNftsId() {
         const [result] = await this.nftsRepository
             .createQueryBuilder("nfts")
+            .where("nfts.isUse = true")
             .select(["nfts.id"])
             .getManyAndCount();
         return {
