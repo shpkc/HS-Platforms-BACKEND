@@ -38,6 +38,10 @@ __decorate([
     __metadata("design:type", Number)
 ], Nfts.prototype, "price", void 0);
 __decorate([
+    (0, typeorm_1.Column)("varchar", { name: "category", default: "ART" }),
+    __metadata("design:type", String)
+], Nfts.prototype, "category", void 0);
+__decorate([
     (0, typeorm_1.Column)("varchar", { name: "mediaType", default: "IMAGE" }),
     __metadata("design:type", String)
 ], Nfts.prototype, "mediaType", void 0);
@@ -53,6 +57,10 @@ __decorate([
     (0, typeorm_1.Column)("varchar", { name: "seller", default: "" }),
     __metadata("design:type", String)
 ], Nfts.prototype, "seller", void 0);
+__decorate([
+    (0, typeorm_1.Column)("varchar", { name: "contractAddress", default: "" }),
+    __metadata("design:type", String)
+], Nfts.prototype, "contractAddress", void 0);
 __decorate([
     (0, typeorm_1.Column)("boolean", { name: "isSold", default: false }),
     __metadata("design:type", Boolean)

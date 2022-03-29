@@ -5,10 +5,12 @@ export declare class Nfts {
     description: string;
     currency: string;
     price: number;
+    category: string;
     mediaType: string;
     image: string;
     owner: string;
     seller: string;
+    contractAddress: string;
     isSold: boolean;
     isUse: boolean;
     createdAt: Date;
