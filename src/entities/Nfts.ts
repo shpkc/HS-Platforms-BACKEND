@@ -27,6 +27,9 @@ export class Nfts {
   @Column("float", { name: "price", default: 1.0 })
   price: number;
 
+  @Column("varchar", { name: "category", default: "ART" })
+  category: string;
+
   @Column("varchar", { name: "mediaType", default: "IMAGE" })
   mediaType: string;
 
@@ -38,6 +41,9 @@ export class Nfts {
 
   @Column("varchar", { name: "seller", default: "" })
   seller: string;
+
+  @Column("varchar", { name: "contractAddress", default: "" })
+  contractAddress: string;
 
   @Column("boolean", { name: "isSold", default: false })
   isSold: boolean;
