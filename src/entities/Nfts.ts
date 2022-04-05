@@ -21,6 +21,9 @@ export class Nfts {
   @Column("varchar", { name: "description" })
   description: string;
 
+  @Column("varchar", { name: "blockchain", default: "Ethereum" })
+  blockchain: string;
+
   @Column("varchar", { name: "currency", default: "ETH" })
   currency: string;
 

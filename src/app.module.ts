@@ -5,21 +5,21 @@ import { AppController } from "./app.controller";
 import { AppService } from "./app.service";
 import { LoggerMiddleware } from "./middlewares/logger.middleware";
 import * as ormconfig from "./ormconfig";
-import { GamesModule } from "./games/games.module";
 import { UsersModule } from "./users/users.module";
 import { AuthModule } from "./auth/auth.module";
 import { NftModule } from "./nft/nft.module";
 import { CollectionModule } from "./collections/collections.module";
+import { ProductModule } from "./products/products.module";
 
 @Module({
   imports: [
     ConfigModule.forRoot(),
     TypeOrmModule.forRoot(ormconfig),
-    GamesModule,
     UsersModule,
     AuthModule,
     NftModule,
     CollectionModule,
+    ProductModule,
   ],
   controllers: [AppController],
   providers: [AppService],
