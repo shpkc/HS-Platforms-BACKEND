@@ -3,10 +3,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 const dotenv_1 = __importDefault(require("dotenv"));
-const Games_1 = require("./entities/Games");
 const Nfts_1 = require("./entities/Nfts");
 const Users_1 = require("./entities/Users");
 const Collections_1 = require("./entities/Collections");
+const Products_1 = require("./entities/Products");
 dotenv_1.default.config();
 const config = {
     type: "mysql",
@@ -15,7 +15,7 @@ const config = {
     username: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_DATABASE,
-    entities: [Users_1.Users, Games_1.Games, Nfts_1.Nfts, Collections_1.Collections],
+    entities: [Users_1.Users, Nfts_1.Nfts, Collections_1.Collections, Products_1.Products],
     migrations: [__dirname + "/src/migrations/*.ts"],
     cli: { migrationsDir: "src/migrations" },
     autoLoadEntities: true,

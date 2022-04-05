@@ -33,11 +33,11 @@ const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const logger_middleware_1 = require("./middlewares/logger.middleware");
 const ormconfig = __importStar(require("./ormconfig"));
-const games_module_1 = require("./games/games.module");
 const users_module_1 = require("./users/users.module");
 const auth_module_1 = require("./auth/auth.module");
 const nft_module_1 = require("./nft/nft.module");
 const collections_module_1 = require("./collections/collections.module");
+const products_module_1 = require("./products/products.module");
 let AppModule = class AppModule {
     configure(consumer) {
         consumer.apply(logger_middleware_1.LoggerMiddleware).forRoutes("*");
@@ -48,11 +48,11 @@ AppModule = __decorate([
         imports: [
             config_1.ConfigModule.forRoot(),
             typeorm_1.TypeOrmModule.forRoot(ormconfig),
-            games_module_1.GamesModule,
             users_module_1.UsersModule,
             auth_module_1.AuthModule,
             nft_module_1.NftModule,
             collections_module_1.CollectionModule,
+            products_module_1.ProductModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

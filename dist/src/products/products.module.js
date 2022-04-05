@@ -6,20 +6,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GamesModule = void 0;
+exports.ProductModule = void 0;
 const common_1 = require("@nestjs/common");
-const games_service_1 = require("./games.service");
-const games_controller_1 = require("./games.controller");
 const typeorm_1 = require("@nestjs/typeorm");
-const Games_1 = require("../entities/Games");
-let GamesModule = class GamesModule {
+const Products_1 = require("../entities/Products");
+const Collections_1 = require("../entities/Collections");
+const products_controller_1 = require("./products.controller");
+const products_service_1 = require("./products.service");
+let ProductModule = class ProductModule {
 };
-GamesModule = __decorate([
+ProductModule = __decorate([
     (0, common_1.Module)({
-        imports: [typeorm_1.TypeOrmModule.forFeature([Games_1.Games])],
-        providers: [games_service_1.GamesService],
-        controllers: [games_controller_1.GamesController],
+        imports: [typeorm_1.TypeOrmModule.forFeature([Products_1.Products, Collections_1.Collections])],
+        controllers: [products_controller_1.ProductsController],
+        providers: [products_service_1.ProductsService],
     })
-], GamesModule);
-exports.GamesModule = GamesModule;
-//# sourceMappingURL=games.module.js.map
+], ProductModule);
+exports.ProductModule = ProductModule;
+//# sourceMappingURL=products.module.js.map

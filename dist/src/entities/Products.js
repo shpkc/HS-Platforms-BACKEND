@@ -9,80 +9,72 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Nfts = void 0;
+exports.Products = void 0;
 const typeorm_1 = require("typeorm");
-let Nfts = class Nfts {
+let Products = class Products {
 };
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)({ type: "int", name: "id" }),
     __metadata("design:type", Number)
-], Nfts.prototype, "id", void 0);
-__decorate([
-    (0, typeorm_1.Column)("varchar", { name: "tokenId" }),
-    __metadata("design:type", String)
-], Nfts.prototype, "tokenId", void 0);
+], Products.prototype, "id", void 0);
 __decorate([
     (0, typeorm_1.Column)("varchar", { name: "title" }),
     __metadata("design:type", String)
-], Nfts.prototype, "title", void 0);
+], Products.prototype, "name", void 0);
 __decorate([
     (0, typeorm_1.Column)("varchar", { name: "description" }),
     __metadata("design:type", String)
-], Nfts.prototype, "description", void 0);
+], Products.prototype, "description", void 0);
 __decorate([
-    (0, typeorm_1.Column)("varchar", { name: "blockchain", default: "Ethereum" }),
+    (0, typeorm_1.Column)("varchar", { name: "category", default: "" }),
     __metadata("design:type", String)
-], Nfts.prototype, "blockchain", void 0);
+], Products.prototype, "category", void 0);
 __decorate([
-    (0, typeorm_1.Column)("varchar", { name: "currency", default: "ETH" }),
+    (0, typeorm_1.Column)("varchar", { name: "keywords", default: "" }),
     __metadata("design:type", String)
-], Nfts.prototype, "currency", void 0);
+], Products.prototype, "keywords", void 0);
 __decorate([
-    (0, typeorm_1.Column)("float", { name: "price", default: 1.0 }),
-    __metadata("design:type", Number)
-], Nfts.prototype, "price", void 0);
-__decorate([
-    (0, typeorm_1.Column)("varchar", { name: "category", default: "ART" }),
+    (0, typeorm_1.Column)("varchar", { name: "companyName", default: "" }),
     __metadata("design:type", String)
-], Nfts.prototype, "category", void 0);
+], Products.prototype, "companyName", void 0);
 __decorate([
-    (0, typeorm_1.Column)("varchar", { name: "mediaType", default: "IMAGE" }),
+    (0, typeorm_1.Column)("varchar", { name: "companyCeoName", default: "" }),
     __metadata("design:type", String)
-], Nfts.prototype, "mediaType", void 0);
+], Products.prototype, "companyCeoName", void 0);
 __decorate([
-    (0, typeorm_1.Column)("varchar", { name: "image", default: "" }),
+    (0, typeorm_1.Column)("varchar", { name: "homepage", default: "" }),
     __metadata("design:type", String)
-], Nfts.prototype, "image", void 0);
+], Products.prototype, "homepage", void 0);
 __decorate([
-    (0, typeorm_1.Column)("varchar", { name: "owner", default: "" }),
+    (0, typeorm_1.Column)("varchar", { name: "appStoreLink", default: "" }),
     __metadata("design:type", String)
-], Nfts.prototype, "owner", void 0);
+], Products.prototype, "appStoreLink", void 0);
 __decorate([
-    (0, typeorm_1.Column)("varchar", { name: "seller", default: "" }),
+    (0, typeorm_1.Column)("varchar", { name: "playStoreLink", default: "" }),
     __metadata("design:type", String)
-], Nfts.prototype, "seller", void 0);
+], Products.prototype, "playStoreLink", void 0);
 __decorate([
-    (0, typeorm_1.Column)("varchar", { name: "contractAddress", default: "" }),
+    (0, typeorm_1.Column)("varchar", { name: "releaseDate", default: "" }),
     __metadata("design:type", String)
-], Nfts.prototype, "contractAddress", void 0);
+], Products.prototype, "releaseDate", void 0);
 __decorate([
-    (0, typeorm_1.Column)("boolean", { name: "isSold", default: false }),
+    (0, typeorm_1.Column)("boolean", { name: "isNew", default: false }),
     __metadata("design:type", Boolean)
-], Nfts.prototype, "isSold", void 0);
+], Products.prototype, "isNew", void 0);
 __decorate([
     (0, typeorm_1.Column)("boolean", { name: "isUse", default: true }),
     __metadata("design:type", Boolean)
-], Nfts.prototype, "isUse", void 0);
+], Products.prototype, "isUse", void 0);
 __decorate([
     (0, typeorm_1.CreateDateColumn)(),
     __metadata("design:type", Date)
-], Nfts.prototype, "createdAt", void 0);
+], Products.prototype, "createdAt", void 0);
 __decorate([
     (0, typeorm_1.UpdateDateColumn)(),
     __metadata("design:type", Date)
-], Nfts.prototype, "updatedAt", void 0);
-Nfts = __decorate([
-    (0, typeorm_1.Entity)({ name: "nfts" })
-], Nfts);
-exports.Nfts = Nfts;
-//# sourceMappingURL=Nfts.js.map
+], Products.prototype, "updatedAt", void 0);
+Products = __decorate([
+    (0, typeorm_1.Entity)({ name: "products" })
+], Products);
+exports.Products = Products;
+//# sourceMappingURL=Products.js.map

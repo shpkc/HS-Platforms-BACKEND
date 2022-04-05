@@ -12,24 +12,24 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GamesController = void 0;
+exports.ProductsController = void 0;
 const common_1 = require("@nestjs/common");
-const games_service_1 = require("./games.service");
-let GamesController = class GamesController {
-    constructor(gamesService) {
-        this.gamesService = gamesService;
+const products_service_1 = require("./products.service");
+let ProductsController = class ProductsController {
+    constructor(productsService) {
+        this.productsService = productsService;
     }
-    async getGames(page, perPage) {
-        return this.gamesService.getGames(page, perPage);
+    async getProducts(page, perPage) {
+        return this.productsService.getProducts(page, perPage);
     }
-    async getAllGamesId() {
-        return this.gamesService.getAllGamesId();
+    async getAllProductsId() {
+        return this.productsService.getAllProductsId();
     }
-    async getGamesMain() {
-        return this.gamesService.getGamesMain();
+    async getMain() {
+        return this.productsService.getMain();
     }
-    async getGamesDetail(id) {
-        return this.gamesService.getGamesDetail(id);
+    async getProductsDetail(id) {
+        return this.productsService.getProductsDetail(id);
     }
 };
 __decorate([
@@ -39,29 +39,29 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number, Number]),
     __metadata("design:returntype", Promise)
-], GamesController.prototype, "getGames", null);
+], ProductsController.prototype, "getProducts", null);
 __decorate([
     (0, common_1.Get)("/all-id"),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
-], GamesController.prototype, "getAllGamesId", null);
+], ProductsController.prototype, "getAllProductsId", null);
 __decorate([
     (0, common_1.Get)("/main"),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
-], GamesController.prototype, "getGamesMain", null);
+], ProductsController.prototype, "getMain", null);
 __decorate([
     (0, common_1.Get)("/:id"),
     __param(0, (0, common_1.Param)("id")),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
-], GamesController.prototype, "getGamesDetail", null);
-GamesController = __decorate([
-    (0, common_1.Controller)("games"),
-    __metadata("design:paramtypes", [games_service_1.GamesService])
-], GamesController);
-exports.GamesController = GamesController;
-//# sourceMappingURL=games.controller.js.map
+], ProductsController.prototype, "getProductsDetail", null);
+ProductsController = __decorate([
+    (0, common_1.Controller)("products"),
+    __metadata("design:paramtypes", [products_service_1.ProductsService])
+], ProductsController);
+exports.ProductsController = ProductsController;
+//# sourceMappingURL=products.controller.js.map

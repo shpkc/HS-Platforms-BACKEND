@@ -3,6 +3,7 @@ export declare class Nfts {
     tokenId: string;
     title: string;
     description: string;
+    blockchain: string;
     currency: string;
     price: number;
     category: string;
