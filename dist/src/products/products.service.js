@@ -40,9 +40,9 @@ let ProductsService = class ProductsService {
     }
     async getAllProductsId() {
         const result = await this.productsRepository
-            .createQueryBuilder("nfts")
-            .where("nfts.isUse = true")
-            .select(["nfts.id"])
+            .createQueryBuilder("products")
+            .where("products.isUse = true")
+            .select(["products.id"])
             .getMany();
         return {
             result,
@@ -67,7 +67,7 @@ let ProductsService = class ProductsService {
         const bestProductsIdList = ["1", "2", "3", "4"];
         const bestProductsResult = await this.productsRepository
             .createQueryBuilder("products")
-            .where("collections.id IN (:...ids)", { ids: bestProductsIdList })
+            .where("products.id IN (:...ids)", { ids: bestProductsIdList })
             .getMany();
         return {
             banner: bannerResult,
