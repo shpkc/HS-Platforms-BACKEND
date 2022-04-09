@@ -15,11 +15,17 @@ export class Products {
   @Column("varchar", { name: "title" })
   name: string;
 
+  @Column("varchar", { name: "subTitle" })
+  subTitle: string;
+
   @Column("varchar", { name: "description" })
   description: string;
 
   @Column("varchar", { name: "category", default: "" })
   category: string;
+
+  @Column("float", { name: "score", default: 0.0 })
+  score: number;
 
   @Column("varchar", { name: "keywords", default: "" })
   keywords: string;
