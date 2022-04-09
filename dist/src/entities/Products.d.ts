@@ -1,8 +1,10 @@
 export declare class Products {
     id: number;
     name: string;
+    subTitle: string;
     description: string;
     category: string;
+    score: number;
     keywords: string;
     companyName: string;
     companyCeoName: string;

@@ -22,6 +22,10 @@ __decorate([
     __metadata("design:type", String)
 ], Products.prototype, "name", void 0);
 __decorate([
+    (0, typeorm_1.Column)("varchar", { name: "subTitle" }),
+    __metadata("design:type", String)
+], Products.prototype, "subTitle", void 0);
+__decorate([
     (0, typeorm_1.Column)("varchar", { name: "description" }),
     __metadata("design:type", String)
 ], Products.prototype, "description", void 0);
@@ -29,6 +33,10 @@ __decorate([
     (0, typeorm_1.Column)("varchar", { name: "category", default: "" }),
     __metadata("design:type", String)
 ], Products.prototype, "category", void 0);
+__decorate([
+    (0, typeorm_1.Column)("float", { name: "score", default: 0.0 }),
+    __metadata("design:type", Number)
+], Products.prototype, "score", void 0);
 __decorate([
     (0, typeorm_1.Column)("varchar", { name: "keywords", default: "" }),
     __metadata("design:type", String)
