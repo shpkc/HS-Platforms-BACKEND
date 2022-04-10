@@ -13,7 +13,7 @@ export class Products {
   id: number;
 
   @Column("varchar", { name: "title" })
-  name: string;
+  title: string;
 
   @Column("varchar", { name: "subTitle" })
   subTitle: string;
@@ -38,6 +38,9 @@ export class Products {
 
   @Column("varchar", { name: "homepage", default: "" })
   homepage: string;
+
+  @Column("varchar", { name: "webLink", default: "" })
+  webLink: string;
 
   @Column("varchar", { name: "appStoreLink", default: "" })
   appStoreLink: string;
