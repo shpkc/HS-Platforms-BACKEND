@@ -23,8 +23,11 @@ export class Products {
   @Column("varchar", { name: "category", default: "" })
   category: string;
 
-  @Column("float", { name: "score", default: 0.0 })
-  score: number;
+  @Column("float", { name: "reviewScore", default: 0.0 })
+  reviewScore: number;
+
+  @Column("int", { name: "reviewParticipants", default: 1 })
+  reviewParticipants: number;
 
   @Column("varchar", { name: "keywords", default: "" })
   keywords: string;
