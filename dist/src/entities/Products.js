@@ -58,17 +58,29 @@ __decorate([
     __metadata("design:type", String)
 ], Products.prototype, "homepage", void 0);
 __decorate([
-    (0, typeorm_1.Column)("varchar", { name: "webLink", default: "" }),
-    __metadata("design:type", String)
-], Products.prototype, "webLink", void 0);
+    (0, typeorm_1.Column)("boolean", { name: "isAppStore", default: true }),
+    __metadata("design:type", Boolean)
+], Products.prototype, "isAppStore", void 0);
 __decorate([
     (0, typeorm_1.Column)("varchar", { name: "appStoreLink", default: "" }),
     __metadata("design:type", String)
 ], Products.prototype, "appStoreLink", void 0);
 __decorate([
+    (0, typeorm_1.Column)("boolean", { name: "isPlayStore", default: true }),
+    __metadata("design:type", Boolean)
+], Products.prototype, "isPlayStore", void 0);
+__decorate([
     (0, typeorm_1.Column)("varchar", { name: "playStoreLink", default: "" }),
     __metadata("design:type", String)
 ], Products.prototype, "playStoreLink", void 0);
+__decorate([
+    (0, typeorm_1.Column)("boolean", { name: "isWebService", default: true }),
+    __metadata("design:type", Boolean)
+], Products.prototype, "isWebService", void 0);
+__decorate([
+    (0, typeorm_1.Column)("varchar", { name: "webServiceLink", default: "" }),
+    __metadata("design:type", String)
+], Products.prototype, "webServiceLink", void 0);
 __decorate([
     (0, typeorm_1.Column)("varchar", { name: "releaseDate", default: "" }),
     __metadata("design:type", String)

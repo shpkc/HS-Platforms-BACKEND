@@ -10,9 +10,12 @@ export declare class Products {
     companyName: string;
     companyCeoName: string;
     homepage: string;
-    webLink: string;
+    isAppStore: boolean;
     appStoreLink: string;
+    isPlayStore: boolean;
     playStoreLink: string;
+    isWebService: boolean;
+    webServiceLink: string;
     releaseDate: string;
     isNew: boolean;
     isUse: boolean;
