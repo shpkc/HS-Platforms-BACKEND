@@ -34,9 +34,13 @@ __decorate([
     __metadata("design:type", String)
 ], Products.prototype, "category", void 0);
 __decorate([
-    (0, typeorm_1.Column)("float", { name: "score", default: 0.0 }),
+    (0, typeorm_1.Column)("float", { name: "reviewScore", default: 0.0 }),
     __metadata("design:type", Number)
-], Products.prototype, "score", void 0);
+], Products.prototype, "reviewScore", void 0);
+__decorate([
+    (0, typeorm_1.Column)("int", { name: "reviewParticipants", default: 1 }),
+    __metadata("design:type", Number)
+], Products.prototype, "reviewParticipants", void 0);
 __decorate([
     (0, typeorm_1.Column)("varchar", { name: "keywords", default: "" }),
     __metadata("design:type", String)

@@ -4,7 +4,8 @@ export declare class Products {
     subTitle: string;
     description: string;
     category: string;
-    score: number;
+    reviewScore: number;
+    reviewParticipants: number;
     keywords: string;
     companyName: string;
     companyCeoName: string;
