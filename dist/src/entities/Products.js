@@ -20,7 +20,7 @@ __decorate([
 __decorate([
     (0, typeorm_1.Column)("varchar", { name: "title" }),
     __metadata("design:type", String)
-], Products.prototype, "name", void 0);
+], Products.prototype, "title", void 0);
 __decorate([
     (0, typeorm_1.Column)("varchar", { name: "subTitle" }),
     __metadata("design:type", String)
@@ -53,6 +53,10 @@ __decorate([
     (0, typeorm_1.Column)("varchar", { name: "homepage", default: "" }),
     __metadata("design:type", String)
 ], Products.prototype, "homepage", void 0);
+__decorate([
+    (0, typeorm_1.Column)("varchar", { name: "webLink", default: "" }),
+    __metadata("design:type", String)
+], Products.prototype, "webLink", void 0);
 __decorate([
     (0, typeorm_1.Column)("varchar", { name: "appStoreLink", default: "" }),
     __metadata("design:type", String)

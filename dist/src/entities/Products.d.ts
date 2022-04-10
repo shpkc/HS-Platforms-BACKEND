@@ -1,6 +1,6 @@
 export declare class Products {
     id: number;
-    name: string;
+    title: string;
     subTitle: string;
     description: string;
     category: string;
@@ -9,6 +9,7 @@ export declare class Products {
     companyName: string;
     companyCeoName: string;
     homepage: string;
+    webLink: string;
     appStoreLink: string;
     playStoreLink: string;
     releaseDate: string;
