@@ -64,7 +64,7 @@ let ProductsService = class ProductsService {
             .where("products.isNew = true")
             .take(8)
             .getMany();
-        const bestProductsIdList = ["1", "2", "3", "4"];
+        const bestProductsIdList = ["1", "2", "3", "4", "5", "6", "7", "8"];
         const bestProductsResult = await this.productsRepository
             .createQueryBuilder("products")
             .where("products.id IN (:...ids)", { ids: bestProductsIdList })

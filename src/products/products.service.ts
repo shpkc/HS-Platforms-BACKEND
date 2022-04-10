@@ -70,8 +70,8 @@ export class ProductsService {
       .take(8)
       .getMany();
 
-    // NOTE : BEST Products
-    const bestProductsIdList = ["1", "2", "3", "4"];
+    // NOTE : BEST Products 8개
+    const bestProductsIdList = ["1", "2", "3", "4", "5", "6", "7", "8"];
     const bestProductsResult = await this.productsRepository
       .createQueryBuilder("products")
       .where("products.id IN (:...ids)", { ids: bestProductsIdList })
