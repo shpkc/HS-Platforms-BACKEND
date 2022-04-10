@@ -41,14 +41,23 @@ export class Products {
   @Column("varchar", { name: "homepage", default: "" })
   homepage: string;
 
-  @Column("varchar", { name: "webLink", default: "" })
-  webLink: string;
+  @Column("boolean", { name: "isAppStore", default: true })
+  isAppStore: boolean;
 
   @Column("varchar", { name: "appStoreLink", default: "" })
   appStoreLink: string;
 
+  @Column("boolean", { name: "isPlayStore", default: true })
+  isPlayStore: boolean;
+
   @Column("varchar", { name: "playStoreLink", default: "" })
   playStoreLink: string;
+
+  @Column("boolean", { name: "isWebService", default: true })
+  isWebService: boolean;
+
+  @Column("varchar", { name: "webServiceLink", default: "" })
+  webServiceLink: string;
 
   @Column("varchar", { name: "releaseDate", default: "" })
   releaseDate: string;
