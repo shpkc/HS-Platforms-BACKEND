@@ -63,7 +63,7 @@ export class ProductsService {
       .where("collections.id IN (:...ids)", { ids: recommendCollectionIdList })
       .getMany();
 
-    // NOTE : NEW Products
+    // NOTE : NEW Products 8개
     const newProductsResult = await this.productsRepository
       .createQueryBuilder("products")
       .where("products.isNew = true")
@@ -71,7 +71,8 @@ export class ProductsService {
       .getMany();
 
     // NOTE : BEST Products 8개
-    const bestProductsIdList = ["1", "2", "3", "4", "5", "6", "7", "8"];
+    // NOTE : 펫닥, 원티드, 블립, 오늘의 집, 네모, 왓챠 피디아, 어반베이스, 헤이딜러
+    const bestProductsIdList = ["1", "2", "3", "4", "6", "10", "13", "14"];
     const bestProductsResult = await this.productsRepository
       .createQueryBuilder("products")
       .where("products.id IN (:...ids)", { ids: bestProductsIdList })
