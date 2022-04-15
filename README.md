@@ -25,4 +25,4 @@
   <br/>
   <br/>
 
-## [PLUSIVE](https://nftify.site) BACKEND
+## HS Platforms BACKEND
