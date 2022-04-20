@@ -19,5 +19,8 @@ export declare class ProductsService {
         newProducts: Products[];
         bestProducts: Products[];
     }>;
-    rateProduct(id: string, score: number): Promise<void>;
+    rateProduct(id: string, score: number): Promise<{
+        serverCode: string;
+        serverMsg: string;
+    }>;
 }

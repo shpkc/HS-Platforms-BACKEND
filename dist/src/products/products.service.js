@@ -82,6 +82,10 @@ let ProductsService = class ProductsService {
         });
         product.reviewScore += score;
         await this.productsRepository.save(product);
+        return {
+            serverCode: "200",
+            serverMsg: "API : Reserved",
+        };
     }
 };
 __decorate([

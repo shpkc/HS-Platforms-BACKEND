@@ -18,5 +18,8 @@ export declare class ProductsController {
     getProductsDetail(id: any): Promise<{
         result: import("../entities/Products").Products;
     }>;
-    rateProduct(id: string, score: number): Promise<void>;
+    rateProduct(id: string, score: number): Promise<{
+        serverCode: string;
+        serverMsg: string;
+    }>;
 }
