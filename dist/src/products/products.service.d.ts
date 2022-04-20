@@ -19,4 +19,5 @@ export declare class ProductsService {
         newProducts: Products[];
         bestProducts: Products[];
     }>;
+    rateProduct(id: string, score: number): Promise<void>;
 }

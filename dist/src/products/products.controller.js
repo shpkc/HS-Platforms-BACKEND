@@ -31,6 +31,9 @@ let ProductsController = class ProductsController {
     async getProductsDetail(id) {
         return this.productsService.getProductsDetail(id);
     }
+    async rateProduct(id, score) {
+        return this.productsService.rateProduct(id, score);
+    }
 };
 __decorate([
     (0, common_1.Get)(),
@@ -59,6 +62,14 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], ProductsController.prototype, "getProductsDetail", null);
+__decorate([
+    (0, common_1.Post)("/ratings/:id"),
+    __param(0, (0, common_1.Param)("id")),
+    __param(1, (0, common_1.Body)("score")),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Number]),
+    __metadata("design:returntype", Promise)
+], ProductsController.prototype, "rateProduct", null);
 ProductsController = __decorate([
     (0, common_1.Controller)("products"),
     __metadata("design:paramtypes", [products_service_1.ProductsService])

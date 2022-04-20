@@ -76,6 +76,13 @@ let ProductsService = class ProductsService {
             bestProducts: bestProductsResult,
         };
     }
+    async rateProduct(id, score) {
+        const product = await this.productsRepository.findOne({
+            where: { id },
+        });
+        product.reviewScore += score;
+        await this.productsRepository.save(product);
+    }
 };
 __decorate([
     (0, typeorm_1.InjectRepository)(Products_1.Products),

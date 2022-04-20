@@ -1,4 +1,12 @@
-import { Controller, Get, Param, ParseIntPipe, Query } from "@nestjs/common";
+import {
+  Body,
+  Controller,
+  Get,
+  Param,
+  ParseIntPipe,
+  Post,
+  Query,
+} from "@nestjs/common";
 import { ProductsService } from "./products.service";
 
 @Controller("products")
@@ -25,5 +33,10 @@ export class ProductsController {
   @Get("/:id")
   async getProductsDetail(@Param("id") id) {
     return this.productsService.getProductsDetail(id);
+  }
+
+  @Post("/ratings/:id")
+  async rateProduct(@Param("id") id: string, @Body("score") score: number) {
+    return this.productsService.rateProduct(id, score);
   }
 }

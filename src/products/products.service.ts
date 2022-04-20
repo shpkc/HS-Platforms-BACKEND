@@ -85,4 +85,12 @@ export class ProductsService {
       bestProducts: bestProductsResult,
     };
   }
+  // NOTE : product rate api
+  async rateProduct(id: string, score: number) {
+    const product = await this.productsRepository.findOne({
+      where: { id },
+    });
+    product.reviewScore += score;
+    await this.productsRepository.save(product);
+  }
 }
