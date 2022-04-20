@@ -32,7 +32,7 @@ let ProductsController = class ProductsController {
         return this.productsService.getProductsDetail(id);
     }
     async rateProduct(id, score) {
-        return this.productsService.rateProduct(id, score);
+        return this.productsService.rateProduct(id, parseInt(score));
     }
 };
 __decorate([
@@ -67,7 +67,7 @@ __decorate([
     __param(0, (0, common_1.Param)("id")),
     __param(1, (0, common_1.Body)("score")),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String, Number]),
+    __metadata("design:paramtypes", [String, Object]),
     __metadata("design:returntype", Promise)
 ], ProductsController.prototype, "rateProduct", null);
 ProductsController = __decorate([

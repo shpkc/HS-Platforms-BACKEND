@@ -36,7 +36,7 @@ export class ProductsController {
   }
 
   @Post("/ratings/:id")
-  async rateProduct(@Param("id") id: string, @Body("score") score: number) {
-    return this.productsService.rateProduct(id, score);
+  async rateProduct(@Param("id") id: string, @Body("score") score) {
+    return this.productsService.rateProduct(id, parseInt(score));
   }
 }
