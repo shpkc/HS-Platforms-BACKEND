@@ -23,6 +23,9 @@ export class Exhibitions {
   @Column("varchar", { name: "location", default: "" })
   location: string;
 
+  @Column("varchar", { name: "duration", default: "" })
+  duration: string;
+
   @Column("float", { name: "reviewScore", default: 0.0 })
   reviewScore: number;
 
@@ -31,6 +34,9 @@ export class Exhibitions {
 
   @Column("varchar", { name: "keywords", default: "" })
   keywords: string;
+
+  @Column("boolean", { name: "isNew", default: false })
+  isNew: boolean;
 
   @Column("boolean", { name: "isSeoul", default: true })
   isSeoul: boolean;
