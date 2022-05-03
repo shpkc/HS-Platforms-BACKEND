@@ -10,6 +10,7 @@ import { AuthModule } from "./auth/auth.module";
 import { NftModule } from "./nft/nft.module";
 import { CollectionModule } from "./collections/collections.module";
 import { ProductModule } from "./products/products.module";
+import { ExhibitionsModule } from "./exhibitions/exhibitions.module";
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { ProductModule } from "./products/products.module";
     NftModule,
     CollectionModule,
     ProductModule,
+    ExhibitionsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
