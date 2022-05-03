@@ -4,6 +4,7 @@ import { Users } from "./src/entities/Users";
 import { Nfts } from "./src/entities/Nfts";
 import { Collections } from "./src/entities/Collections";
 import { Products } from "./src/entities/Products";
+import { Exhibitions } from "./src/entities/Exhibitions";
 
 dotenv.config();
 const config: TypeOrmModuleOptions = {
@@ -13,7 +14,7 @@ const config: TypeOrmModuleOptions = {
   username: process.env.DB_USERNAME,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_DATABASE,
-  entities: [Users, Nfts, Collections, Products],
+  entities: [Users, Nfts, Collections, Products, Exhibitions],
   migrations: [__dirname + "/src/migrations/*.ts"],
   cli: { migrationsDir: "src/migrations" },
   autoLoadEntities: true,
