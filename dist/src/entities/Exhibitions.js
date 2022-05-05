@@ -34,6 +34,10 @@ __decorate([
     __metadata("design:type", String)
 ], Exhibitions.prototype, "location", void 0);
 __decorate([
+    (0, typeorm_1.Column)("varchar", { name: "duration", default: "" }),
+    __metadata("design:type", String)
+], Exhibitions.prototype, "duration", void 0);
+__decorate([
     (0, typeorm_1.Column)("float", { name: "reviewScore", default: 0.0 }),
     __metadata("design:type", Number)
 ], Exhibitions.prototype, "reviewScore", void 0);
@@ -45,6 +49,10 @@ __decorate([
     (0, typeorm_1.Column)("varchar", { name: "keywords", default: "" }),
     __metadata("design:type", String)
 ], Exhibitions.prototype, "keywords", void 0);
+__decorate([
+    (0, typeorm_1.Column)("boolean", { name: "isNew", default: false }),
+    __metadata("design:type", Boolean)
+], Exhibitions.prototype, "isNew", void 0);
 __decorate([
     (0, typeorm_1.Column)("boolean", { name: "isSeoul", default: true }),
     __metadata("design:type", Boolean)
