@@ -64,6 +64,9 @@ export class Courts {
   @Column("boolean", { name: "isOutDoor", default: true })
   isOutDoor: boolean;
 
+  @Column("boolean", { name: "isThumbnail", default: false })
+  isThumbnail: boolean;
+
   @CreateDateColumn()
   createdAt: Date;
 
