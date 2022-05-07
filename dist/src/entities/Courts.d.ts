@@ -17,6 +17,7 @@ export declare class Courts {
     isParking: boolean;
     isIndoor: boolean;
     isOutDoor: boolean;
+    isThumbnail: boolean;
     createdAt: Date;
     updatedAt: Date;
 }

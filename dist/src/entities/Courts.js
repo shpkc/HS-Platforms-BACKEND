@@ -86,6 +86,10 @@ __decorate([
     __metadata("design:type", Boolean)
 ], Courts.prototype, "isOutDoor", void 0);
 __decorate([
+    (0, typeorm_1.Column)("boolean", { name: "isThumbnail", default: false }),
+    __metadata("design:type", Boolean)
+], Courts.prototype, "isThumbnail", void 0);
+__decorate([
     (0, typeorm_1.CreateDateColumn)(),
     __metadata("design:type", Date)
 ], Courts.prototype, "createdAt", void 0);
