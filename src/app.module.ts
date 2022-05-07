@@ -12,6 +12,7 @@ import { CollectionModule } from "./collections/collections.module";
 import { ProductModule } from "./products/products.module";
 import { ExhibitionsModule } from "./exhibitions/exhibitions.module";
 import { CourtsModule } from "./courts/courts.module";
+import { BannerModule } from "./banner/banners.module";
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { CourtsModule } from "./courts/courts.module";
     ProductModule,
     ExhibitionsModule,
     CourtsModule,
+    BannerModule,
   ],
   controllers: [AppController],
   providers: [AppService],
