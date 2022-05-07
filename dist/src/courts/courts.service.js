@@ -14,6 +14,7 @@ const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_2 = require("typeorm");
 const Courts_1 = require("../entities/Courts");
+const Banner_1 = require("../entities/Banner");
 let CourtsService = class CourtsService {
     async getCourts(page, perPage) {
         const [result, total] = await this.courtsRepository
@@ -86,6 +87,10 @@ __decorate([
     (0, typeorm_1.InjectRepository)(Courts_1.Courts),
     __metadata("design:type", typeorm_2.Repository)
 ], CourtsService.prototype, "courtsRepository", void 0);
+__decorate([
+    (0, typeorm_1.InjectRepository)(Banner_1.Banners),
+    __metadata("design:type", typeorm_2.Repository)
+], CourtsService.prototype, "bannersRepository", void 0);
 CourtsService = __decorate([
     (0, common_1.Injectable)()
 ], CourtsService);

@@ -8,6 +8,7 @@ import { Banners } from "../entities/Banner";
 export class CourtsService {
   @InjectRepository(Courts)
   private courtsRepository: Repository<Courts>;
+  @InjectRepository(Banners)
   private bannersRepository: Repository<Banners>;
 
   async getCourts(page: number, perPage: number) {
@@ -25,7 +26,6 @@ export class CourtsService {
 
   // NOTE : main API (banner, best courts)
   async getMain() {
-    // NOTE: BANNER 코트로 4개 지정
     const bannerIdList = ["1", "2", "3", "4"];
     const bannerResult = await this.bannersRepository
       .createQueryBuilder("banners")
