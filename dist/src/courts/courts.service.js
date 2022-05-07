@@ -30,12 +30,12 @@ let CourtsService = class CourtsService {
         const bannerIdList = ["1", "2", "3", "4"];
         const bannerResult = await this.courtsRepository
             .createQueryBuilder("courts")
-            .where("collections.id IN (:...ids)", { ids: bannerIdList })
+            .where("courts.id IN (:...ids)", { ids: bannerIdList })
             .getMany();
         const bestCourtsIdList = ["1", "2", "3", "4", "6", "10", "13", "14"];
         const bestResult = await this.courtsRepository
             .createQueryBuilder("courts")
-            .where("exhibitions.id IN (:...ids)", { ids: bestCourtsIdList })
+            .where("courts.id IN (:...ids)", { ids: bestCourtsIdList })
             .getMany();
         return {
             banner: bannerResult,

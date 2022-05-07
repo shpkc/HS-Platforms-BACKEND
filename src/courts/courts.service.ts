@@ -23,18 +23,18 @@ export class CourtsService {
 
   // NOTE : main API (banner, best courts)
   async getMain() {
-    // NOTE: BANNER 컬렉션으로 4개 지정
+    // NOTE: BANNER 코트로 4개 지정
     const bannerIdList = ["1", "2", "3", "4"];
     const bannerResult = await this.courtsRepository
       .createQueryBuilder("courts")
-      .where("collections.id IN (:...ids)", { ids: bannerIdList })
+      .where("courts.id IN (:...ids)", { ids: bannerIdList })
       .getMany();
 
-    // NOTE : BEST Exhibitions 8개
+    // NOTE : BEST courts 8개
     const bestCourtsIdList = ["1", "2", "3", "4", "6", "10", "13", "14"];
     const bestResult = await this.courtsRepository
       .createQueryBuilder("courts")
-      .where("exhibitions.id IN (:...ids)", { ids: bestCourtsIdList })
+      .where("courts.id IN (:...ids)", { ids: bestCourtsIdList })
       .getMany();
 
     return {
