@@ -5,6 +5,10 @@ export declare class CourtsService {
         result: Courts[];
         totalCount: number;
     }>;
+    getMain(): Promise<{
+        banner: Courts[];
+        bestCourts: Courts[];
+    }>;
     getCourtsDetail(id: number): Promise<{
         result: Courts;
     }>;

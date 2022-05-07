@@ -25,6 +25,9 @@ let CourtsController = class CourtsController {
     async getAllCourtsId() {
         return this.courtsService.getAllCourtsId();
     }
+    async getMain() {
+        return this.courtsService.getMain();
+    }
     async getCourtsDetail(id) {
         return this.courtsService.getCourtsDetail(id);
     }
@@ -46,6 +49,12 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], CourtsController.prototype, "getAllCourtsId", null);
+__decorate([
+    (0, common_1.Get)("/main"),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], CourtsController.prototype, "getMain", null);
 __decorate([
     (0, common_1.Get)("/:id"),
     __param(0, (0, common_1.Param)("id")),

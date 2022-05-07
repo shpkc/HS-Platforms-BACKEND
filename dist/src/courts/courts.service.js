@@ -26,6 +26,22 @@ let CourtsService = class CourtsService {
             totalCount: total,
         };
     }
+    async getMain() {
+        const bannerIdList = ["1", "2", "3", "4"];
+        const bannerResult = await this.courtsRepository
+            .createQueryBuilder("courts")
+            .where("collections.id IN (:...ids)", { ids: bannerIdList })
+            .getMany();
+        const bestCourtsIdList = ["1", "2", "3", "4", "6", "10", "13", "14"];
+        const bestResult = await this.courtsRepository
+            .createQueryBuilder("courts")
+            .where("exhibitions.id IN (:...ids)", { ids: bestCourtsIdList })
+            .getMany();
+        return {
+            banner: bannerResult,
+            bestCourts: bestResult,
+        };
+    }
     async getCourtsDetail(id) {
         const result = await this.courtsRepository.findOne({
             where: {
@@ -41,7 +57,6 @@ let CourtsService = class CourtsService {
             .createQueryBuilder("courts")
             .select(["courts.id"])
             .getManyAndCount();
-        console.log(result);
         return {
             result,
         };
