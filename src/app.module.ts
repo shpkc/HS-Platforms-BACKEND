@@ -11,6 +11,7 @@ import { NftModule } from "./nft/nft.module";
 import { CollectionModule } from "./collections/collections.module";
 import { ProductModule } from "./products/products.module";
 import { ExhibitionsModule } from "./exhibitions/exhibitions.module";
+import { CourtsModule } from "./courts/courts.module";
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { ExhibitionsModule } from "./exhibitions/exhibitions.module";
     CollectionModule,
     ProductModule,
     ExhibitionsModule,
+    CourtsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

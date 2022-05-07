@@ -39,6 +39,7 @@ const nft_module_1 = require("./nft/nft.module");
 const collections_module_1 = require("./collections/collections.module");
 const products_module_1 = require("./products/products.module");
 const exhibitions_module_1 = require("./exhibitions/exhibitions.module");
+const courts_module_1 = require("./courts/courts.module");
 let AppModule = class AppModule {
     configure(consumer) {
         consumer.apply(logger_middleware_1.LoggerMiddleware).forRoutes("*");
@@ -55,6 +56,7 @@ AppModule = __decorate([
             collections_module_1.CollectionModule,
             products_module_1.ProductModule,
             exhibitions_module_1.ExhibitionsModule,
+            courts_module_1.CourtsModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
