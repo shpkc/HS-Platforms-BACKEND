@@ -8,7 +8,7 @@ import { Banners } from "../entities/Banner";
 export class CourtsService {
   @InjectRepository(Courts)
   private courtsRepository: Repository<Courts>;
-  private bannersRepository: Repository<Courts>;
+  private bannersRepository: Repository<Banners>;
 
   async getCourts(page: number, perPage: number) {
     const [result, total] = await this.courtsRepository

@@ -10,7 +10,7 @@ export declare class CourtsController {
         result: import("../entities/Courts").Courts[];
     }>;
     getMain(): Promise<{
-        banner: import("../entities/Courts").Courts[];
+        banner: import("../entities/Banner").Banners[];
         bestCourts: import("../entities/Courts").Courts[];
     }>;
     getCourtsDetail(id: any): Promise<{

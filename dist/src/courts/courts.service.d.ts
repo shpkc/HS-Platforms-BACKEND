@@ -1,4 +1,5 @@
 import { Courts } from "../entities/Courts";
+import { Banners } from "../entities/Banner";
 export declare class CourtsService {
     private courtsRepository;
     private bannersRepository;
@@ -7,7 +8,7 @@ export declare class CourtsService {
         totalCount: number;
     }>;
     getMain(): Promise<{
-        banner: Courts[];
+        banner: Banners[];
         bestCourts: Courts[];
     }>;
     getCourtsDetail(id: number): Promise<{
