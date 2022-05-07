@@ -1,6 +1,7 @@
 import { Courts } from "../entities/Courts";
 export declare class CourtsService {
     private courtsRepository;
+    private bannersRepository;
     getCourts(page: number, perPage: number): Promise<{
         result: Courts[];
         totalCount: number;

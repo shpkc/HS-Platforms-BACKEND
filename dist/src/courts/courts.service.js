@@ -28,9 +28,9 @@ let CourtsService = class CourtsService {
     }
     async getMain() {
         const bannerIdList = ["1", "2", "3", "4"];
-        const bannerResult = await this.courtsRepository
-            .createQueryBuilder("courts")
-            .where("courts.id IN (:...ids)", { ids: bannerIdList })
+        const bannerResult = await this.bannersRepository
+            .createQueryBuilder("banners")
+            .where("banners.id IN (:...ids)", { ids: bannerIdList })
             .getMany();
         const bestCourtsIdList = ["1", "2", "3", "4", "6", "10", "13", "14"];
         const bestResult = await this.courtsRepository
@@ -53,7 +53,7 @@ let CourtsService = class CourtsService {
         };
     }
     async getAllCourtsId() {
-        const [result, total] = await this.courtsRepository
+        const [result] = await this.courtsRepository
             .createQueryBuilder("courts")
             .select(["courts.id"])
             .getManyAndCount();

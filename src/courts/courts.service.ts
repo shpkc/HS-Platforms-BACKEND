@@ -2,11 +2,13 @@ import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Repository } from "typeorm";
 import { Courts } from "../entities/Courts";
+import { Banners } from "../entities/Banner";
 
 @Injectable()
 export class CourtsService {
   @InjectRepository(Courts)
   private courtsRepository: Repository<Courts>;
+  private bannersRepository: Repository<Courts>;
 
   async getCourts(page: number, perPage: number) {
     const [result, total] = await this.courtsRepository
@@ -25,9 +27,9 @@ export class CourtsService {
   async getMain() {
     // NOTE: BANNER 코트로 4개 지정
     const bannerIdList = ["1", "2", "3", "4"];
-    const bannerResult = await this.courtsRepository
-      .createQueryBuilder("courts")
-      .where("courts.id IN (:...ids)", { ids: bannerIdList })
+    const bannerResult = await this.bannersRepository
+      .createQueryBuilder("banners")
+      .where("banners.id IN (:...ids)", { ids: bannerIdList })
       .getMany();
 
     // NOTE : BEST courts 8개
@@ -55,7 +57,7 @@ export class CourtsService {
   }
 
   async getAllCourtsId() {
-    const [result, total] = await this.courtsRepository
+    const [result] = await this.courtsRepository
       .createQueryBuilder("courts")
       .select(["courts.id"])
       .getManyAndCount();
