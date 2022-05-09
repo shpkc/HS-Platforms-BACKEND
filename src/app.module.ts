@@ -13,6 +13,7 @@ import { ProductModule } from "./products/products.module";
 import { ExhibitionsModule } from "./exhibitions/exhibitions.module";
 import { CourtsModule } from "./courts/courts.module";
 import { BannerModule } from "./banner/banners.module";
+import { PostModule } from "./posts/posts.module";
 
 @Module({
   imports: [
@@ -26,6 +27,7 @@ import { BannerModule } from "./banner/banners.module";
     ExhibitionsModule,
     CourtsModule,
     BannerModule,
+    PostModule,
   ],
   controllers: [AppController],
   providers: [AppService],

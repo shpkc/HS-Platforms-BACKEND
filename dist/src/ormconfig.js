@@ -9,7 +9,7 @@ const Collections_1 = require("./entities/Collections");
 const Products_1 = require("./entities/Products");
 const Exhibitions_1 = require("./entities/Exhibitions");
 const Courts_1 = require("./entities/Courts");
-const Banner_1 = require("./entities/Banner");
+const Posts_1 = require("./entities/Posts");
 dotenv_1.default.config();
 const config = {
     type: "mysql",
@@ -18,7 +18,7 @@ const config = {
     username: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_DATABASE,
-    entities: [Users_1.Users, Nfts_1.Nfts, Collections_1.Collections, Products_1.Products, Exhibitions_1.Exhibitions, Courts_1.Courts, Banner_1.Banners],
+    entities: [Users_1.Users, Nfts_1.Nfts, Collections_1.Collections, Products_1.Products, Exhibitions_1.Exhibitions, Courts_1.Courts, Posts_1.Posts],
     migrations: [__dirname + "/src/migrations/*.ts"],
     cli: { migrationsDir: "src/migrations" },
     autoLoadEntities: true,

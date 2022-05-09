@@ -41,6 +41,7 @@ const products_module_1 = require("./products/products.module");
 const exhibitions_module_1 = require("./exhibitions/exhibitions.module");
 const courts_module_1 = require("./courts/courts.module");
 const banners_module_1 = require("./banner/banners.module");
+const posts_module_1 = require("./posts/posts.module");
 let AppModule = class AppModule {
     configure(consumer) {
         consumer.apply(logger_middleware_1.LoggerMiddleware).forRoutes("*");
@@ -59,6 +60,7 @@ AppModule = __decorate([
             exhibitions_module_1.ExhibitionsModule,
             courts_module_1.CourtsModule,
             banners_module_1.BannerModule,
+            posts_module_1.PostModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
