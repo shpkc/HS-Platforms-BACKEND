@@ -33,11 +33,11 @@ export class PostsService {
     };
   }
 
-  async getAllPostsId() {
+  async getAllPostsSlug() {
     const result = await this.postsRepository
       .createQueryBuilder("posts")
       .where("posts.isUse = true")
-      .select(["posts.id"])
+      .select(["posts.slug"])
       .getMany();
     return {
       result,

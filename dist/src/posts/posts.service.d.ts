@@ -8,7 +8,7 @@ export declare class PostsService {
     getPostsDetail(slug: string): Promise<{
         result: Posts;
     }>;
-    getAllPostsId(): Promise<{
+    getAllPostsSlug(): Promise<{
         result: Posts[];
     }>;
 }

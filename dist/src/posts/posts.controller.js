@@ -22,8 +22,8 @@ let PostsController = class PostsController {
     async getPosts(page, perPage) {
         return this.postsService.getPosts(page, perPage);
     }
-    async getAllPostId() {
-        return this.postsService.getAllPostsId();
+    async getAllPostsSlug() {
+        return this.postsService.getAllPostsSlug();
     }
     async getProductsDetail(id) {
         return this.postsService.getPostsDetail(id);
@@ -38,11 +38,11 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], PostsController.prototype, "getPosts", null);
 __decorate([
-    (0, common_1.Get)("/all-id"),
+    (0, common_1.Get)("/all-slug"),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
-], PostsController.prototype, "getAllPostId", null);
+], PostsController.prototype, "getAllPostsSlug", null);
 __decorate([
     (0, common_1.Get)("/:id"),
     __param(0, (0, common_1.Param)("id")),

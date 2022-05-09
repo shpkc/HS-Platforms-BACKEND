@@ -6,7 +6,7 @@ export declare class PostsController {
         result: import("../entities/Posts").Posts[];
         totalCount: number;
     }>;
-    getAllPostId(): Promise<{
+    getAllPostsSlug(): Promise<{
         result: import("../entities/Posts").Posts[];
     }>;
     getProductsDetail(id: any): Promise<{

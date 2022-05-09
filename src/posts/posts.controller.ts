@@ -21,9 +21,9 @@ export class PostsController {
     return this.postsService.getPosts(page, perPage);
   }
 
-  @Get("/all-id")
-  async getAllPostId() {
-    return this.postsService.getAllPostsId();
+  @Get("/all-slug")
+  async getAllPostsSlug() {
+    return this.postsService.getAllPostsSlug();
   }
   @Get("/:id")
   async getProductsDetail(@Param("id") id) {
