@@ -32,7 +32,7 @@ let CourtsService = class CourtsService {
         };
     }
     async getMain() {
-        axios_1.default.post("https://hooks.slack.com/services/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", {
+        await axios_1.default.post("https://hooks.slack.com/services/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", {
             title: "테스트 메시지 전송 danger",
             text: "text",
         }, {
