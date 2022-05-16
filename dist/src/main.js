@@ -18,10 +18,7 @@ async function bootstrap() {
     app.useGlobalPipes(new common_1.ValidationPipe({
         transform: true,
     }));
-    app.enableCors({
-        origin: true,
-        credentials: true,
-    });
+    app.enableCors();
     app.useStaticAssets(process.env.NODE_ENV === "production"
         ? path_1.default.join(__dirname, "..", "..", "uploads")
         : path_1.default.join(__dirname, "..", "uploads"), {

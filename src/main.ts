@@ -19,10 +19,7 @@ async function bootstrap() {
       transform: true,
     })
   );
-  app.enableCors({
-    origin: true,
-    credentials: true,
-  });
+  app.enableCors();
   app.useStaticAssets(
     process.env.NODE_ENV === "production"
       ? path.join(__dirname, "..", "..", "uploads")
