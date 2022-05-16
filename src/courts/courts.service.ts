@@ -27,20 +27,10 @@ export class CourtsService {
 
   // NOTE : main API (banner, best courts)
   async getMain() {
-    console.log("hello");
-    await axios.post(
-      "https://hooks.slack.com/services/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",
-      {
-        title: "테스트 메시지 전송 danger",
-        text: "text",
-      },
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
+    const result = await axios.get(
+      "https://api.github.com/repos/facebook/create-react-app/issues"
     );
-    console.log("hello");
+    console.log(result);
     const bannerIdList = ["1", "2", "3", "4"];
     const bannerResult = await this.bannersRepository
       .createQueryBuilder("banners")
