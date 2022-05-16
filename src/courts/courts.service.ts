@@ -27,8 +27,8 @@ export class CourtsService {
 
   // NOTE : main API (banner, best courts)
   async getMain() {
-    await axios.post(
-      "https://hooks.slack.com/services/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",
+    axios.post(
+      "https://hooks.slack.com/services/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",
       {
         title: "테스트 메시지 전송 danger",
         text: "text",
