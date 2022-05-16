@@ -8,9 +8,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CourtsService = void 0;
 const common_1 = require("@nestjs/common");
@@ -18,7 +15,6 @@ const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_2 = require("typeorm");
 const Courts_1 = require("../entities/Courts");
 const Banner_1 = require("../entities/Banner");
-const axios_1 = __importDefault(require("axios"));
 let CourtsService = class CourtsService {
     async getCourts(page, perPage) {
         const [result, total] = await this.courtsRepository
@@ -32,15 +28,6 @@ let CourtsService = class CourtsService {
         };
     }
     async getMain() {
-        const result = await axios_1.default.post("https://hooks.slack.com/services/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", {
-            title: "테스트 메시지 전송 danger",
-            text: "text",
-        }, {
-            headers: {
-                "Content-Type": "application/json",
-            },
-        });
-        console.log(result);
         const bannerIdList = ["1", "2", "3", "4"];
         const bannerResult = await this.bannersRepository
             .createQueryBuilder("banners")
