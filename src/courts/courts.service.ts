@@ -3,6 +3,7 @@ import { InjectRepository } from "@nestjs/typeorm";
 import { Repository } from "typeorm";
 import { Courts } from "../entities/Courts";
 import { Banners } from "../entities/Banner";
+import axios from "axios";
 
 @Injectable()
 export class CourtsService {
@@ -26,6 +27,13 @@ export class CourtsService {
 
   // NOTE : main API (banner, best courts)
   async getMain() {
+    axios({
+      url: "https://hooks.slack.com/services/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",
+      method: "POST",
+      data: {
+        text: "test",
+      },
+    });
     const bannerIdList = ["1", "2", "3", "4"];
     const bannerResult = await this.bannersRepository
       .createQueryBuilder("banners")
