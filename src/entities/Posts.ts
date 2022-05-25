@@ -17,6 +17,12 @@ export class Posts {
   @Column("varchar", { name: "subTitle" })
   subTitle: string;
 
+  @Column("varchar", { name: "category" })
+  category: string;
+
+  @Column("varchar", { name: "thumbnail" })
+  thumbnail: string;
+
   @Column("longtext", { name: "contents" })
   contents: string;
 
