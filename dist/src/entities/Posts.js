@@ -26,6 +26,14 @@ __decorate([
     __metadata("design:type", String)
 ], Posts.prototype, "subTitle", void 0);
 __decorate([
+    (0, typeorm_1.Column)("varchar", { name: "category" }),
+    __metadata("design:type", String)
+], Posts.prototype, "category", void 0);
+__decorate([
+    (0, typeorm_1.Column)("varchar", { name: "thumbnail" }),
+    __metadata("design:type", String)
+], Posts.prototype, "thumbnail", void 0);
+__decorate([
     (0, typeorm_1.Column)("longtext", { name: "contents" }),
     __metadata("design:type", String)
 ], Posts.prototype, "contents", void 0);
