@@ -22,6 +22,18 @@ export class PostsService {
     };
   }
 
+  // NOTE : main API
+  async getMain() {
+    const [result, total] = await this.postsRepository
+      .createQueryBuilder("posts")
+      .where("posts.isUse = true")
+      .getManyAndCount();
+
+    return {
+      result,
+      totalCount: total,
+    };
+  }
   async getPostsDetail(slug: string) {
     const result = await this.postsRepository.findOne({
       where: {

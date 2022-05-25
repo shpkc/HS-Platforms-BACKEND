@@ -9,6 +9,10 @@ export declare class PostsController {
     getAllPostsSlug(): Promise<{
         result: import("../entities/Posts").Posts[];
     }>;
+    getMain(): Promise<{
+        result: import("../entities/Posts").Posts[];
+        totalCount: number;
+    }>;
     getProductsDetail(id: any): Promise<{
         result: import("../entities/Posts").Posts;
     }>;

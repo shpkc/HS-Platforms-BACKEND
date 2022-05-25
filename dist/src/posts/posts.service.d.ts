@@ -5,6 +5,10 @@ export declare class PostsService {
         result: Posts[];
         totalCount: number;
     }>;
+    getMain(): Promise<{
+        result: Posts[];
+        totalCount: number;
+    }>;
     getPostsDetail(slug: string): Promise<{
         result: Posts;
     }>;

@@ -27,6 +27,16 @@ let PostsService = class PostsService {
             totalCount: total,
         };
     }
+    async getMain() {
+        const [result, total] = await this.postsRepository
+            .createQueryBuilder("posts")
+            .where("posts.isUse = true")
+            .getManyAndCount();
+        return {
+            result,
+            totalCount: total,
+        };
+    }
     async getPostsDetail(slug) {
         const result = await this.postsRepository.findOne({
             where: {
