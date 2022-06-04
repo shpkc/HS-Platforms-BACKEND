@@ -31,6 +31,7 @@ let PostsService = class PostsService {
         const [result, total] = await this.postsRepository
             .createQueryBuilder("posts")
             .where("posts.isUse = true")
+            .orderBy("createdAt", "DESC")
             .getManyAndCount();
         return {
             result,
